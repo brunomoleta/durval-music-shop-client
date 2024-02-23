@@ -1,30 +1,99 @@
-# React + TypeScript + Vite
+# Durval Music Shop e-commerce front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+
+Frontend de aplicação fullstack de um e-commerce de equipamentos musicais
+onde usuários podem comprar e vender seus instrumentos.
+A motivação da equipe foi de desevolver uma aplicação robusta para compor o portfólio de cada um.
+
+## Table of contents
+
+- [Visão geral](#visão-geral)
+ - [Tecnologias usadas](#tecnologias-usadas)
+   - [React](#react)
+   - [Outros](#outros)
+ - [Design](#screenshot)
+   - [Fluxo do usuário](#fluxo-do-usuário)
+   - [Telas do app](#telas-do-app)
+ - [Links importantes](#links-importantes)
+- [Estrutura do projeto](#estructura-do-projeto)
+ - [Scripts](#scripts)
+ - [Dependencies](#dependencies)
+ - [Dev dependencies](#dev-dependencies)
+ - [Installation](#installation)
+ - [Architecture](#architecture)
+- [The process](#the-process)
+ - [What I learned](#what-i-learned)
+ - [Continued development](#continued-development)
+ - [Useful resources](#useful-resources)
+- [Acknowledgments](#acknowledgments)
+ - [Author](#author)
+
+## Visão geral
+
+### Tecnologias usadas
+
+#### React
+
+- React router dom
+- React Context
+
+#### Outros
+
+- Styled-components
+- Radix UI
+- Axios
+
+### Design
+
+#### Fluxo do usuário
+
+- O primeiro print se refere a tela inicial da aplicação;
+- Em seguida, o carrinho que apresenta os pedidos não finalizados dele.
+Aqui ele pode editar, esvaziar ou finalizar a compra;
+- a telas 3 diz respeito ao login, que é um formulário em várias
+etapas. Primeiro email e em seguida senha;
+- Na última o usuário logado dentro da dashboard;
+
+#### Telas do app
+
+![](./src/assets/docs/Durval-telas.jpg)
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+  uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
+  Refresh
 
-## Expanding the ESLint configuration
+## Links importantes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Deploy:  https://durval-music-shop.vercel.app/
+- Documentação do backend: swagger
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Estrutura do projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Scripts
+
+### Dependências
+
+### Dependências de desenvolvimento
+
+### Instalação
+
+### Arquitetura
+
+## Processo de trabalho
+
+### Aprendizado
+
+### O que desenvolver em seguida
+
+### Fontes úteis
+
+## Crédito
+
+#### Autores
+
+#### Pessoas que nos ajudaram
