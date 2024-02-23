@@ -12,7 +12,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
  - [Tecnologias usadas](#tecnologias-usadas)
    - [React](#react)
    - [Outros](#outros)
- - [Design](#screenshot)
+ - [Design](#design)
    - [Fluxo do usuário](#fluxo-do-usuário)
    - [Telas do app](#telas-do-app)
  - [Links importantes](#links-importantes)
