@@ -9,8 +9,6 @@ export const AppWrapper = styled.div`
   grid-template-rows: auto 1fr auto;
 `;
 export const MainWrapper = styled.main`
-  display: grid;
-  place-items: center;
   margin-block: 64px;
   width: 100%;
   max-width: 100svw;

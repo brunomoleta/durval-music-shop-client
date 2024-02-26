@@ -47,8 +47,3 @@ export const AddProfileItemBtn = styled.button`
     background-color: ${colors.purpleHover};
   }
 `;
-
-export const FormContainer = styled.div`
-  overflow-y: auto;
-  padding-inline-end: 16px;
-`;

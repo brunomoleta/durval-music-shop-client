@@ -6,20 +6,21 @@ import { QUERIES } from "../services/database.ts";
 
 
 export const Field = styled.fieldset`
-  display: flex;
-  flex-flow: column;
-  margin-block-end: 24px;
-  border-radius: 8px;
-  border: 2px solid ${colors.offWhite};
-  outline: 1px solid ${colors.offWhite}
-  flex-flow: column;
-  gap: 8px;
-  padding-inline: 20px;
-  padding-block: 16px;
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    margin-block-end: 24px;
+    border-radius: 8px;
+    border: 2px solid ${colors.offWhite};
+    outline: 1px solid ${colors.offWhite}
+    flex-flow: column;
+    gap: 8px;
+    padding-inline: 20px;
+    padding-block: 16px;
 
-  &:focus-within {
-    border: 2px solid ${colors.purple};
-  }
+    &:focus-within {
+        border: 2px solid ${colors.purple};
+    }
 `;
 
 export const DefaultLabel = styled.label`
@@ -62,27 +63,21 @@ export const DContent = styled(Dialog.Content)`
   padding-block: clamp(2%, 5%, 64px);
   padding-inline: clamp(2%, 5%, 40px);
 
-  & > * {
-    width: 100%;
-  }
-
   @media ${QUERIES.tabletAndUp} {
     border-radius: 8px;
-    height: auto;
-    min-width: fit-content;
-    width: auto;
+      
+    height: fit-content;
+    width: fit-content;
   }
 `;
 
 
 
 export const DTitle = styled(Dialog.Title)`
+  margin-inline-end:  auto;
   
   line-height: 130%;
   font-weight: 500;
-  font-size: ${
-          fontSize.h2
-  };
   font-size: clamp(${fontSize.text},8dvw,${fontSize.h2h3});
 `
 export const DClose = styled(Dialog.Close)`
@@ -95,7 +90,9 @@ export const Form = styled.form`
 export const FormUser = styled.form`
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr minmax(200px, 500px) auto;
+  overflow-y: auto;
+
+  max-height: 80svh;
 `
 
 

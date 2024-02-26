@@ -11,9 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  @media ${QUERIES.tabletAndUp} {
-    flex-flow: row;
-  }
+    flex-wrap: wrap;
 `;
 
 const Question = styled.h3`
