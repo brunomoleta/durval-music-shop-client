@@ -9,6 +9,7 @@ import { useProductContext } from "../../../../providers/UserContext/ProductProv
 import { IFullProductContext } from "../../../../types/product";
 import { useNavigate } from "react-router-dom";
 import { SendBtn } from "../../../../styled-components/Button.styles.ts";
+import {FormUser} from "../../../../styled-components/Modal.styles.tsx";
 
 function SearchFormHeader() {
   const [searchValue, setSearchValue] = React.useState("");
@@ -25,7 +26,7 @@ function SearchFormHeader() {
   return (
     <SearchWrapper>
 
-      <form
+      <FormUser
           style={{ width: "100%", position: "relative" }}
         onSubmit={(event) => {
           event.preventDefault();
@@ -53,7 +54,7 @@ function SearchFormHeader() {
           >
             <Search />
           </SendBtn>
-      </form>
+      </FormUser >
     </SearchWrapper>
   );
 }

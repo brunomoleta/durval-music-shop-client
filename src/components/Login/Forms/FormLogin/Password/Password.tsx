@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Form } from "../../../../../styled-components/Modal.styles.tsx";
 import { useUserContext } from "../../../../../providers/UserContext";
 
 import { useForm } from "react-hook-form";
@@ -11,6 +10,7 @@ import { IUserContext } from "../../../../../types/user";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
 import { simplePasswordSchema } from "../../../../../schemas/passwordSchema/simplePasswordSchema.ts";
+import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
 
 function Password() {
   const {
@@ -41,7 +41,7 @@ function Password() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(submit)}>
+    <FormUser onSubmit={handleSubmit(submit)}>
       <Input
         label="senha"
         type={isPasswordVisible ? "text" : "password"}
@@ -51,7 +51,7 @@ function Password() {
       />
 
       <SendBtn disabled={isLoading}>{isLoading ? <Loader /> : "LOGIN"}</SendBtn>
-    </Form>
+    </FormUser>
   );
 }
 
