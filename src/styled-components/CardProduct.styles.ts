@@ -40,7 +40,8 @@ export const Price = styled.h3`
   font-weight: 600;
 `;
 export const PriceModal = styled(Price)`
-  text-align: end;
+    text-align: end;
+    margin-inline-start: auto;
 `
 
 export const ProductCardButton = styled(Link)`

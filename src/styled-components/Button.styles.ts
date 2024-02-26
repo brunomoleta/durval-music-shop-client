@@ -77,7 +77,7 @@ export const InlineButton = styled(DefaultButton)`
 
 export const WarningInlineButton = styled(InlineButton)`
   color: ${colors.red50};
-    font-size: clamp(${fontSize.icons},7dvw,${fontSize.smallLink});
+    font-size: clamp(${fontSize.icons},5dvw,${fontSize.smallLink});
 
   top: 5ex;
   left: 0;

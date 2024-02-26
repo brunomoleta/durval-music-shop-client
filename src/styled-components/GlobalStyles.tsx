@@ -199,7 +199,7 @@ const GlobalStyles = createGlobalStyle`
   section,
   article,
   ul,
-  form,
+  ol,
   input[type="text"],
   hr {
     max-inline-size: none;

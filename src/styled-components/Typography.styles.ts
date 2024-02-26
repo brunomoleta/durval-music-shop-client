@@ -11,12 +11,17 @@ export const H2 = styled.h2`
   line-height: 140%;
   font-size: ${fontSize.h3};
   font-weight: 600;
-`
+`;
 export const H3 = styled.h3`
   font-weight: 500;
-`
-
+`;
 export const CardSubTitle = styled.p`
   color: ${colors.grey70};
   font-size: ${fontSize.p};
+`;
+
+export const GreyParagraph = styled.p`
+  font-size: clamp(${fontSize.icons}, 5svw, ${fontSize.smallLink});
+  color: ${colors.grey70};
+  text-align: end;
 `;
