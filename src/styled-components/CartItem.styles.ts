@@ -10,9 +10,7 @@ export const ProductInfo = styled.div`
 `;
 export const Wrapper = styled.div`
   display: grid;
-  height: 100%;
-  max-height: 200px;
-  grid-template-columns: 120px auto;
+  grid-template-columns: 130px auto;
   gap: 32px;
   padding-block: 20px;
 
@@ -48,3 +46,13 @@ export const RemoveBtn = styled.button`
     outline: 2px solid ${colors.red40};
   }
 `;
+
+export const InfoButtons = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 16px
+`
+

@@ -219,7 +219,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   input, textarea, select, button, hr {
-    border: var(--border-thickness) transparent;
+    border: 2px transparent;
   }
 
   textarea {

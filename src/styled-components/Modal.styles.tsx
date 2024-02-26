@@ -69,6 +69,7 @@ export const DContent = styled(Dialog.Content)`
   @media ${QUERIES.tabletAndUp} {
     border-radius: 8px;
     height: auto;
+    min-width: fit-content;
     width: auto;
   }
 `;
@@ -82,7 +83,7 @@ export const DTitle = styled(Dialog.Title)`
   font-size: ${
           fontSize.h2
   };
-  font-size: clamp(${fontSize.text},10dvw,${fontSize.h2});
+  font-size: clamp(${fontSize.text},8dvw,${fontSize.h2h3});
 `
 export const DClose = styled(Dialog.Close)`
   width: auto;

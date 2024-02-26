@@ -46,7 +46,7 @@ export const AddCartButton = styled(IconButton)`
   position: absolute;
   bottom: 10px;
   right: 10px;
-  padding-block-end: 0px;
+  padding-block-end: 0;
   padding-block-start: 8px;
   z-index: 2;
 
