@@ -4,15 +4,19 @@ import CreatePaymentForm from "./Form/CreatePaymentForm";
 import { useEffect } from "react";
 import PaymentCard from "./PaymentCard";
 
-import {usePaymentContext} from "../../../providers/UserContext/PaymentProvider.tsx";
-import {IPaymentContext} from "../../../types/payment";
-import {useUserContext} from "../../../providers/UserContext";
-import {IUserContext} from "../../../types/user";
-import {H1, H2} from "../../../styled-components/Typography.styles.ts";
+import { usePaymentContext } from "../../../providers/UserContext/PaymentProvider.tsx";
+import { IPaymentContext } from "../../../types/payment";
+import { useUserContext } from "../../../providers/UserContext";
+import { IUserContext } from "../../../types/user";
+import { H2 } from "../../../styled-components/Typography.styles.ts";
 import Loader from "../../Loader";
 import Modal from "../../Modal";
-import {AddProfileItemBtn, ProfileContent, ResumeHeader} from "../../../styled-components/ProfileItem.style.ts";
-
+import {
+  AddProfileItemBtn,
+  ProfileContent,
+  ResumeHeader,
+} from "../../../styled-components/ProfileItem.style.ts";
+import DashboardHeading from "../../DashboardHeading";
 
 function Payments() {
   const {
@@ -30,7 +34,7 @@ function Payments() {
   return (
     <>
       <ResumeHeader>
-        <H1>CARTÕES</H1>
+        <DashboardHeading text="formas de pagamento" />
 
         <AddProfileItemBtn onClick={() => setIsCreatePaymentModalOpen(true)}>
           <MdOutlineAddCircleOutline size="18" />
@@ -58,12 +62,11 @@ function Payments() {
       </div>
 
       <Modal
-          title='Criar pagamento'
+        title="Criar pagamento"
         open={isCreatePaymentModalOpen}
         onOpenChange={setIsCreatePaymentModalOpen}
         element={CreatePaymentForm()}
       />
-
     </>
   );
 }

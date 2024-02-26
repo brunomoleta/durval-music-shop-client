@@ -4,6 +4,7 @@ import { DefaultButton } from "../../../styled-components/Button.styles.ts";
 import { ItemsWrapper } from "../../../styled-components/UserProfile.styles.ts";
 import { colors } from "../../../styled-components/root.ts";
 import { useNavigate } from "react-router-dom";
+
 interface ResumeItemsProps {
   array: Array<{ url: string; text: string }>;
 }
@@ -17,13 +18,17 @@ function ResumeItems({ array }: ResumeItemsProps) {
       ? `2px solid ${colors.purpleBorder}`
       : "2px solid transparent";
 
+  const changeUrl = (url: string) => {
+    window.scrollTo(0, 0);
+    navigate(`/resumo/${url}`);
+  };
   return (
     <ItemsWrapper>
       {array.map(({ text, url }) => (
         <Category key={nanoid()}>
           <DefaultButton
             style={{ outline: hasName(url), color: hasName(url) }}
-            onClick={() => navigate(`/resumo/${url}`)}
+            onClick={() => changeUrl(url)}
           >
             {text}
           </DefaultButton>
@@ -32,6 +37,5 @@ function ResumeItems({ array }: ResumeItemsProps) {
     </ItemsWrapper>
   );
 }
-
 
 export default ResumeItems;
