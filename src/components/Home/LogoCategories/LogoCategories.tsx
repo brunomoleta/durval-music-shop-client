@@ -5,38 +5,37 @@ import {colors, genericValues} from "../../../styled-components/root.ts";
 import {DefaultButton} from "../../../styled-components/Button.styles.ts";
 import {nanoid} from "nanoid";
 
-const Wrapper = styled.div`
-  padding-inline: ${genericValues.pagePadding};
-  width: 100%;
-  max-width: ${genericValues.genericMaxWidth};
-  @media${QUERIES.laptopAndUp}{
-    padding-inline: 0;
-  }
+const Wrapper = styled.section`
+    padding-inline: ${genericValues.pagePadding};
+    width: 100%;
+    max-width: ${genericValues.genericMaxWidth};
 `
 
 const BrandsOl = styled.ol`
-  align-items: center;
-  display: flex;
-  gap: 15px;
+    padding-inline: 8px;
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    
+    padding-block: 24px;
 
-  max-width: ${genericValues.pageWidth};
-  padding-inline: ${genericValues.pagePadding};
-  padding-block: 24px;
+    border-radius: 8px;
+    outline: 2px solid ${colors.purpleSurface};
+    position: relative;
+    box-shadow: 0 5px 16px 1.5px ${colors.grey10};
+    
 
-  border: 2px solid ${colors.grey30};
-  border-radius: 8px;
-
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 
 
-  @media ${QUERIES.laptopAndUp} {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    overflow: hidden;
+    @media ${QUERIES.laptopAndUp} {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        overflow: hidden;
 
-    border: 2px solid transparent;
-  }
+        border: 2px solid transparent;
+    }
 `;
 const Brand =  styled.li`
   flex: 0 0 clamp(50%, 60%, 160px);

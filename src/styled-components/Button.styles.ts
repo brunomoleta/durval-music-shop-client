@@ -32,15 +32,19 @@ export const MenuButton = styled(DefaultButton)`
   }
 `;
 export const IconButton = styled.button<{ $bgColor?: boolean }>`
-  background-color: ${(props) => props.$bgColor && colors.grey5};
-  padding: 16px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
+    background-color: ${(props) => props.$bgColor && colors.grey5};
+    padding: clamp(4px, 3svw, 20px);
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    height: 80px;
 
-  &:hover {
-    outline: 2px solid ${colors.purpleHover};
-  }
+    box-shadow: 0 5px 16px 1.5px ${colors.grey10};
+    
+    &:hover {
+        outline: 2px solid ${colors.purpleHover};
+    }
+
 `;
 export const AddCartButton = styled(IconButton)`
   position: absolute;
@@ -198,8 +202,8 @@ export const RoundButton = styled.button<{ $positionLeft?: boolean }>`
   }
 
   top: 50%;
-  left: ${(props) => (props.$positionLeft ? 0 : "none")};
-  right: ${(props) => (props.$positionLeft ? "none" : 0)};
+  left: ${(props) => (props.$positionLeft ? "20px" : "none")};
+  right: ${(props) => (props.$positionLeft ? "none" : "20px")};
 `;
 
 export const PasswordButton = styled.button`

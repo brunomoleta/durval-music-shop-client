@@ -7,8 +7,11 @@ import {
   TextWrapper,
   Wrapper,
 } from "../../../../styled-components/NotFound.styles.ts";
-import { Card, CardGrid } from "../../../../styled-components/Cards.styles.ts";
-import {colors, genericValues} from "../../../../styled-components/root.ts";
+import {
+  CardGrid,
+  CardProd,
+} from "../../../../styled-components/Cards.styles.ts";
+import { colors, genericValues } from "../../../../styled-components/root.ts";
 
 const CardImage = styled(ImageNotFound)`
   max-width: 240px;
@@ -26,7 +29,7 @@ function IllustrationCard({
 }: IllustrationCardProps) {
   return (
     <>
-      <Card>
+      <CardProd>
         <CardGrid>
           <Figure>
             <CardImage src={image} alt={title} />
@@ -39,7 +42,7 @@ function IllustrationCard({
             </CardWrapper>
           </Wrapper>
         </CardGrid>
-      </Card>
+      </CardProd>
     </>
   );
 }

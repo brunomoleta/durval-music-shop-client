@@ -34,5 +34,4 @@ export const CartOl = styled.ol`
     min-height: 100%;
     max-height: 33svh;
     margin-block: 40px 24px;
-
 `;

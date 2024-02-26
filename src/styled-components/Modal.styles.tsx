@@ -85,8 +85,6 @@ export const DClose = styled(Dialog.Close)`
   
 `
 
-export const Form = styled.form`
-`;
 export const FormUser = styled.form`
   height: 100%;
   display: grid;

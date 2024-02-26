@@ -6,7 +6,6 @@ import {QUERIES} from "../../../services/database.ts";
 export const Foot = styled.footer`
   width: 100%;
   margin: 0 auto;
-  padding: 0 clamp(0px, 8vw, 200px);
   box-shadow: 0 -9px 16px 1.5px #dddddd;
     
   display: flex;
@@ -36,7 +35,6 @@ export const DivUp = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 80px;
-  padding-inline: ${genericValues.pagePadding};
   gap: 50px;
 
   @media ${QUERIES.tabletAndUp} {
