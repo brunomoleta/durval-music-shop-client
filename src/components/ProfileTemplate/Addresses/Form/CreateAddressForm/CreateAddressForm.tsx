@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
-import { FormContainer } from "../../../../../styled-components/ProfileItem.style.ts";
 
 function CreateAddressForm() {
   const { createAddressRequest } = useAddressContext() as IAddressContext;
@@ -49,7 +48,6 @@ function CreateAddressForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Nome"
           error={errors.name}
@@ -102,9 +100,8 @@ function CreateAddressForm() {
           {...register("complement")}
           id={"complement"}
         />
-      </FormContainer>
       <SendBtn type="submit">CADASTRAR ENDEREÇO</SendBtn>
-    </FormUser>
+    </FormUser >
   );
 }
 

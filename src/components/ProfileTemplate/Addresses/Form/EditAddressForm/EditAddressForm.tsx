@@ -2,16 +2,15 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-import {useAddressContext} from "../../../../../providers/UserContext/AddressProvider.tsx";
-import {IAddressContext, IAddressForm} from "../../../../../types/address";
-import {useUserContext} from "../../../../../providers/UserContext";
-import {IUserContext} from "../../../../../types/user";
-import {addressSchema} from "../../../../../schemas/addressSchema";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import { useAddressContext } from "../../../../../providers/UserContext/AddressProvider.tsx";
+import { IAddressContext, IAddressForm } from "../../../../../types/address";
+import { useUserContext } from "../../../../../providers/UserContext";
+import { IUserContext } from "../../../../../types/user";
+import { addressSchema } from "../../../../../schemas/addressSchema";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
-import {SendBtn} from "../../../../../styled-components/Button.styles.ts";
+import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
-import {FormContainer} from "../../../../../styled-components/ProfileItem.style.ts";
 
 function EditAddressForm() {
   const { editAddress, editingAddress } =
@@ -59,7 +58,6 @@ function EditAddressForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Nome"
           error={errors.name}
@@ -112,12 +110,11 @@ function EditAddressForm() {
           {...register("complement")}
           id={"complement"}
         />
-      </FormContainer>
 
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "EDITAR ENDEREÇO"}
       </SendBtn>
-    </FormUser>
+    </FormUser >
   );
 }
 

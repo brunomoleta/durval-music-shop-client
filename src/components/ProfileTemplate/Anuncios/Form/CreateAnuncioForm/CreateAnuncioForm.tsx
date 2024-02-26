@@ -10,7 +10,6 @@ import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
-import { FormContainer } from "../../../../../styled-components/ProfileItem.style.ts";
 import React from "react";
 
 function CreateAnuncioForm() {
@@ -42,7 +41,6 @@ function CreateAnuncioForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Nome"
           error={errors.name}
@@ -105,11 +103,10 @@ function CreateAnuncioForm() {
           {...register("brandName")}
           id={`${id}-brandName`}
         />
-      </FormContainer>
       <SendBtn type="submit" disabled={isLoading}>
-        {isLoading ? <Loader /> : "CADASTRAR ANUNCIO"}
+        {isLoading ? <Loader /> : "CADASTRAR ANÚNCIO"}
       </SendBtn>
-    </FormUser>
+    </FormUser >
   );
 }
 
