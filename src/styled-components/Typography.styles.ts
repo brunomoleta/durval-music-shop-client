@@ -2,7 +2,7 @@ import { colors, fontSize } from "./root.ts";
 import styled from "styled-components";
 
 export const H1 = styled.h1`
-  font-size: ${fontSize.h2};
+  font-size: clamp(${fontSize.p}, 5svw, ${fontSize.h2});
   line-height: 120%;
   font-weight: 600;
 `;

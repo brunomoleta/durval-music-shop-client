@@ -19,7 +19,7 @@ import {
 } from "../../../../styled-components/resumeCard.styles.ts";
 import Modal from "../../../Modal";
 import ModalQuit from "../../../Modal/ModalQuit";
-import { priceToString } from "../../../../services/utils.ts";
+import {priceToString, upper} from "../../../../services/utils.ts";
 
 const ViewButton = styled(Link)`
   color: ${colors.purple};
@@ -95,7 +95,7 @@ export function AnuncioCard(props: IAnuncioCard) {
         </CartButtons>
       </CartContent>
       <Modal
-        title="editar anúncio"
+        title={upper("editar anúncio")}
         open={isEditAnuncioModalOpen}
         onOpenChange={setIsEditAnuncioModalOpen}
         element={EditAnuncioForm()}

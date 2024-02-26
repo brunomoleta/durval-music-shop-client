@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {colors, fontSize, genericValues} from "./root.ts";
+import { colors, fontSize, genericValues } from "./root.ts";
 
 export const Heading = styled.h2`
-  font-size: ${fontSize.h3};
+  font-size: clamp(${fontSize.smallLink}, 7svw, ${fontSize.h3});
   font-weight: 600;
   color: ${colors.purple};
 `;
