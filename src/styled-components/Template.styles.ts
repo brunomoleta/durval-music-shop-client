@@ -12,6 +12,9 @@ export const MainWrapper = styled.main`
   margin-block: 64px;
   width: 100%;
   max-width: 100svw;
+    
+    display:grid;
+    place-content: center;
 `;
 export const Wrapper = styled.div`
   width: 100%;
