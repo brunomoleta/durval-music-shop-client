@@ -146,13 +146,17 @@ export const ModalButton = styled.button`
     min-height: 40px;
     min-width: 40px;
     border-radius: 4px;
-    padding: 8px;   
+    padding: 8px;
     max-width: fit-content;
+
+    height: fit-content;
 
     @media ${QUERIES.tabletAndUp} {
         position: absolute;
+        
         top: -60px;
-        right: 00px;
+        right: 0;
+        
         color: ${colors.black};
         background-color: ${colors.white000};
     }

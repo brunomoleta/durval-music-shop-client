@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Form } from "../../../../../styled-components/Modal.styles.tsx";
 import { useUserContext } from "../../../../../providers/UserContext";
 
 import { useForm } from "react-hook-form";
@@ -10,6 +9,7 @@ import Input from "../../Input";
 import { IUserContext } from "../../../../../types/user";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import emailSchema from "../../../../../schemas/emailSchema";
+import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
 
 function Email() {
 
@@ -34,7 +34,7 @@ function Email() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(submit)}>
+    <FormUser onSubmit={handleSubmit(submit)}>
       <Input
         label="e-mail"
         type="text"
@@ -44,7 +44,7 @@ function Email() {
       />
 
       <SendBtn type='submit'>AVANÇAR</SendBtn>
-    </Form>
+    </FormUser >
   );
 }
 
