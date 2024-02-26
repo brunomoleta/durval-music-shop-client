@@ -8,9 +8,11 @@ import { useUserContext } from "../../../../providers/UserContext";
 import { Eye, EyeOff } from "react-feather";
 import { IUserContext } from "../../../../types/user";
 import { PasswordButton } from "../../../../styled-components/Button.styles.ts";
-import {LabelWrapper, Span, StyledInput} from "../../../../styled-components/Input.styles.ts";
-
-
+import {
+  LabelWrapper,
+  Span,
+  StyledInput,
+} from "../../../../styled-components/Input.styles.ts";
 
 const Input = React.forwardRef(
   (
@@ -30,12 +32,7 @@ const Input = React.forwardRef(
           <div style={{ position: "relative" }}>
             <StyledInput type={type} id={id} ref={ref} {...delegated} />
             {label.toLowerCase().includes("senha") && (
-              <PasswordButton
-                onClick={(event) => {
-                  event.preventDefault();
-                  changePasswordVisibility();
-                }}
-              >
+              <PasswordButton onClick={changePasswordVisibility}>
                 {type === "text" ? <Eye /> : <EyeOff />}
               </PasswordButton>
             )}

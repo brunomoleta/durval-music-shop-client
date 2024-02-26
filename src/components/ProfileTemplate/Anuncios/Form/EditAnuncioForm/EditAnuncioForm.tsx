@@ -1,16 +1,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {useAnuncioContext} from "../../../../../providers/UserContext";
-import {IAnuncioContext, IProductForm} from "../../../../../types/anuncios";
-import {useUserContext} from "../../../../../providers/UserContext";
-import {IUserContext} from "../../../../../types/user";
-import {anuncioSchema} from "../../../../../schemas/anuncioSchema";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import {
+  useAnuncioContext,
+  useUserContext,
+} from "../../../../../providers/UserContext";
+import { IAnuncioContext, IProductForm } from "../../../../../types/anuncios";
+import { IUserContext } from "../../../../../types/user";
+import { anuncioSchema } from "../../../../../schemas/anuncioSchema";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
 import Loader from "../../../../Loader";
-import {SendBtn} from "../../../../../styled-components/Button.styles.ts";
-import {FormContainer} from "../../../../../styled-components/ProfileItem.style.ts";
+import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 
 function EditAnuncioForm() {
   const { editAnuncio, editingAnuncio } =
@@ -47,7 +48,6 @@ function EditAnuncioForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Nome"
           error={errors.name}
@@ -110,11 +110,10 @@ function EditAnuncioForm() {
           {...register("brandName")}
           id={".brandName"}
         />
-      </FormContainer>
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "SALVAR EDIÇÃO"}
       </SendBtn>
-    </FormUser>
+    </FormUser >
   );
 }
 

@@ -7,6 +7,7 @@ import styled from "styled-components";
 const Amount = styled.div`
   display: flex;
   gap: 16px;
+    margin-inline-start: auto;
 `;
 
 function ProductAmount({ amount, product }: ICart) {

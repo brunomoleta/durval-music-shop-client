@@ -6,8 +6,7 @@ import {
   ModalBottonButton,
   SendBtn,
 } from "../../styled-components/Button.styles.ts";
-import { H3 } from "../../styled-components/Typography.styles.ts";
-import { colors, fontSize } from "../../styled-components/root.ts";
+import {GreyParagraph, H3} from "../../styled-components/Typography.styles.ts";
 import { IUserContext } from "../../types/user";
 import { useNavigate } from "react-router-dom";
 import React, { useRef } from "react";
@@ -18,13 +17,13 @@ import {
   FinalPrice,
   Wrapper,
 } from "../../styled-components/RenderCartItems.ts";
-import {priceToString} from "../../services/utils.ts";
+import { priceToString } from "../../services/utils.ts";
+import { Subtotal } from "../../styled-components/CartModal.style.ts";
 
 function RenderCartItems() {
   const { cart, setIsCartModalOpen, isCartModalOpen } =
     useCartContext() as ICartContext;
-  const { setIsLogOpen, isLogOpen } =
-    useUserContext() as IUserContext;
+  const { setIsLogOpen, isLogOpen } = useUserContext() as IUserContext;
 
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -65,13 +64,13 @@ function RenderCartItems() {
       </CartOl>
       <BottonInfo>
         <div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <H3 style={{ fontSize: fontSize.link }}>Subtotal:</H3>
+          <Subtotal>
+            <H3>Subtotal:</H3>
             <FinalPrice>{priceToString(subTotal)}</FinalPrice>
-          </div>
-          <p style={{ color: colors.grey70, fontSize: fontSize.smallLink }}>
-            O frete é adicionado a seguir :)
-          </p>
+          </Subtotal>
+            <GreyParagraph>
+              O frete é adicionado a seguir :)
+            </GreyParagraph>
         </div>
         <Buttons>
           <ModalBottonButton

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, genericValues } from "../../../styled-components/root.ts";
+import {colors, fontSize, genericValues} from "../../../styled-components/root.ts";
 import { Link } from "react-router-dom";
 import {QUERIES} from "../../../services/database.ts";
 
@@ -8,10 +8,12 @@ export const Foot = styled.footer`
   margin: 0 auto;
   padding: 0 clamp(0px, 8vw, 200px);
   box-shadow: 0 -9px 16px 1.5px #dddddd;
+    
   display: flex;
   justify-content: center;
   overflow-x: hidden;
-  font-size: ${genericValues.clampFontSize};
+    
+  font-size: clamp(${fontSize.icons},5svw, ${fontSize.smallLink});
 `;
 
 export const DivContainer = styled.div`
@@ -64,6 +66,8 @@ export const UlSocialMedia = styled.ul`
 export const LiSocialMedia = styled.li`
   display: flex;
   gap: 20px;
+
+
 `;
 
 export const AnchorMedias = styled(Link)``;

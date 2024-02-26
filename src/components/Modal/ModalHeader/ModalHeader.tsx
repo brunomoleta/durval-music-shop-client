@@ -29,6 +29,7 @@ const TitleWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
+    width: 100%;
   display: flex;
   justify-content: space-between;
 `;

@@ -3,20 +3,24 @@ import {fontSize} from "./root.ts";
 import {QUERIES} from "../services/database.ts";
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-flow: column-reverse;
-  margin: 64px;
-  
-  @media ${QUERIES.tabletAndUp} {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-  }
+    display: flex;
+    flex-flow: column-reverse;
+    margin: clamp(20px, 7svw, 64px);
+
+
+    @media ${QUERIES.tabletAndUp} {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
 `;
 
-export const InternalWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  place-items: center;
+export const InternalWrapper = styled.aside`
+    position: sticky;
+    top: 0;
+    
+    height: fit-content;
+    padding-block-start: 20px;
 `;
 
 export const ItemsWrapper = styled.ol`

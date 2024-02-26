@@ -1,10 +1,7 @@
 import { useUserContext } from "../../../../../providers/UserContext";
-// import { IUserContext, IPassword } from "../../../../../types/types";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-} from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../Input";
 import React from "react";
 import styled from "styled-components";
@@ -13,6 +10,7 @@ import passwordSchema from "../../../../../schemas/passwordSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IPassword } from "../../../../../types/signUp";
 import {SendBtn} from "../../../../../styled-components/Button.styles.ts";
+import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
 
 const Ol = styled.ol`
   font-size: ${fontSize.smallLink};
@@ -53,7 +51,7 @@ function Password() {
 
   return (
     <>
-      <Form onSubmit={handleSubmit(submit)}>
+      <FormUser onSubmit={handleSubmit(submit)}>
         <Input
           label="senha"
           type={isPasswordVisible ? "text" : "password"}
@@ -71,7 +69,7 @@ function Password() {
         />
 
         <SendBtn>AVANÇAR</SendBtn>
-      </Form>
+      </FormUser >
       <div>
 
       <h3> Sua senha deve cumprir os seguintes critérios:</h3>

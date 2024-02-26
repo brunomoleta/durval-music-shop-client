@@ -199,7 +199,7 @@ const GlobalStyles = createGlobalStyle`
   section,
   article,
   ul,
-  form,
+  ol,
   input[type="text"],
   hr {
     max-inline-size: none;
@@ -219,7 +219,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   input, textarea, select, button, hr {
-    border: var(--border-thickness) transparent;
+    border: 2px transparent;
   }
 
   textarea {

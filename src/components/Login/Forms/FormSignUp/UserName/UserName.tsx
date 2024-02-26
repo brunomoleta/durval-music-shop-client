@@ -1,4 +1,3 @@
-import { Form } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,6 +7,7 @@ import nameSchema from "../../../../../schemas/nameSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IName } from "../../../../../types/signUp";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
+import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
 
 function UserName() {
   const { setStep, signUpInfo, setSignUpInfo } =
@@ -32,7 +32,7 @@ function UserName() {
 
   return (
     <>
-      <Form onSubmit={handleSubmit(submit)}>
+      <FormUser onSubmit={handleSubmit(submit)}>
         <Input
           label="nome"
           type="text"
@@ -49,7 +49,7 @@ function UserName() {
         />
 
         <SendBtn type="submit">AVANÇAR</SendBtn>
-      </Form>
+      </FormUser >
     </>
   );
 }

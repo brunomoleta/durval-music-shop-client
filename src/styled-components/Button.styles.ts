@@ -46,7 +46,7 @@ export const AddCartButton = styled(IconButton)`
   position: absolute;
   bottom: 10px;
   right: 10px;
-  padding-block-end: 0px;
+  padding-block-end: 0;
   padding-block-start: 8px;
   z-index: 2;
 
@@ -77,7 +77,7 @@ export const InlineButton = styled(DefaultButton)`
 
 export const WarningInlineButton = styled(InlineButton)`
   color: ${colors.red50};
-    font-size: clamp(${fontSize.icons},7dvw,${fontSize.smallLink});
+    font-size: clamp(${fontSize.icons},5dvw,${fontSize.smallLink});
 
   top: 5ex;
   left: 0;
@@ -146,13 +146,17 @@ export const ModalButton = styled.button`
     min-height: 40px;
     min-width: 40px;
     border-radius: 4px;
-    padding: 8px;   
+    padding: 8px;
     max-width: fit-content;
+
+    height: fit-content;
 
     @media ${QUERIES.tabletAndUp} {
         position: absolute;
+        
         top: -60px;
-        right: 00px;
+        right: 0;
+        
         color: ${colors.black};
         background-color: ${colors.white000};
     }

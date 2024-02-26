@@ -7,7 +7,7 @@ import { IAnuncioContext } from "../../../types/anuncios";
 import { useUserContext } from "../../../providers/UserContext";
 import { IUserContext } from "../../../types/user";
 import { useAnuncioContext } from "../../../providers/UserContext/AnuncioProvider.tsx";
-import { H1, H2 } from "../../../styled-components/Typography.styles.ts";
+import { H2 } from "../../../styled-components/Typography.styles.ts";
 import Loader from "../../Loader";
 import Modal from "../../Modal";
 import {
@@ -15,6 +15,7 @@ import {
   ProfileContent,
   ResumeHeader,
 } from "../../../styled-components/ProfileItem.style.ts";
+import DashboardHeading from "../../DashboardHeading";
 
 function Anuncios() {
   const {
@@ -32,7 +33,8 @@ function Anuncios() {
   return (
     <>
       <ResumeHeader>
-        <H1>ANÚNCIOS</H1>
+        <DashboardHeading text="anúncios" />
+
         <AddProfileItemBtn onClick={() => setIsCreateAnuncioModalOpen(true)}>
           <MdOutlineAddCircleOutline size="18" />
           Anúncio

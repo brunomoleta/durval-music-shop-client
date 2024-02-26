@@ -10,7 +10,6 @@ import { useUserContext } from "../../../../../providers/UserContext";
 import { usePaymentContext } from "../../../../../providers/UserContext/PaymentProvider.tsx";
 import { IUserContext } from "../../../../../types/user";
 import { paymentSchema } from "../../../../../schemas/paymentSchema";
-import { FormContainer } from "../../../../../styled-components/ProfileItem.style.ts";
 
 function EditPaymentForm() {
   const { editPayment, editingPayment } =
@@ -35,7 +34,6 @@ function EditPaymentForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Número do Cartão"
           error={errors.number}
@@ -54,11 +52,10 @@ function EditPaymentForm() {
           <option value="debit">Débito</option>
           <option value="credit">Crédito</option>
         </Select>
-      </FormContainer>
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "EDITAR CARTÃO"}
       </SendBtn>{" "}
-    </FormUser>
+    </FormUser >
   );
 }
 

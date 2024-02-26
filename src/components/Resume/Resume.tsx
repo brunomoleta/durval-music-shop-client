@@ -2,18 +2,18 @@ import Refund from "../../assets/illustrations/Refund.svg"
 import styled from "styled-components";
 import {fontSize} from "../../styled-components/root.ts";
 import Illustration from "../Illustration";
-import {QUERIES} from "../../services/database.ts";
 
 const H1 = styled.h1`
   width: 100%;
+
   font-weight: 500;
+    font-size: clamp(${fontSize.text}, 7svw, ${fontSize.h2});
+
+
+    margin-inline-end: auto;
+    
   text-align: center;
   line-height: 130%;
-  font-size: ${fontSize.h3};
-  @media ${QUERIES.tabletAndUp}{
-    
-  font-size: ${fontSize.h1};
-  }
 `
 const Section = styled.section`
   display: grid;

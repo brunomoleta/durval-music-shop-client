@@ -1,16 +1,15 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {IPaymentContext, IPaymentForm} from "../../../../../types/payment";
-import {IUserContext} from "../../../../../types/user";
-import {usePaymentContext} from "../../../../../providers/UserContext/PaymentProvider.tsx";
-import {useUserContext} from "../../../../../providers/UserContext";
-import {paymentSchema} from "../../../../../schemas/paymentSchema";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import { IPaymentContext, IPaymentForm } from "../../../../../types/payment";
+import { IUserContext } from "../../../../../types/user";
+import { usePaymentContext } from "../../../../../providers/UserContext/PaymentProvider.tsx";
+import { useUserContext } from "../../../../../providers/UserContext";
+import { paymentSchema } from "../../../../../schemas/paymentSchema";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
-import {SendBtn} from "../../../../../styled-components/Button.styles.ts";
+import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
-import {FormContainer} from "../../../../../styled-components/ProfileItem.style.ts";
 
 function CreatePaymentForm() {
   const { createPaymentRequest } = usePaymentContext() as IPaymentContext;
@@ -32,7 +31,6 @@ function CreatePaymentForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-      <FormContainer>
         <Input
           label="Número do Cartão"
           error={errors.number}
@@ -52,11 +50,10 @@ function CreatePaymentForm() {
           <option value="debit">Débito</option>
           <option value="credit">Crédito</option>
         </Select>
-      </FormContainer>
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "CADASTRAR CARTÃO"}
       </SendBtn>
-    </FormUser>
+    </FormUser >
   );
 }
 

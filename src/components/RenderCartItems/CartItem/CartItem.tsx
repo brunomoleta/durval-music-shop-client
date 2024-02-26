@@ -11,18 +11,18 @@ import { ICart, ICartContext } from "../../../types/cart";
 import ProductAmount from "../ProductAmount";
 import { useCartContext } from "../../../providers/UserContext";
 import {
+  InfoButtons,
   ProductInfo,
   RemoveBtn,
   Warning,
   Wrapper,
 } from "../../../styled-components/CartItem.styles.ts";
-import { priceToString } from "../../../services/utils.ts";
+import { priceToString, upper } from "../../../services/utils.ts";
 
 function CartItem(props: ICart) {
   const { product, amount } = props;
   const { name, brandName, image, price, id } = product;
-  const { removeProductInCart } =
-    useCartContext() as ICartContext;
+  const { removeProductInCart } = useCartContext() as ICartContext;
 
   return (
     <>
@@ -35,16 +35,10 @@ function CartItem(props: ICart) {
         </ImgModalContainer>
         <ProductInfo>
           <div>
-            <Brand>{brandName}</Brand>
-            <Name>{name}</Name>
+            <Brand>{upper(brandName)}</Brand>
+            <Name>{upper(name)}</Name>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <InfoButtons>
             <RemoveBtn
               onClick={() => {
                 removeProductInCart(id);
@@ -62,7 +56,7 @@ function CartItem(props: ICart) {
             </RemoveBtn>
             <ProductAmount product={product} amount={amount} />
             <PriceModal>{priceToString(price)}</PriceModal>
-          </div>
+          </InfoButtons>
         </ProductInfo>
       </Wrapper>
     </>
