@@ -19,10 +19,11 @@ import { IUserContext } from "../../../../types/user";
 import { ICartContext } from "../../../../types/cart";
 import styled from "styled-components";
 import FloatingText from "./FloatingText";
+import DropdownMenuHeader from "../DropdownMenu";
 
-const Span = styled.span`
-  font-size: ${fontSize.icons};
-  font-weight: 500;
+export const IconSpan = styled.span`
+    font-size: clamp(0.25rem, 3svw, ${fontSize.icons});
+    font-weight: 500;
 `;
 
 function IconsHeader() {
@@ -34,6 +35,8 @@ function IconsHeader() {
 
   return (
     <IconsWrapper>
+      <DropdownMenuHeader />
+
       <IconButton
         onClick={() =>
           token && token.length > 0
@@ -42,16 +45,15 @@ function IconsHeader() {
         }
       >
         <ProfileIcon src={Profile} alt="User Button" />
-        <Span>CONTA</Span>
+        <IconSpan>CONTA</IconSpan>
       </IconButton>
       <CartWrapper>
         <IconButton
-          $bgColor
           onClick={() => setIsCartModalOpen(!isCartModalOpen)}
         >
           <ProfileIcon src={Cart} alt="Carrinho" />
-          <Span>CARRINHO</Span>
-          <FloatingText/>
+          <IconSpan>CARRINHO</IconSpan>
+          <FloatingText />
           <CartQuantity>{cart?.length}</CartQuantity>
         </IconButton>
       </CartWrapper>
