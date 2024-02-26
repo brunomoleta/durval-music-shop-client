@@ -146,7 +146,7 @@ export const CartQuantity = styled.span`
   color: ${colors.offWhite};
 
   padding-inline: 10px;
-  padding-block: 0px;
+  padding-block: 0;
   border-radius: 20px;
   font-size: ${fontSize.icons};
 `;
@@ -203,8 +203,8 @@ export const DSubContent = styled(DropdownMenu.SubContent)`
   padding-inline: 8px;
   padding-block: 16px;
   box-shadow:
-    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
-    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+    0 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0 10px 20px -15px rgba(22, 23, 24, 0.2);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
