@@ -6,14 +6,17 @@ import {
   DSeparator,
   DSubContent,
   DSubTrigger,
+  ProfileIcon,
 } from "../../../../styled-components/Header.styles.tsx";
 import { nanoid } from "nanoid";
 import {
-  DefaultButton,
+  IconButton,
   MenuButton,
 } from "../../../../styled-components/Button.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "react-feather";
+import List from "../../../../assets/ui/List.svg";
+import {IconSpan} from "../IconsHeader";
 
 function DropdownMenuHeader() {
   const navigate = useNavigate();
@@ -21,9 +24,12 @@ function DropdownMenuHeader() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <DefaultButton className="IconButton" aria-label="categorias">
-          CATEGORIAS
-        </DefaultButton>
+        <IconButton
+        >
+          <ProfileIcon src={List} alt="Categories" />
+          <IconSpan>CATEGORIAS</IconSpan>
+        </IconButton>
+        {/*</DefaultButton>*/}
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>

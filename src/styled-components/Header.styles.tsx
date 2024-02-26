@@ -11,10 +11,12 @@ export const SearchBar = styled.input`
   padding-block: 0.3rem;
   padding-inline-start: 1.125rem;
   width: 100%;
+    
+    margin: auto;
 
   &:focus {
     border: 2px solid ${colors.purpleSurface};
-    outline: 2px solid ${colors.purple};
+    outline: 5px solid ${colors.purple};
   }
 
   @media ${QUERIES.tabletAndUp} {
@@ -27,16 +29,12 @@ export const LogoTop = styled.span`
   margin: auto;
   width: 100%;
   height: auto;
+    
 
   line-height: 110%;
 
   font-size: clamp(${fontSize.text}, 10svw, ${fontSize.h2});
   font-weight: 700;
-
-  text-align: center;
-
-  align-self: center;
-  justify-self: center;
 
   transition: color 300ms;
 
@@ -52,7 +50,10 @@ export const LogoTop = styled.span`
     color: ${colors.purpleHover};
   }
 `;
-export const ProfileIcon = styled.img<{ $bgColor?: boolean }>``;
+export const ProfileIcon = styled.img<{ $bgColor?: boolean }>`
+    max-height: 20px;
+    width: auto;
+`;
 
 export const Category = styled.li`
   padding-block: 4px;
@@ -71,20 +72,20 @@ export const InfoWrapper = styled.div`
     
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     width: 100%;
-    max-width: 1440px;
+    max-width: ${genericValues.genericMaxWidth};
     @media ${QUERIES.tabletAndUp}) {
         grid-template-columns: revert;
-        margin-inline: 0px;
+        margin-inline: 0;
 }
 `;
 
 export const IconsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 5svw, 20px);
 `;
 
 export const Wrapper = styled.header`
@@ -94,40 +95,37 @@ export const Wrapper = styled.header`
   padding-block-start: 24px;
   min-width: 0;
   box-shadow:
-    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
-    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    hsl(206 22% 7% / 35%) 0 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0 10px 20px -15px;
 `;
-export const HeaderWrapper = styled.div`
+
+export const MidWrapper = styled.div`
     max-width: ${genericValues.pageWidth};
     width: 100%;
+`
+
+export const HeaderWrapper = styled.div`
     margin-block-end: 24px;
     margin-block-start: 8px;
     padding-inline: ${genericValues.pagePadding};
     display: flex;
     flex-flow: column;
-    justify-content: center;
     align-items: center;
     gap: clamp(5svh, 8svh, 32px);
+    
+    flex-wrap: wrap;
 `;
 export const SearchWrapper = styled.div`
+    
+    
     position: relative;
     flex: 0 5 50ch;
     width: 100%;
-    margin-inline: auto;
     max-inline-size: 65ch;
 
     @media ${QUERIES.laptopAndUp} {
         margin-inline: 0 auto ;
     }
-`;
-export const CategoriesWrapper = styled.ol`
-  display: flex;
-  align-items: center;
-  gap: 24px;
-
-  @media (max-width: 20rem) {
-    display: none;
-  }
 `;
 
 export const Label = styled(DefaultLabel)`
@@ -148,7 +146,7 @@ export const CartQuantity = styled.span`
   color: ${colors.offWhite};
 
   padding-inline: 10px;
-  padding-block: 0px;
+  padding-block: 0;
   border-radius: 20px;
   font-size: ${fontSize.icons};
 `;
@@ -166,8 +164,8 @@ export const DContent = styled(DropdownMenu.Content)`
   padding: 8px;
   padding-block: 16px;
   box-shadow:
-    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
-    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+    0 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0 10px 20px -15px rgba(22, 23, 24, 0.2);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
@@ -205,8 +203,8 @@ export const DSubContent = styled(DropdownMenu.SubContent)`
   padding-inline: 8px;
   padding-block: 16px;
   box-shadow:
-    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
-    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+    0 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0 10px 20px -15px rgba(22, 23, 24, 0.2);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;

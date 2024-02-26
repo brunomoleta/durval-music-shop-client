@@ -4,16 +4,15 @@ import {fontSize} from "../../styled-components/root.ts";
 import Illustration from "../Illustration";
 
 const H1 = styled.h1`
-  width: 100%;
+    width: 100%;
 
-  font-weight: 500;
+    font-weight: 500;
     font-size: clamp(${fontSize.text}, 7svw, ${fontSize.h2});
 
-
     margin-inline-end: auto;
-    
-  text-align: center;
-  line-height: 130%;
+
+    text-align: center;
+    line-height: 130%;
 `
 const Section = styled.section`
   display: grid;

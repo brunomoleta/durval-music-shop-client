@@ -1,39 +1,14 @@
-import { Link } from "react-router-dom";
-import {
-  CategoriesWrapper,
-  HeaderWrapper,
-  InfoWrapper,
-  LogoTop,
-  Wrapper,
-} from "../../../styled-components/Header.styles.tsx";
-import DropdownMenuHeader from "./DropdownMenu";
-import SearchFormHeader from "./SearchFormHeader";
-import IconsHeader from "./IconsHeader";
-import { logoName } from "../../../services/database.ts";
+import Cart from "../../Cart";
+import HeaderInfo from "./HeaderInfo";
+import SignInModal from "./SignInModal";
 
 function Header() {
   return (
-    <Wrapper>
-      <HeaderWrapper>
-        <Link to={"/"}>
-          <LogoTop>{logoName}</LogoTop>
-        </Link>
-        <InfoWrapper>
-          <SearchFormHeader />
-          <div
-            style={{
-              display: "flex",
-              gap: "24px",
-            }}
-          >
-            <CategoriesWrapper>
-              <DropdownMenuHeader />
-            </CategoriesWrapper>
-            <IconsHeader />
-          </div>
-        </InfoWrapper>
-      </HeaderWrapper>
-    </Wrapper>
+    <>
+      <HeaderInfo />
+      <SignInModal />
+      <Cart />
+    </>
   );
 }
 

@@ -1,34 +1,44 @@
 # Durval Music Shop e-commerce front-end
 
+<hr style="border-top: 3px solid #bbb;">
+
+
 ## Descrição
 
 Frontend de aplicação fullstack de um e-commerce de equipamentos musicais
 onde usuários podem comprar e vender seus instrumentos.
 A motivação da equipe foi de desevolver uma aplicação robusta para compor o portfólio de cada um.
 
+<hr style="border-top: 3px solid #bbb;">
+
+
 ## Table of contents
 
 - [Visão geral](#visão-geral)
-- [Tecnologias usadas](#tecnologias-usadas)
-    - [React](#react)
-    - [Outros](#outros)
-- [Design](#design)
-    - [Fluxo do usuário](#fluxo-do-usuário)
-    - [Telas do app](#telas-do-app)
-- [Links importantes](#links-importantes)
+  - [Tecnologias usadas](#tecnologias-usadas)
+      - [React](#react)
+      - [Outros](#outros)
+  - [Design](#design)
+      - [Fluxo do usuário](#fluxo-do-usuário)
+      - [Telas do app](#telas-do-app)
+  - [Links importantes](#links-importantes)
 - [Estrutura do projeto](#estrutura-do-projeto)
-- [Scripts](#scripts)
-- [Dependências](#dependências)
-- [Dependências de desenvolvimento](#dependências-de-desenvolvimento)
-- [Instalação](#instalação)
-- [Executar o projeto](#executar-o-projeto)
-- [Arquitetura](#arquitetura)
+  - [Scripts](#scripts)
+  - [Dependências](#dependências)
+  - [Dependências de desenvolvimento](#dependências-de-desenvolvimento)
+  - [Instalação](#instalação)
+  - [Executar o projeto](#executar-o-projeto)
+  - [Arquitetura](#arquitetura)
 - [Processo de trabalho](#processo-de-trabalho)
-- [Aprendizado](#aprendizado)
-- [O que desenvolver em seguida](#o-que-desenvolver-em-seguida)
-- [Fontes úteis](#fontes-úteis)
+  - [Aprendizado](#aprendizado)
+  - [O que desenvolver em seguida](#o-que-desenvolver-em-seguida)
+  - [Fontes úteis](#fontes-úteis)
 - [Créditos](#crédito)
-- [Autores](#autores)
+  - [Autores](#autores)
+  - [Pessoas que nos ajudaram](#pessoas-que-nos-ajudaram)
+
+<hr style="border-top: 3px solid #bbb;">
+
 
 ## Visão geral
 
@@ -45,6 +55,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 - Styled-components
 - Radix UI
 - Axios
+- BrasilApi
 
 ### Design
 
@@ -68,11 +79,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
   Refresh
 
-## Links importantes
+### Links importantes
 
 - Deploy frontend:  https://durval-music-shop.vercel.app/
 - Deploy backend: https://loja-do-durval.onrender.com/
 - Documentação do backend: https://github.com/brunomoleta/durval-music-shop-server
+
+<hr style="border-top: 3px solid #bbb;">
 
 ## Estrutura do projeto
 
@@ -87,7 +100,44 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 
 ### Dependências
 
+-  ````@hookform/resolvers````: ^3.3.4,
+-  ````@radix-ui/react-dialog````: ^1.0.5,
+-  ````@radix-ui/react-dropdown-menu````: ^2.0.6,
+-  ````@radix-ui/react-icons````: ^1.3.0,
+-  ````@radix-ui/react-visually-hidden````: ^1.0.3,
+-  ````@types/cors````: ^2.8.17,
+-  ````axios````: ^1.6.7,
+-  ````focus-trap-react````: ^10.2.3,
+-  ````jsonwebtoken````: ^9.0.2,
+-  ````nanoid````: ^5.0.6,
+-  ````react````: ^18.2.0,
+-  ````react-dom````: ^18.2.0,
+-  ````react-feather````: ^2.0.10,
+-  ````react-hook-form````: ^7.50.1,
+-  ````react-icons````: ^5.0.1,
+-  ````react-router-dom````: ^6.22.1,
+-  ````react-toastify````: ^10.0.4,
+-  ````styled-components````: ^6.1.8,
+-  ````zod````: ^3.22.4
+
 ### Dependências de desenvolvimento
+
+-   ````@testing-library/jest-dom````: ^6.4.2,
+-   ````@testing-library/react````: ^14.2.1,
+-   ````@types/jest````: ^29.5.12,
+-   ````@types/jsonwebtoken````: ^9.0.5,
+-   ````@types/react````: ^18.2.56,
+-   ````@types/react-dom````: ^18.2.19,
+-   ````@typescript-eslint/eslint-plugin````: ^7.0.2,
+-   ````@typescript-eslint/parser````: ^7.0.2,
+-   ````@vitejs/plugin-react````: ^4.2.1,
+-   ````eslint````: ^8.56.0,
+-   ````eslint-plugin-react-hooks````: ^4.6.0,
+-   ````eslint-plugin-react-refresh````: ^0.4.5,
+-   ````new-component````: ^5.0.2,
+-   ````prettier````: ^3.2.5,
+-   ````typescript````: ^5.2.2,
+-   ````vite````: ^5.1.
 
 ### Instalação
 
@@ -149,32 +199,103 @@ durval-music-shop-client/
 │   └── tests/              Testes unitários
 │   └── types/              Tipagem dos components, funções e providers. 
 ```
+<hr style="border-top: 3px solid #bbb;">
 
 ## Processo de trabalho
 
 - O principal componente da aplicação é o Modal;
-- O usuário pode fazer um carrinho de compras(modal) e editá-lo;
+- O usuário pode adicionar produtos a um carrinho de compras(modal) e editá-lo;
 - Além disso, a criação de conta e login ocorrem através dele;
 - Dentro do dashboard do usuário autenticado, as ações de
 CRUD acontecem no modal;
 
-
 ### Aprendizado
 
-- Foi desafiador desenvolver nossa primeira aplicação
-de React + Typescript;
--  
+
+#### Modal
+O componente Modal é usa o Radix-UI como base:
+
+```Javascript
+function Modal({
+                 open,
+                 onOpenChange,
+
+                 element,
+                 title = "",
+                 button,
+               }: IModal) {
+  return (
+          <Dialog.Root 
+                  modal={true} 
+                  open={open} 
+                  onOpenChange={onOpenChange}
+          >
+            <Dialog.Portal>
+              <DOverLay />
+              <DContent>
+                <ModalHeader 
+                        button={button} 
+                        title={title} 
+                />
+                {element}
+              </DContent>
+            </Dialog.Portal>
+          </Dialog.Root>
+  );
+}
+````
+
+A fim de que este fosse o mais flexível possível,
+pelo fato de receber em um momento
+uma lista de elementos, em outra um formulário curto
+e em um terceiro um formulário longo foi
+realizado o seguinte css:
+
+````css
+export const DContent = styled(Dialog.Content)`
+    /* ... */
+
+    width: 100%;
+    height: 100%;
+
+
+@media ${QUERIES.tabletAndUp} {
+    height: fit-content;
+    width: fit-content;
+}
+`
+````
+O código acima fez com que o modal 
+ocupe a tela inteira quando ela tiver até 62.5rem
+e ocupar o quanto for necessário
+em uma maior. Dando assim um resultado visual e funcional
+satisfatório em todas as situações.
 
 ### O que desenvolver em seguida
 
+- Filtro de instrumentos após o usuário buscar o nome de um equipamento ( por preço, anúncios mais ou menos antigo);
+- Dar ao usuário a possibilidade de terminar a compra;
+
 ### Fontes úteis
 
-- [Josh Cameau's blog](https://www.joshwcomeau.com/) - The best frontend blog I know by far;
+- [Josh Cameau's blog](https://www.joshwcomeau.com/) - Blog de frontend de um desenvolvedor sênior canadense. 
+Ele ilustra com pequenos jogos e ilustrações sem perder a profundidade;
 - [Radix UI](https://www.radix-ui.com/) - É uma mão na roda esta biblioteca de components não estilizados.
 O Modal e o Dropdown são baseados nele;
 
+<hr style="border-top: 3px solid #bbb;">
+
 ## Crédito
 
-#### Autores
+### Autores
 
-#### Pessoas que nos ajudaram
+- Bruno Moleta;
+- Gustavo Lazarin;
+- Filipe Otávio;
+- João Pedro;
+
+### Pessoas que nos ajudaram
+
+- Mestre Alex Conder (Kenzie Academy Brasil)
+
+<hr style="border-top: 3px solid #bbb;">
