@@ -12,7 +12,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 <hr style="border-top: 3px solid #bbb;">
 
 
-## Table of contents
+## Índice
 
 - [Visão geral](#visão-geral)
   - [Tecnologias usadas](#tecnologias-usadas)
@@ -26,9 +26,10 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Scripts](#scripts)
   - [Dependências](#dependências)
   - [Dependências de desenvolvimento](#dependências-de-desenvolvimento)
+  - [Arquitetura](#arquitetura)
+- [Configuração do ambiente local](#configuração-do-ambiente-local)
   - [Instalação](#instalação)
   - [Executar o projeto](#executar-o-projeto)
-  - [Arquitetura](#arquitetura)
 - [Processo de trabalho](#processo-de-trabalho)
   - [Aprendizado](#aprendizado)
   - [O que desenvolver em seguida](#o-que-desenvolver-em-seguida)
@@ -72,18 +73,12 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 
 ![](./src/assets/docs/Durval-telas.jpg)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
-  Refresh
-
 ### Links importantes
 
 - Deploy frontend:  https://durval-music-shop.vercel.app/
 - Deploy backend: https://loja-do-durval.onrender.com/
-- Documentação do backend: https://github.com/brunomoleta/durval-music-shop-server
+- Repositório do backend: https://github.com/brunomoleta/durval-music-shop-server
+- Documentação do backend: https://loja-do-durval.onrender.com/doc
 
 <hr style="border-top: 3px solid #bbb;">
 
@@ -137,45 +132,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 -   ````new-component````: ^5.0.2,
 -   ````prettier````: ^3.2.5,
 -   ````typescript````: ^5.2.2,
--   ````vite````: ^5.1.
-
-### Instalação
-
-1. Clone o repositório (front-end):
-
-```bash
-git clone git@github.com:brunomoleta/durval-music-shop-client.git
-```
-
-2. Clone o repositório (back-end):
-
-```bash
-git clone git@github.com:brunomoleta/durval-music-shop-server.git
-```
-
-Para mais informações sobre o back-end, verfique o README.md na raiz do projeto.
-
-3. Instale as dependências:
-
-```bash
-npm install 
-
-# ou 
-
-yarn install
-```
-
-### Executar o Projeto
-
-Execute o seguinte comando para iniciar o servidor:
-
-```bash
-# development
-yarn dev
-
-# production
-yarn build
-```
+-   ````vite````: ^5.1.0
 
 ### Arquitetura
 
@@ -199,6 +156,51 @@ durval-music-shop-client/
 │   └── tests/              Testes unitários
 │   └── types/              Tipagem dos components, funções e providers. 
 ```
+
+<hr style="border-top: 3px solid #bbb;">
+
+## Configuração do ambiente local
+
+### Instalação
+
+1. Clone o repositório (front-end):
+
+```bash
+git clone git@github.com:brunomoleta/durval-music-shop-client.git
+```
+
+2. Clone o repositório (back-end):
+
+```bash
+git clone git@github.com:brunomoleta/durval-music-shop-server.git
+```
+
+Para mais informações sobre o back-end, 
+verfique o README.md na raiz do projeto do servidor.
+
+3. Instale as dependências:
+
+```bash
+npm install 
+
+# ou 
+
+yarn install
+```
+
+### Executar o Projeto
+
+Execute o seguinte comando para iniciar o servidor:
+
+```bash
+# development
+yarn dev
+
+# production
+yarn build
+```
+
+
 <hr style="border-top: 3px solid #bbb;">
 
 ## Processo de trabalho
