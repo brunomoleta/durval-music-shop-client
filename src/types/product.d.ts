@@ -42,7 +42,7 @@ export interface IManagePagesProps {
 export interface IGetProductsByCategoryResponse {
   nextPage: string | null;
   prevPage: string | null;
-  products: { product: IProductContext }[];
+  products: IProductContext[];
 }
 
 export interface IFullProductContext {

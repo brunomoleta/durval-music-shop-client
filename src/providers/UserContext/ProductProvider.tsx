@@ -41,21 +41,16 @@ const ProductProvider = (props: { children: ReactNode }) => {
 
   const getProductsByCategory = async (
     categoryName: string,
-    url: string | null | undefined,
   ) => {
     try {
       setIsLoading(true);
       const { data } = await api.get(
-        `products/category/${categoryName}${url ? url : "/"}`,
+        `products/category/${categoryName}`,
       );
       const { products, prevPage, nextPage }: IGetProductsByCategoryResponse =
         data;
 
-      const productsList: IProductContext[] = products.map(
-        (product) => product.product,
-      );
-
-      setAllProducts(productsList);
+      setAllProducts(products);
       return { prevPage, nextPage };
     } finally {
       setIsLoading(false);
