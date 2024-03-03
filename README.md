@@ -18,6 +18,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Tecnologias usadas](#tecnologias-usadas)
       - [React](#react)
       - [Outros](#outros)
+  - [Funcionalidades](#funcionalidades) 
   - [Design](#design)
       - [Fluxo do usuário](#fluxo-do-usuário)
       - [Telas do app](#telas-do-app)
@@ -57,33 +58,36 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 - Axios
 - BrasilApi
 
+### Funcionalidades
+
+- Usuário sem autenticação pode criar um carrinho de compras que é salvo no Local Storage;
+- Usuário logado pode criar, editar, ler ou remover:
+  - Seus endereços;
+  - Seus produtos anunciados;
+  - Seus métodos de pagamento;
+- Cadastro realizado através de um formulário de múltiplas etapas,
+    melhorando a experiência do usuário; 
+
 ### Design
 
 #### Fluxo do usuário
 
-- O primeiro print se refere a tela inicial da aplicação;
-- Em seguida, o carrinho que apresenta os pedidos não finalizados dele.
+- Imagem 01: tela inicial da aplicação;
+- Imagem 02: O carrinho que apresenta os pedidos não finalizados dele.
   Aqui ele pode editar, esvaziar ou finalizar a compra;
-- a telas 3 diz respeito ao login, que é um formulário em várias
+- Imagem 03: Login, que é um formulário em várias
   etapas. Primeiro email e em seguida senha;
-- Na última o usuário logado dentro da dashboard;
+- Imagem 04: Na última o usuário logado dentro da dashboard;
 
 #### Telas do app
 
 ![](./src/assets/docs/Durval-telas.jpg)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
-  Refresh
-
 ### Links importantes
 
 - Deploy frontend:  https://durval-music-shop.vercel.app/
 - Deploy backend: https://loja-do-durval.onrender.com/
-- Documentação do backend: https://github.com/brunomoleta/durval-music-shop-server
+- Documentação do backend: https://loja-do-durval.onrender.com/doc
 
 <hr style="border-top: 3px solid #bbb;">
 
