@@ -18,6 +18,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Tecnologias usadas](#tecnologias-usadas)
       - [React](#react)
       - [Outros](#outros)
+  - [Funcionalidades](#funcionalidades) 
   - [Design](#design)
       - [Fluxo do usuário](#fluxo-do-usuário)
       - [Telas do app](#telas-do-app)
@@ -30,6 +31,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 - [Configuração do ambiente local](#configuração-do-ambiente-local)
   - [Instalação](#instalação)
   - [Executar o projeto](#executar-o-projeto)
+  - [Arquitetura](#arquitetura)
 - [Processo de trabalho](#processo-de-trabalho)
   - [Aprendizado](#aprendizado)
   - [O que desenvolver em seguida](#o-que-desenvolver-em-seguida)
@@ -58,16 +60,26 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 - Axios
 - BrasilApi
 
+### Funcionalidades
+
+- Usuário sem autenticação pode criar um carrinho de compras que é salvo no Local Storage;
+- Usuário logado pode criar, editar, ler ou remover:
+  - Seus endereços;
+  - Seus produtos anunciados;
+  - Seus métodos de pagamento;
+- Cadastro realizado através de um formulário de múltiplas etapas,
+    melhorando a experiência do usuário; 
+
 ### Design
 
 #### Fluxo do usuário
 
-- O primeiro print se refere a tela inicial da aplicação;
-- Em seguida, o carrinho que apresenta os pedidos não finalizados dele.
+- Imagem 01: tela inicial da aplicação;
+- Imagem 02: O carrinho que apresenta os pedidos não finalizados dele.
   Aqui ele pode editar, esvaziar ou finalizar a compra;
-- a telas 3 diz respeito ao login, que é um formulário em várias
+- Imagem 03: Login, que é um formulário em várias
   etapas. Primeiro email e em seguida senha;
-- Na última o usuário logado dentro da dashboard;
+- Imagem 04: Na última o usuário logado dentro da dashboard;
 
 #### Telas do app
 
@@ -77,7 +89,6 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 
 - Deploy frontend:  https://durval-music-shop.vercel.app/
 - Deploy backend: https://loja-do-durval.onrender.com/
-- Repositório do backend: https://github.com/brunomoleta/durval-music-shop-server
 - Documentação do backend: https://loja-do-durval.onrender.com/doc
 
 <hr style="border-top: 3px solid #bbb;">
@@ -132,34 +143,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 -   ````new-component````: ^5.0.2,
 -   ````prettier````: ^3.2.5,
 -   ````typescript````: ^5.2.2,
--   ````vite````: ^5.1.0
-
-### Arquitetura
-
-```
-durval-music-shop-client/
-│
-├── node_modules/         Pacotes e dependências do projeto.
-│
-├── public/               Recursos públicos acessíveis diretamente.
-│
-├── src/                    Código-fonte da aplicação.
-│   ├── assets/             Recursos estáticos como imagens, icones, etc.
-│   ├── components/         Componentes reutilizáveis.
-│   ├── hooks/              Hooks reutilizáveis.
-│   ├── pages/              Componentes específicos de páginas.
-│   ├── providers/          Componentes de gerenciamento de estado global.
-│   ├── routes/             Componentes específicos de rotas.
-│   ├── schemas/            Contexto de validação de dados.
-│   ├── services/           Serviço de comunicação com API.
-│   ├── styled-components/  Estilos globais da aplicação.
-│   └── tests/              Testes unitários
-│   └── types/              Tipagem dos components, funções e providers. 
-```
-
-<hr style="border-top: 3px solid #bbb;">
-
-## Configuração do ambiente local
+-   ````vite````: ^5.1.
 
 ### Instalação
 
@@ -175,8 +159,7 @@ git clone git@github.com:brunomoleta/durval-music-shop-client.git
 git clone git@github.com:brunomoleta/durval-music-shop-server.git
 ```
 
-Para mais informações sobre o back-end, 
-verfique o README.md na raiz do projeto do servidor.
+Para mais informações sobre o back-end, verfique o README.md na raiz do projeto.
 
 3. Instale as dependências:
 
@@ -200,7 +183,28 @@ yarn dev
 yarn build
 ```
 
+### Arquitetura
 
+```
+durval-music-shop-client/
+│
+├── node_modules/         Pacotes e dependências do projeto.
+│
+├── public/               Recursos públicos acessíveis diretamente.
+│
+├── src/                    Código-fonte da aplicação.
+│   ├── assets/             Recursos estáticos como imagens, icones, etc.
+│   ├── components/         Componentes reutilizáveis.
+│   ├── hooks/              Hooks reutilizáveis.
+│   ├── pages/              Componentes específicos de páginas.
+│   ├── providers/          Componentes de gerenciamento de estado global.
+│   ├── routes/             Componentes específicos de rotas.
+│   ├── schemas/            Contexto de validação de dados.
+│   ├── services/           Serviço de comunicação com API.
+│   ├── styled-components/  Estilos globais da aplicação.
+│   └── tests/              Testes unitários
+│   └── types/              Tipagem dos components, funções e providers. 
+```
 <hr style="border-top: 3px solid #bbb;">
 
 ## Processo de trabalho
