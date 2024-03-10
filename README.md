@@ -12,7 +12,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 <hr style="border-top: 3px solid #bbb;">
 
 
-## Table of contents
+## Índice
 
 - [Visão geral](#visão-geral)
   - [Tecnologias usadas](#tecnologias-usadas)
@@ -27,6 +27,8 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Scripts](#scripts)
   - [Dependências](#dependências)
   - [Dependências de desenvolvimento](#dependências-de-desenvolvimento)
+  - [Arquitetura](#arquitetura)
+- [Configuração do ambiente local](#configuração-do-ambiente-local)
   - [Instalação](#instalação)
   - [Executar o projeto](#executar-o-projeto)
   - [Arquitetura](#arquitetura)
