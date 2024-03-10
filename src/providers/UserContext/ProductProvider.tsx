@@ -39,17 +39,12 @@ const ProductProvider = (props: { children: ReactNode }) => {
     }
   };
 
-  const getProductsByCategory = async (
-    categoryName: string,
-  ) => {
+  const getProductsByCategory = async (categoryName: string) => {
     try {
       setIsLoading(true);
-      const { data } = await api.get(
-        `products/category/${categoryName}`,
-      );
+      const { data } = await api.get(`products/category/${categoryName}`);
       const { products, prevPage, nextPage }: IGetProductsByCategoryResponse =
         data;
-
       setAllProducts(products);
       return { prevPage, nextPage };
     } finally {
@@ -57,15 +52,10 @@ const ProductProvider = (props: { children: ReactNode }) => {
     }
   };
 
-  const getProductsByBrand = async (
-    brandName: string,
-    url: string | null | undefined,
-  ) => {
+  const getProductsByBrand = async (brandName: string) => {
     try {
       setIsLoading(true);
-      const { data } = await api.get(
-        `/products/brand/${brandName}${url ? url : "/"}`,
-      );
+      const { data } = await api.get(`/products/brand/${brandName}`);
       const { products, prevPage, nextPage } = data;
       setAllProducts(products);
       return { prevPage, nextPage };
@@ -81,14 +71,14 @@ const ProductProvider = (props: { children: ReactNode }) => {
       const { data } = await api.get(`/products/${id}`);
       setSingleProduct(data);
       return data;
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log(error);
     } finally {
       setIsLoading(false);
     }
   };
 
-    const getSingleProduct = async (id: number) => {
+  const getSingleProduct = async (id: number) => {
     try {
       const product: IProductContext = await getProductById(id);
 
@@ -104,14 +94,12 @@ const ProductProvider = (props: { children: ReactNode }) => {
       setIsLoading(true);
       const { data } = await api.get(`products/search/${productInfo}`);
       setAllProducts(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
     } finally {
       setIsLoading(false);
     }
   };
-
-
 
   const values: IFullProductContext = {
     allProducts,
