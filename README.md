@@ -21,7 +21,6 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Funcionalidades](#funcionalidades) 
   - [Design](#design)
       - [Fluxo do usuário](#fluxo-do-usuário)
-      - [Telas do app](#telas-do-app)
   - [Links importantes](#links-importantes)
 - [Estrutura do projeto](#estrutura-do-projeto)
   - [Scripts](#scripts)
@@ -73,17 +72,25 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 ### Design
 
 #### Fluxo do usuário
+<hr style="border-top: 3px solid #bbb;">
 
 - Imagem 01: tela inicial da aplicação;
 - Imagem 02: O carrinho que apresenta os pedidos não finalizados dele.
+
+![](./src/assets/docs/01-02.png)
+
+<hr style="border-top: 3px solid #bbb;">
+- 
   Aqui ele pode editar, esvaziar ou finalizar a compra;
 - Imagem 03: Login, que é um formulário em várias
   etapas. Primeiro email e em seguida senha;
 - Imagem 04: Na última o usuário logado dentro da dashboard;
 
-#### Telas do app
+![](./src/assets/docs/03-04.png)
 
-![](./src/assets/docs/Durval-telas.jpg)
+
+<hr style="border-top: 3px solid #bbb;">
+
 
 ### Links importantes
 
