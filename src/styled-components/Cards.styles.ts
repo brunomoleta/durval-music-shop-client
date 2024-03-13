@@ -74,7 +74,7 @@ export const CardProd = styled(Card)`
 
     flex: 0 0 100%;
     @media ${QUERIES.tabletAndUp} {
-        flex: 0 0 50%;
+        flex: 0 0 48%;
     }
 
 `;
