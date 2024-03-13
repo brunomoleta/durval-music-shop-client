@@ -1,18 +1,17 @@
 import styled from "styled-components";
-import {fontSize} from "./root.ts";
-import {QUERIES} from "../services/database.ts";
+import { fontSize } from "./root.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-flow: column-reverse;
-    margin: clamp(20px, 7svw, 64px);
+  display: flex;
+  flex-flow: column-reverse;
+  margin: clamp(20px, 7svw, 64px);
 
-
-    @media ${QUERIES.tabletAndUp} {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-    }
+  @media ${QUERIES.tabletAndUp} {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
 `;
 
 export const InternalWrapper = styled.aside`
@@ -34,5 +33,5 @@ export const MainInfo = styled.div`
 `;
 export const H2 = styled.h2`
   font-weight: 600;
-  font-size: ${fontSize.h3};
+  font-size: ${fontSize.h5};
 `;
