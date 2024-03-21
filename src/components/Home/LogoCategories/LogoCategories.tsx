@@ -24,7 +24,6 @@ const BrandsOl = styled.ol`
     position: relative;
     box-shadow: 0 5px 16px 1.5px ${colors.grey10};
     
-
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 

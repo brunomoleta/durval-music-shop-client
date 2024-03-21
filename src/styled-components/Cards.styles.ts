@@ -56,7 +56,7 @@ export const Card = styled.li`
     display: flex;
     flex-flow: column;
     align-items: center;
-    flex: 0 0 50%;
+    flex: 0 0 48%;
 
     box-shadow: 0 5px 16px 1.5px ${colors.grey10};
 
@@ -74,7 +74,7 @@ export const CardProd = styled(Card)`
 
     flex: 0 0 100%;
     @media ${QUERIES.tabletAndUp} {
-        flex: 0 0 50%;
+        flex: 0 0 48%;
     }
 
 `;

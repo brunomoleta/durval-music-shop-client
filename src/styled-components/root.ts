@@ -27,6 +27,8 @@ export const fontSize = {
   h2: "2.25rem",
   h2h3: "1.875rem",
   h3: "1.5rem",
+  h4: "1.375rem",
+  h5: "1.250rem",
   sub: "1.125rem",
   link: "1.125rem",
   largeP: "1.25rem",

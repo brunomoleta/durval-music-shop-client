@@ -75,16 +75,15 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 <hr style="border-top: 3px solid #bbb;">
 
 - Imagem 01: tela inicial da aplicação;
-- Imagem 02: O carrinho que apresenta os pedidos não finalizados dele.
+- Imagem 02: O carrinho que apresenta os pedidos não finalizados dele. Aqui ele pode editar, esvaziar ou finalizar a compra;
 
 ![](./src/assets/docs/01-02.png)
 
 <hr style="border-top: 3px solid #bbb;">
-- 
-  Aqui ele pode editar, esvaziar ou finalizar a compra;
-- Imagem 03: Login, que é um formulário em várias
+
+- Imagem 03: Usuário logado dentro de sua dashboard;
+- Imagem 04: Login, que é um formulário em várias
   etapas. Primeiro email e em seguida senha;
-- Imagem 04: Na última o usuário logado dentro da dashboard;
 
 ![](./src/assets/docs/03-04.png)
 
