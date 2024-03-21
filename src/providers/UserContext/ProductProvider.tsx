@@ -21,6 +21,7 @@ const ProductProvider = (props: { children: ReactNode }) => {
     prevPage: "",
     nextPage: "",
   });
+  const [page, setPage] = useState(1);
 
   const getAllProducts = async (page: number, perPage: number) => {
     try {
@@ -102,6 +103,9 @@ const ProductProvider = (props: { children: ReactNode }) => {
   };
 
   const values: IFullProductContext = {
+    page,
+    setPage,
+
     allProducts,
     setAllProducts,
 

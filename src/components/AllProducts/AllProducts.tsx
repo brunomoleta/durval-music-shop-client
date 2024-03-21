@@ -1,26 +1,22 @@
-import ArrowLeft from "../../assets/ui/arrow-left.svg";
-import ArrowRight from "../../assets/ui/arrow-right.svg";
-import { useProductContext, useUserContext } from "../../providers/UserContext";
-import { IFullProductContext, IProductContext } from "../../types/product";
-import { ProductCards } from "../../styled-components/Cards.styles.ts";
-import CardProduct from "../CardProduct";
-import React, { useState } from "react";
-import { IUserContext } from "../../types/user";
-import Loader from "../Loader";
-import {Heading, Wrapper} from "../../styled-components/AllProducts.styles.ts";
-import {RoundButton} from "../../styled-components/Button.styles.ts";
-
+import { useProductContext } from "../../providers/UserContext";
+import { IFullProductContext } from "../../types/product";
+import React from "react";
+import {
+  Heading,
+  Wrapper,
+} from "../../styled-components/AllProducts.styles.ts";
+import ProductsList from "./ProductsList";
+import Illustration from "../Illustration";
+import NoOrder from "../../assets/illustrations/No-Order.svg";
+import NoProductFound from "../NoProductFound";
 
 type IAllProducts = {
   heading: string;
 };
 
 function AllProducts(props: IAllProducts) {
-  const [page, setPage] = useState(1);
-  const { getAllProducts, allProducts, productsPage } =
+  const { getAllProducts, page, allProducts } =
     useProductContext() as IFullProductContext;
-
-  const { isLoading } = useUserContext() as IUserContext;
 
   React.useEffect((): void => {
     getAllProducts(page, 4);
@@ -29,28 +25,15 @@ function AllProducts(props: IAllProducts) {
   return (
     <Wrapper>
       <Heading>{props.heading}</Heading>
-      <ProductCards>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          allProducts &&
-          allProducts.map((item: IProductContext) => (
-            <CardProduct key={item.id} item={item} />
-          ))
-        )}
-      </ProductCards>
-      {page > 1 && (
-        <RoundButton
-          $positionLeft={true}
-          onClick={() => setPage((page) => page - 1)}
-        >
-          <img src={ArrowLeft} alt="productos anteriores" />
-        </RoundButton>
-      )}
-      {productsPage.nextPage && (
-        <RoundButton onClick={() => setPage((page) => page + 1)}>
-          <img src={ArrowRight} alt="próximos productos" />
-        </RoundButton>
+      {!allProducts ? (
+          <NoProductFound
+              element={<Illustration image={NoOrder} alt="" />}
+              message="Infelizmente não foi possível trazer os produtos :("
+              subTitle="Você sabia que nós somos o e-commerce nº01 no Brasil no ReclameAqui?"
+              isButton={false}
+          />
+      ) : (
+        <ProductsList products={allProducts} />
       )}
     </Wrapper>
   );
