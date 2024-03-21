@@ -1,5 +1,4 @@
 import NoOrder from "../../assets/illustrations/No-Order.svg";
-import styled from "styled-components";
 import { useProductContext, useUserContext } from "../../providers/UserContext";
 import { IFullProductContext } from "../../types/product";
 import CardProduct from "../CardProduct";
@@ -10,35 +9,7 @@ import Loader from "../Loader";
 import { IUserContext } from "../../types/user";
 import NoProductFound from "../NoProductFound";
 import Illustration from "../Illustration";
-import {QUERIES} from "../../services/database.ts";
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  gap: 2rem;
-`;
-
-const ProductsList = styled.ul`
-  display: flex;
-  flex-direction: column;
-
-  gap: 2.3rem;
-  padding: 0 2rem;
-
-  @media ${QUERIES.tabletAndUp} {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    row-gap: 1.5rem;
-    column-gap: 2rem;
-  }
-
-  @media ${QUERIES.tabletAndUp} {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
+import {ListContainer, ProductsList} from "../../styled-components/Catalog.styles.ts";
 
 function Catalog() {
   const {

@@ -46,6 +46,9 @@ export interface IGetProductsByCategoryResponse {
 }
 
 export interface IFullProductContext {
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+
   allProducts: IProductContext[] | null;
   setAllProducts: React.Dispatch<React.SetStateAction<IProductContext[]>>;
 
