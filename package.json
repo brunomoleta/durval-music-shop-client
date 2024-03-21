@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^14.2.1",
+    "@testing-library/react": "^14.2.2",
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/react": "^18.2.56",
@@ -48,7 +48,8 @@
     "new-component": "^5.0.2",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4",
+    "vite": "^5.2.2",
+    "vite-plugin-checker": "^0.6.4",
     "vitest": "^1.4.0"
   }
 }
