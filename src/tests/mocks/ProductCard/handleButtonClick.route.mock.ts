@@ -1,9 +1,11 @@
-export const handleButtonClick = jest.fn();
+import {vi} from "vitest";
 
-export const useCartContextMock = jest.fn(() => ({
+export const handleButtonClick = vi.fn();
+
+export const useCartContextMock = vi.fn(() => ({
   useCartContext: () => ({
     addProductInCart: handleButtonClick,
   }),
 }));
 
-jest.mock("../../../providers/UserContext", () => useCartContextMock);
+vi.mock("../../../providers/UserContext", () => useCartContextMock);
