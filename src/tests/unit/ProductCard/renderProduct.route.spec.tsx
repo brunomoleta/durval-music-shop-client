@@ -1,36 +1,37 @@
-import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
-
-import {product} from "../../mocks/ProductCard/renderProduct.route.mock.ts";
+import { products } from "../../mocks/ProductCard/renderProduct.route.mock.ts";
 import CardProduct from "../../../components/CardProduct";
-import {UserProvider} from "../../../providers/UserContext";
-import {BrowserRouter} from "react-router-dom";
-import {capitalizedFirstLetter} from "../../../services/utils.ts";
+import { UserProvider } from "../../../providers/UserContext";
+import { BrowserRouter } from "react-router-dom";
+import { capitalizedFirstLetter } from "../../../services/utils.ts";
 
+import {render, screen } from "@testing-library/react";
+import { expect, test, describe } from "vitest";
 
-const guitar = product.guitar;
-describe("RenderProductCard", () => {
+const { guitar } = products;
+const { name, brandName } = guitar;
+describe("Render ProductCard", () => {
+  test("Should render product card, including info and image and button", () => {
     render(
-        <BrowserRouter>
-            <UserProvider>
-                <CardProduct item={guitar}/>
-            </UserProvider>
-        </BrowserRouter>,
+      <BrowserRouter>
+        <UserProvider>
+          <CardProduct item={guitar} />
+        </UserProvider>
+      </BrowserRouter>,
     );
-    const addToCartButton = screen.getByRole("button", {
-        name: /CARRINHO+/i,
+
+    const cartButton = screen.getByRole("button", {
+      name: /CARRINHO+/i,
     });
 
-    test("Should render product card, including info and image and button", async () => {
-        expect(screen.getByText(guitar.name).textContent).toStrictEqual(
-            "Fender Stratocaster sunburst",
-        );
-        expect(
-            screen.getByText(capitalizedFirstLetter(guitar.brandName)).textContent,
-        ).toStrictEqual("Fender");
-        expect(screen.getByAltText(guitar.name)).toBeInTheDocument();
-        expect(screen.getByText("R$ 7.000,00")).toBeInTheDocument();
-        expect(addToCartButton).toBeInTheDocument()
-    });
+    expect(screen.getByText(name).textContent).toStrictEqual(
+      "Fender Stratocaster sunburst",
+    );
 
+    expect(
+      screen.getByText(capitalizedFirstLetter(brandName)).textContent,
+    ).toStrictEqual("Fender");
+    expect(screen.getByAltText(name));
+    expect(screen.getByText("R$ 7.000,00"));
+    expect(cartButton);
+  });
 });
