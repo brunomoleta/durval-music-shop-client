@@ -9,6 +9,7 @@ import ProductsList from "./ProductsList";
 import Illustration from "../Illustration";
 import NoOrder from "../../assets/illustrations/No-Order.svg";
 import NoProductFound from "../NoProductFound";
+import ChangeProductPage from "./ChangeProductPage";
 
 type IAllProducts = {
   heading: string;
@@ -26,14 +27,17 @@ function AllProducts(props: IAllProducts) {
     <Wrapper>
       <Heading>{props.heading}</Heading>
       {!allProducts ? (
-          <NoProductFound
-              element={<Illustration image={NoOrder} alt="" />}
-              message="Infelizmente não foi possível trazer os produtos :("
-              subTitle="Você sabia que nós somos o e-commerce nº01 no Brasil no ReclameAqui?"
-              isButton={false}
-          />
+        <NoProductFound
+          element={<Illustration image={NoOrder} alt="" />}
+          message="Infelizmente não foi possível trazer os produtos :("
+          subTitle="Você sabia que nós somos o e-commerce nº01 no Brasil no ReclameAqui?"
+          isButton={false}
+        />
       ) : (
-        <ProductsList products={allProducts} />
+        <>
+          <ProductsList products={allProducts} />
+          <ChangeProductPage />
+        </>
       )}
     </Wrapper>
   );

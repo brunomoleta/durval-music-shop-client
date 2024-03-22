@@ -28,7 +28,7 @@ export const BottonInfo = styled.div`
     gap: 16px;
 `;
 
-export const CartOl = styled.ol`
+export const CartOl = styled.ul`
     overflow-y: auto;
     padding-inline-end: clamp(8px, 5%, 32px);
     min-height: 100%;

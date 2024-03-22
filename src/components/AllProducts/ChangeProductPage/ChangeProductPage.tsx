@@ -31,7 +31,6 @@ function ChangeProductPage() {
           />
         </RoundButton>
       )}
-      ;
     </>
   );
 }

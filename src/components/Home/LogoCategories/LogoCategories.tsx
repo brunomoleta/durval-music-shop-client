@@ -11,7 +11,7 @@ const Wrapper = styled.section`
     max-width: ${genericValues.genericMaxWidth};
 `
 
-const BrandsOl = styled.ol`
+const BrandsOl = styled.ul`
     padding-inline: 8px;
     align-items: center;
     display: flex;
