@@ -1,11 +1,12 @@
 import { z } from "zod";
+import {schemaMessages} from "../../services/database.ts";
 
 const loginSchema = z.object({
   email: z
     .string()
     .trim()
     .toLowerCase()
-    .email("Por favor insira um e-mail válido")
+    .email(schemaMessages.email)
     .refine((value) => value !== "", {
       message: "Favor colocar o e-mail :)",
     }),

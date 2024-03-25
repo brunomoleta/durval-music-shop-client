@@ -150,4 +150,13 @@ export const buyingItems = [
   },
 ];
 
+export const schemaMessages = {
+  firstName: "Favor coloque seu o nome :)",
+  lastName: "Favor coloque seu sobrenome :)",
+  email: "Por favor insira um e-mail válido",
+  noConfirmation: "Favor confirmar a senha.",
+  equalPassword: "As senhas hão de ser identicasíssimas.",
+  minimumPassword: "O tamanho mínimo é de 8 caracteres :)"
+}
+
 export const corporationOptions = ["ARQUIVOS", "MÍDIA", "SOBRE NÓS"];

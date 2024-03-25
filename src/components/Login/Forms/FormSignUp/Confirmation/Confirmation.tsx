@@ -10,8 +10,11 @@ import React from "react";
 import { H3 } from "../../../../../styled-components/Typography.styles.ts";
 import { colors } from "../../../../../styled-components/root.ts";
 import Loader from "../../../../Loader";
-import {Line, Title, Wrapper} from "../../../../../styled-components/FormCreation.styles.ts";
-
+import {
+  Line,
+  Title,
+  Wrapper,
+} from "../../../../../styled-components/FormCreation.styles.ts";
 
 function Confirmation() {
   const {
@@ -30,8 +33,14 @@ function Confirmation() {
     setSignUpInfo({});
   }
 
+  const sendBtnRef = React.useRef<HTMLButtonElement>(null);
+
   React.useEffect(() => {
     setIsPasswordVisible(false);
+    if (sendBtnRef && sendBtnRef.current) {
+      // Call the focus method
+      sendBtnRef.current.focus();
+    }
   }, []);
   return (
     <>
@@ -68,8 +77,8 @@ function Confirmation() {
         <div
           style={{ display: "flex", flexFlow: "column", alignItems: "center" }}
         >
-          <SendBtn onClick={submit} disabled={isLoading}>
-            {isLoading ? <Loader/> : "ENVIAR"}
+          <SendBtn onClick={submit} ref={sendBtnRef} disabled={isLoading}>
+            {isLoading ? <Loader /> : "ENVIAR"}
           </SendBtn>
           <InlineButton
             style={{

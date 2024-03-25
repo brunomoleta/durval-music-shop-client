@@ -1,11 +1,12 @@
 import { z } from "zod";
 
 const nameSchema = z
+
   .object({
-    firstName: z.string().refine((value) => value !== "", {
+    firstName: z.string().min(1).trim().refine((value) => value !== "", {
       message: "Favor coloque seu o nome :)",
     }),
-    lastName: z.string().refine((value) => value !== "", {
+    lastName: z.string().min(1).trim().refine((value) => value !== "", {
       message: "Favor coloque seu sobrenome :)",
     }),
   });

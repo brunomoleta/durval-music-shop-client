@@ -1,12 +1,13 @@
 import { z } from "zod";
+import {schemaMessages} from "../../services/database.ts";
 
 const signUpSchema = z
   .object({
     firstName: z.string().refine((value) => value !== "", {
-      message: "Favor coloque seu o nome :)",
+      message: schemaMessages.firstName,
     }),
     lastName: z.string().refine((value) => value !== "", {
-      message: "Favor coloque seu sobrenome :)",
+      message: schemaMessages.lastName,
     }),
     email: z
       .string()
@@ -14,7 +15,7 @@ const signUpSchema = z
       .max(120, "O e-mail não pode ultrapassar 120 caracteres")
       .trim()
       .toLowerCase()
-      .email("Por favor insira um e-mail válido")
+      .email(schemaMessages.email)
       .min(8),
     password: z
       .string()
@@ -27,10 +28,10 @@ const signUpSchema = z
         /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/,
         "A senha deve conter pelo menos um caractere especial"
       ),
-    confirmPassword: z.string().nonempty("Favor confirmar a senha."),
+    confirmPassword: z.string().nonempty(schemaMessages.noConfirmation),
   })
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
-    message: "As senhas hão de ser identicasíssimas.",
+    message: schemaMessages.equalPassword,
     path: ["confirmPassword"],
   });
 

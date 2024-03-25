@@ -1,4 +1,5 @@
 import { z } from "zod";
+import {schemaMessages} from "../../services/database.ts";
 
 const passwordSchema = z
   .object({
@@ -13,10 +14,10 @@ const passwordSchema = z
         /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/,
         "A senha deve conter pelo menos um caractere especial",
       ),
-    confirmPassword: z.string().nonempty("Favor confirmar a senha."),
+    confirmPassword: z.string().nonempty(schemaMessages.noConfirmation),
   })
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
-    message: "As senhas hão de ser identicasíssimas.",
+    message: schemaMessages.equalPassword,
     path: ["confirmPassword"],
   });
 
