@@ -16,7 +16,7 @@ const ProductProvider = (props: { children: ReactNode }) => {
   const { setIsLoading } = useUserContext() as IUserContext;
 
   const [allProducts, setAllProducts] = useState<IProductContext[]>([]);
-  const [singleProduct, setSingleProduct] = useState(allProducts[0]);
+  const [ singleProduct, setSingleProduct] = useState(allProducts[0]);
   const [productsPage, setProductsPage] = useState({
     prevPage: "",
     nextPage: "",
