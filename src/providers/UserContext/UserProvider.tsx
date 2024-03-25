@@ -92,7 +92,7 @@ function UserProvider(props: { children: React.ReactNode }) {
       setIsLoading(true);
       const { data } = await api.post("/login", formData);
       localStorage.setItem("@TOKEN", JSON.stringify(data.token));
-      toast.success("Tu estás logado :)");
+      toast.success("Você está logado :)");
       setIsLoggedIn(!isLoggedIn);
     } catch (error: any) {
       if (error.response.status === 404) {

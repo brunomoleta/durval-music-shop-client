@@ -10,7 +10,8 @@ import { IEmail } from "../../../../../types/signUp";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 
 function Email() {
-  const { setStep, signUpInfo, setSignUpInfo } = useUserContext() as IUserContext;
+  const { setStep, signUpInfo, setSignUpInfo } =
+    useUserContext() as IUserContext;
   const id = React.useId();
   const emailId = `${id}-email`;
 
@@ -39,8 +40,7 @@ function Email() {
         />
 
         <SendBtn>AVANÇAR</SendBtn>
-      </FormUser >
-      ;
+      </FormUser>
     </>
   );
 }

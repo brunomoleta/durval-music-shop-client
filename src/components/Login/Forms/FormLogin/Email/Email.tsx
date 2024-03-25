@@ -9,16 +9,14 @@ import Input from "../../Input";
 import { IUserContext } from "../../../../../types/user";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import emailSchema from "../../../../../schemas/emailSchema";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 
 function Email() {
-
   const { loginInfo, setLoginInfo, setStepLogin } =
     useUserContext() as IUserContext;
 
   const id = React.useId();
   const emailId = `${id}-email`;
-
 
   const {
     register,
@@ -42,9 +40,8 @@ function Email() {
         {...register("email")}
         id={emailId}
       />
-
-      <SendBtn type='submit'>AVANÇAR</SendBtn>
-    </FormUser >
+      <SendBtn type="submit">AVANÇAR</SendBtn>
+    </FormUser>
   );
 }
 
