@@ -1,0 +1,8 @@
+{
+  "firstName": "Favor coloque o seu nome :)",
+  "lastName": "Favor coloque o seu sobrenome :)",
+  "email": "Por favor insira um e-mail válido",
+  "noConfirmation": "Favor confirmar a senha.",
+  "equalPassword": "As senhas hão de ser identicasíssimas.",
+  "minimumPassword": "O tamanho mínimo é de 8 caracteres :)"
+}

@@ -1,71 +1,54 @@
-export const schemaMessages = {
-  firstName: "Favor coloque seu o nome :)",
-  lastName: "Favor coloque seu sobrenome :)",
-  email: "Por favor insira um e-mail válido",
-  noConfirmation: "Favor confirmar a senha.",
-  equalPassword: "As senhas hão de ser identicasíssimas.",
-  minimumPassword: "O tamanho mínimo é de 8 caracteres :)",
-};
-
 describe("user login", () => {
-  const userMockSuccess = {
-    email: "fontoura@gmail.com",
-    password: "Wq!-2phaAA",
-  };
-  const userMockFailure = {
-    email: "fontouragmail.com",
-    password: "",
-  };
+  beforeEach(() => {
+    cy.fixture("schemaMessages").then((messages) => {
+      this.messages = messages;
+    });
+    cy.fixture("loginFailure").then((fail) => {
+      this.fail = fail;
+    });
+    cy.fixture("loginSuccess").then((success) => {
+      this.success = success;
+    });
+    cy.visit("");
+    cy.wait(1000);
+    cy.contains("button", "CONTA").click();
+  });
 
 
   it("should be able to make the user's login successfully", () => {
-    cy.visit("");
+    cy.typeInput("email", this.success.email)
+    cy.typeInput("password", this.success.password)
 
-    cy.contains("button", "CONTA").click();
-    cy.wait(200);
-
-    cy.get('input[name="email"]').type(`${userMockSuccess.email}{enter}`);
-
-    cy.wait(200);
-
-    cy.get('input[name="password"]').type(`${userMockSuccess.password}{enter}`);
-    cy.wait(200);
-
+    cy.notExist("dialog");
     cy.get("div.Toastify__toast--success");
+
+    cy.contains("button", "CONTA").click();
+    cy.notExist("input[name=email]");
+
   });
+
   it("Should not be able to advance if there's invalid input", () => {
-    cy.visit("");
+    cy.typeInput("email", this.fail.email)
 
-    cy.contains("button", "CONTA").click();
+
+    cy.hasErrorMessage(this.messages.email);
+
+    cy.get('input[name="email"]').clear().type(`${this.success.email}{enter}`);
     cy.wait(200);
 
-    cy.get('input[name="email"]').type(`${userMockFailure.email}{enter}`);
+    cy.typeInput("password", this.fail.password)
 
-    cy.wait(200);
-    cy.get("span").should("contain.text", schemaMessages.email);
-    cy.get('input[name="email"]')
-      .clear()
-      .type(`${userMockSuccess.email}{enter}`);
-    cy.wait(200);
-
-    cy.get('input[name="password"]').type(`${userMockFailure.password}{enter}`);
-    cy.get("span").should("contain.text", schemaMessages.minimumPassword);
+    cy.hasErrorMessage(this.messages.minimumPassword);
   });
+
   it("Login should fail.", () => {
-    cy.visit("");
-
-    cy.contains("button", "CONTA").click();
-    cy.wait(200);
-
-    cy.get('input[name="email"]').type(`${userMockSuccess.email}{enter}`);
-
-    cy.wait(200);
-
-    cy.get('input[name="password"]').type(`${userMockSuccess.password}654{enter}`);
-    cy.wait(200);
+    cy.typeInput("email", this.success.email)
+    cy.typeInput("password", `${this.success.password}650`)
 
     cy.get("div.Toastify__toast--error");
-    cy.findByRole('dialog').should('not.exist');
-  });
+    cy.notExist("dialog");
 
+    cy.contains("button", "CONTA").click();
+    cy.get('input[name="email"]');
+  });
 });
