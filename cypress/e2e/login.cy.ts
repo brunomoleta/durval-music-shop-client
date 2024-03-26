@@ -14,43 +14,39 @@ describe("user login", () => {
     cy.contains("button", "CONTA").click();
   });
 
+
   it("should be able to make the user's login successfully", () => {
-    cy.get('input[name="email"]').type(`${this.success.email}{enter}`);
+    cy.typeInput("email", this.success.email)
+    cy.typeInput("password", this.success.password)
 
-    cy.wait(200);
-
-    cy.get('input[name="password"]').type(`${this.success.password}{enter}`);
-    cy.wait(200);
-
-    cy.findByRole("dialog").should("not.exist");
+    cy.notExist("dialog");
     cy.get("div.Toastify__toast--success");
 
     cy.contains("button", "CONTA").click();
-    cy.get('input[name="email"]').should(`not.exist`);
+    cy.notExist("input[name=email]");
+
   });
 
   it("Should not be able to advance if there's invalid input", () => {
-    cy.get('input[name="email"]').type(`${this.fail.email}{enter}`);
+    cy.typeInput("email", this.fail.email)
 
-    cy.wait(200);
-    cy.get("span").should("contain.text", this.messages.email);
+
+    cy.hasErrorMessage(this.messages.email);
+
     cy.get('input[name="email"]').clear().type(`${this.success.email}{enter}`);
     cy.wait(200);
 
-    cy.get('input[name="password"]').type(`${this.fail.password}{enter}`);
-    cy.get("span").should("contain.text", this.messages.minimumPassword);
+    cy.typeInput("password", this.fail.password)
+
+    cy.hasErrorMessage(this.messages.minimumPassword);
   });
 
   it("Login should fail.", () => {
-    cy.get('input[name="email"]').type(`${this.success.email}{enter}`);
-
-    cy.wait(200);
-
-    cy.get('input[name="password"]').type(`${this.success.password}654{enter}`);
-    cy.wait(200);
+    cy.typeInput("email", this.success.email)
+    cy.typeInput("password", `${this.success.password}650`)
 
     cy.get("div.Toastify__toast--error");
-    cy.findByRole("dialog").should("not.exist");
+    cy.notExist("dialog");
 
     cy.contains("button", "CONTA").click();
     cy.get('input[name="email"]');
