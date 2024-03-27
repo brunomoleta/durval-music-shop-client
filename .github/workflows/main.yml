@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   unit_test:
@@ -12,11 +12,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: yarn install
+
       - name: Run prettier
         run: yarn format
 
-      - name: Install dependencies
-        run: yarn install
 
       - name: Run Unit Tests
         run: yarn v:test
