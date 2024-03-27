@@ -93,6 +93,7 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 
 ### Links importantes
 
+- Explicação extensa do projeto:  [https://www.brunomoleta.com.br/durval-music-shop](https://www.brunomoleta.com.br/durval-music-shop)
 - Deploy frontend:  https://durval-music-shop.vercel.app/
 - Deploy backend: https://loja-do-durval.onrender.com/
 - Documentação do backend: https://loja-do-durval.onrender.com/doc
