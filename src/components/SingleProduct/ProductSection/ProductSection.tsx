@@ -1,24 +1,11 @@
-import Delivery from "../../../assets/ui/delivery.png";
-import Shipping from "../../../assets/ui/shipping.png";
 import {
-  ImgProduct,
-  SectionBuy,
-  DivImg,
-  DivInfoContainer,
   DivCategories,
-  SpanCategory,
+  DivInfoContainer,
   H3NameProduct,
-  SpanSellerName,
-  DivImgsDelivery,
-  DivImgTextDelivery,
-  ImgDelivery,
-  SpanDelivery,
-  DivImgTextShipping,
-  ImgShipping,
-  SpanShipping,
-  SpanCharacteristic,
+  SectionBuy,
+  SpanCategory,
 } from "./styles.ts";
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import {
   ProductContext,
   useCartContext,
@@ -28,16 +15,14 @@ import { IFullProductContext } from "../../../types/product";
 import { SendBtn } from "../../../styled-components/Button.styles.ts";
 import { ICartContext } from "../../../types/cart";
 import { nanoid } from "nanoid";
-import Modal from "../../Modal";
 import { useParams } from "react-router-dom";
 import { IUserContext } from "../../../types/user";
-import Loader from "../../Loader";
-import { genericValues } from "../../../styled-components/root.ts";
-import { priceToString } from "../../../services/utils.ts";
+import DeliverySection from "../DeliverySection";
+import ProductValues from "../ProductValues";
+import ProductImage from "../ProductImage";
 
 const ProductSection = () => {
-  const [showImage, setShowImage] = React.useState(false);
-  const { setIsLoading, isLoading } = useUserContext() as IUserContext;
+  const { setIsLoading } = useUserContext() as IUserContext;
   const { singleProduct, getProductById } = useContext(
     ProductContext,
   ) as IFullProductContext;
@@ -55,36 +40,9 @@ const ProductSection = () => {
     }
   }, []);
 
-  const singleProductPrice = singleProduct?.price;
   return (
     <SectionBuy>
-      {
-        <Modal
-          title=""
-          maxWidth={genericValues.genericMaxWidth}
-          overflow={"scroll"}
-          open={showImage}
-          onOpenChange={setShowImage}
-          element={
-            <ImgProduct
-              src={singleProduct?.image}
-              alt={singleProduct?.name}
-              title={singleProduct?.name}
-            />
-          }
-        />
-      }
-      <DivImg onClick={() => setShowImage(!showImage)}>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <ImgProduct
-            src={singleProduct?.image}
-            alt={singleProduct?.name}
-            title={singleProduct?.name}
-          />
-        )}
-      </DivImg>
+      <ProductImage product={singleProduct}/>
       <DivInfoContainer>
         <DivCategories>
           {singleProduct?.categories.map((category) => (
@@ -93,46 +51,12 @@ const ProductSection = () => {
         </DivCategories>
         <H3NameProduct>{singleProduct?.name}</H3NameProduct>
 
-        <SpanCharacteristic>
-          <span>Preço: </span>
-          {priceToString(singleProductPrice)}
-        </SpanCharacteristic>
-
-        {singleProduct?.color && (
-          <SpanCharacteristic>
-            <span>Cor:</span> {singleProduct?.color}
-          </SpanCharacteristic>
-        )}
-
-        <SpanCharacteristic>
-          <span>Condição:</span>{" "}
-          {singleProduct?.condition == "new" ? "Novo" : "Usado"}
-        </SpanCharacteristic>
-        <SpanCharacteristic>
-          <span>
-            {singleProduct?.stock > 1
-              ? `Unidades disponíveis: ${singleProduct?.stock}`
-              : "Última unidade"}
-          </span>
-        </SpanCharacteristic>
-        <SpanCharacteristic>
-          <span>Vendedor:</span>{" "}
-          <SpanSellerName>{singleProduct?.owner.name}</SpanSellerName>
-        </SpanCharacteristic>
+        <ProductValues product={singleProduct} />
         <SendBtn onClick={() => addProductInCart(singleProduct)}>
           Adicionar ao Carrinho
         </SendBtn>
 
-        <DivImgsDelivery>
-          <DivImgTextDelivery>
-            <ImgDelivery src={Delivery} alt="Delivery icon" />
-            <SpanDelivery>Entrega segura</SpanDelivery>
-          </DivImgTextDelivery>
-          <DivImgTextShipping>
-            <ImgShipping src={Shipping} alt="Shipping icon" />
-            <SpanShipping>Entrega em até 5 dias</SpanShipping>
-          </DivImgTextShipping>
-        </DivImgsDelivery>
+        <DeliverySection />
       </DivInfoContainer>
     </SectionBuy>
   );
