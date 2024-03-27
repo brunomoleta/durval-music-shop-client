@@ -40,15 +40,17 @@
 declare global {
   namespace Cypress {
     interface Chainable {
-      typeInput(
+      typeInputData(
         field: string,
         write: string,
         pressEnter?: boolean,
       ): Chainable<void>;
 
+      clearAndTypeRightData(field: string, write: string): Chainable<void>;
+
       hasErrorMessage(error: string): Chainable<void>;
 
-      typeUserInfo(object): Chainable<void>;
+      typeUserData(object): Chainable<void>;
 
       notExist(element: string): Chainable<void>;
     }
@@ -62,19 +64,41 @@ Cypress.Commands.add("hasErrorMessage", (error: string) => {
   cy.get("span").should("contain.text", error);
 });
 Cypress.Commands.add(
-  "typeInput",
+  "typeInputData",
+  (field: string, write: string, pressEnter: boolean = true) => {
+    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
+    cy.wait(200);
+  },
+);
+Cypress.Commands.add(
+  "clearAndTypeRightData",
+  (field: string, write: string,) => {
+    cy.get(`input[name="${field}"]`).clear().type(`${write}{enter}`);
+    cy.wait(200);
+  },
+);
+
+Cypress.Commands.add(
+  "typeInputData",
+  (field: string, write: string, pressEnter: boolean = true) => {
+    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
+    cy.wait(200);
+  },
+);
+Cypress.Commands.add(
+  "typeInputData",
   (field: string, write: string, pressEnter: boolean = true) => {
     cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
     cy.wait(200);
   },
 );
 
-Cypress.Commands.add("typeUserInfo", (user: User) => {
-  cy.typeInput("firstName", user.firstName);
-  cy.typeInput("lastName", user.lastName);
-  cy.typeInput("email", user.email);
-  cy.typeInput("password", user.password);
-  cy.typeInput("confirmPassword", user.password);
+Cypress.Commands.add("typeUserData", (user: User) => {
+  cy.typeInputData("firstName", user.firstName);
+  cy.typeInputData("lastName", user.lastName);
+  cy.typeInputData("email", user.email);
+  cy.typeInputData("password", user.password);
+  cy.typeInputData("confirmPassword", user.password);
 });
 
 interface User {
