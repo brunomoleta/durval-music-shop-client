@@ -16,8 +16,8 @@ describe("user login", () => {
 
 
   it("should be able to make the user's login successfully", () => {
-    cy.typeInput("email", this.success.email)
-    cy.typeInput("password", this.success.password)
+    cy.typeInputData("email", this.success.email)
+    cy.typeInputData("password", this.success.password)
 
     cy.notExist("dialog");
     cy.get("div.Toastify__toast--success");
@@ -28,22 +28,21 @@ describe("user login", () => {
   });
 
   it("Should not be able to advance if there's invalid input", () => {
-    cy.typeInput("email", this.fail.email)
+    cy.typeInputData("email", this.fail.email)
 
 
     cy.hasErrorMessage(this.messages.email);
 
-    cy.get('input[name="email"]').clear().type(`${this.success.email}{enter}`);
-    cy.wait(200);
+    cy.clearAndTypeRightData('email', this.success.email)
 
-    cy.typeInput("password", this.fail.password)
+    cy.typeInputData("password", this.fail.password)
 
     cy.hasErrorMessage(this.messages.minimumPassword);
   });
 
   it("Login should fail.", () => {
-    cy.typeInput("email", this.success.email)
-    cy.typeInput("password", `${this.success.password}650`)
+    cy.typeInputData("email", this.success.email)
+    cy.typeInputData("password", `${this.success.password}650`)
 
     cy.get("div.Toastify__toast--error");
     cy.notExist("dialog");

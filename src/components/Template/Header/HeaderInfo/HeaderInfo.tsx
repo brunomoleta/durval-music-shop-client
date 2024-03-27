@@ -1,22 +1,20 @@
 import {
   HeaderWrapper,
   InfoWrapper,
-  LogoTop, MidWrapper,
+  MidWrapper,
   Wrapper,
 } from "../../../../styled-components/Header.styles.tsx";
-import { Link } from "react-router-dom";
-import { logoName } from "../../../../services/database.ts";
 import SearchFormHeader from "../SearchFormHeader";
 import IconsHeader from "../IconsHeader";
+import HeaderLogo from "../../../HeaderLogo";
 
 function HeaderInfo() {
+
   return (
     <Wrapper>
       <MidWrapper>
         <HeaderWrapper>
-          <Link to={"/"}>
-            <LogoTop>{logoName}</LogoTop>
-          </Link>
+          <HeaderLogo/>
           <InfoWrapper>
             <SearchFormHeader />
             <IconsHeader />

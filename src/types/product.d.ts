@@ -46,6 +46,10 @@ export interface IGetProductsByCategoryResponse {
 }
 
 export interface IFullProductContext {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  returnHome: () => void;
+
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 
