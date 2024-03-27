@@ -1,0 +1,41 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run prettier
+        run: yarn format
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run Unit Tests
+        run: yarn v:test
+
+      - name: Build
+        run: yarn build
+
+  e2e_test:
+    needs: unit_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build app
+        run: yarn build
+
+      - name: Run E2E Tests
+        run: yarn cypress

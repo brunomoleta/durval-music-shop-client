@@ -53,7 +53,7 @@ const ProductSection = () => {
 
         <ProductValues product={singleProduct} />
         <SendBtn onClick={() => addProductInCart(singleProduct)}>
-          Adicionar ao Carrinho
+          Adicionar ao carrinho
         </SendBtn>
 
         <DeliverySection />
