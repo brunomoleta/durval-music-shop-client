@@ -28,7 +28,7 @@ export const Cards = styled.ul`
     }
 `;
 
-export const ProductCards = styled.ol`
+export const ProductCards = styled.ul`
     display: flex;
     gap: 32px;
 
