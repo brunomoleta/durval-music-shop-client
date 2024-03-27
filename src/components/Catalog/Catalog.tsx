@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { IUserContext } from "../../types/user";
 import RenderProducts from "../RenderProducts";
+import { Wrapper } from "../../styled-components/AllProducts.styles.ts";
 
 function Catalog() {
   const { allProducts, searchProduct } =
@@ -24,7 +25,13 @@ function Catalog() {
     }
   }, []);
 
-  return <>{allProducts && <RenderProducts products={allProducts} />}</>;
+  return (
+    <Wrapper>
+      {allProducts && (
+        <RenderProducts hasPagination={false} products={allProducts} />
+      )}
+    </Wrapper>
+  );
 }
 
 export default Catalog;
