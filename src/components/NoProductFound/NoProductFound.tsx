@@ -1,11 +1,11 @@
 import { SendBtn } from "../../styled-components/Button.styles.ts";
 import { CardSubTitle, H1 } from "../../styled-components/Typography.styles.ts";
-import { useCartContext } from "../../providers/UserContext";
+import { useCartContext, useProductContext } from "../../providers/UserContext";
 import { ICartContext } from "../../types/cart";
-import { Link } from "react-router-dom";
 import React from "react";
 import { NoProductFoundProps } from "../../types/types";
 import styled from "styled-components";
+import { IFullProductContext } from "../../types/product";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,6 +22,7 @@ const NoProductFound: React.FC<NoProductFoundProps> = ({
 }) => {
   const { isCartModalOpen, setIsCartModalOpen } =
     useCartContext() as ICartContext;
+  const { returnHome } = useProductContext() as IFullProductContext;
   return (
     <Wrapper>
       {element}
@@ -32,7 +33,9 @@ const NoProductFound: React.FC<NoProductFoundProps> = ({
           Ir às compras :)
         </SendBtn>
       ) : (
-        <Link to={"/"}>Voltar a página inicial</Link>
+        <button onClick={returnHome} style={{ textDecoration: "underline" }}>
+          Voltar para a página inicial
+        </button>
       )}
     </Wrapper>
   );

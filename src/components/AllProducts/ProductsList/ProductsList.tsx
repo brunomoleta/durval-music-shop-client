@@ -6,12 +6,13 @@ import {
   useUserContext,
 } from "../../../providers/UserContext";
 import { IUserContext } from "../../../types/user";
+import React from "react";
 
 function ProductsList({ products }: { products: IProductContext[] }) {
   const { isLoading } = useUserContext() as IUserContext;
-
+  const id = React.useId()
   return (
-    <ProductCards>
+    <ProductCards id={`${id}-products`}>
       {isLoading ? (
         <Loader />
       ) : (
