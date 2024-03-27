@@ -19,8 +19,9 @@ function SearchFormHeader() {
   const { searchProduct } = useProductContext() as IFullProductContext;
 
   const handleSubmit = () => {
-    navigate("/catalog");
-    searchProduct(searchValue.toLowerCase());
+    const search = searchValue.toLowerCase()
+    navigate(`/catalog/${search}`);
+    searchProduct(search);
   };
 
   return (
