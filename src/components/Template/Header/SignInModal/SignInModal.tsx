@@ -1,9 +1,8 @@
-import { useUserContext } from "../../../../providers/UserContext";
-
 import Modal from "../../../Modal";
 import { LogInInfo, SignUpInfo } from "../../../../services/database.ts";
 import LoginOrSignUp from "../../../LoginOrSignUp";
 import { IUserContext } from "../../../../types/user";
+import { useUserContext } from "../../../../providers/hooks";
 
 function SignInModal() {
   const { isLogOpen, setIsLogOpen, isSignUp } =

@@ -10,7 +10,7 @@ import {
 import ResumeItems from "../../components/Resume/ResumeItems";
 import Modal from "../../components/Modal";
 import ModalQuit from "../../components/Modal/ModalQuit";
-import { useUserContext } from "../../providers/UserContext";
+import { useUserContext } from "../../providers/hooks";
 import { IUserContext } from "../../types/user";
 
 function UserProfile({ children }: { children: ReactNode }) {

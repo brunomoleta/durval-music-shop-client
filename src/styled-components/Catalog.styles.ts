@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import {QUERIES} from "../services/database.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-    
 `;
 
 export const ProductsList = styled.ul`

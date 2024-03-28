@@ -6,11 +6,7 @@ import { IUserContext } from "../../types/user";
 import { ISignUp } from "../../types/signUp";
 import { ILogin } from "../../types/login";
 
-const UserContext = React.createContext({});
-
-function useUserContext() {
-  return React.useContext(UserContext);
-}
+export const UserContext = React.createContext({});
 
 function UserProvider(props: { children: React.ReactNode }) {
   const navigate = useNavigate();
@@ -36,7 +32,6 @@ function UserProvider(props: { children: React.ReactNode }) {
     const {
       firstName: firstName,
       lastName: lastName,
-      confirmPassword,
       ...newFormData
     } = formData;
 
@@ -107,10 +102,7 @@ function UserProvider(props: { children: React.ReactNode }) {
     }
   };
 
-
-
   const values: IUserContext = {
-
     cleanUpRequests,
 
     isSignUp,
@@ -153,4 +145,4 @@ function UserProvider(props: { children: React.ReactNode }) {
   );
 }
 
-export { UserProvider, useUserContext };
+export { UserProvider };

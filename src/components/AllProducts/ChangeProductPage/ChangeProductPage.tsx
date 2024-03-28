@@ -1,7 +1,7 @@
 import { RoundButton } from "../../../styled-components/Button.styles.ts";
 import ArrowLeft from "../../../assets/ui/arrow-left.svg";
 import ArrowRight from "../../../assets/ui/arrow-right.svg";
-import { useProductContext } from "../../../providers/UserContext";
+import { useProductContext } from "../../../providers/hooks";
 import { IFullProductContext } from "../../../types/product";
 
 function ChangeProductPage() {

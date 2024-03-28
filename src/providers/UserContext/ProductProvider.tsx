@@ -5,16 +5,14 @@ import {
   IGetProductsByCategoryResponse,
   IProductContext,
 } from "../../types/product";
-import { useUserContext } from "./UserProvider.tsx";
 import { IUserContext } from "../../types/user";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../hooks";
 
 export const ProductContext = createContext({});
 
-const useProductContext = () => React.useContext(ProductContext);
-
 const ProductProvider = (props: { children: ReactNode }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { setIsLoading } = useUserContext() as IUserContext;
 
   const [allProducts, setAllProducts] = useState<IProductContext[]>([]);
@@ -105,10 +103,10 @@ const ProductProvider = (props: { children: ReactNode }) => {
     }
   };
 
-  const returnHome = ()=> {
-    setSearchValue("")
-    navigate("/")
-  }
+  const returnHome = () => {
+    setSearchValue("");
+    navigate("/");
+  };
 
   const values: IFullProductContext = {
     page,
@@ -142,4 +140,4 @@ const ProductProvider = (props: { children: ReactNode }) => {
     </ProductContext.Provider>
   );
 };
-export { ProductProvider, useProductContext };
+export { ProductProvider };

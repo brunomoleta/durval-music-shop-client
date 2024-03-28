@@ -1,2 +1,2 @@
-export * from './AllProducts.js';
-export { default } from './AllProducts.js';
+export * from "./AllProducts.js";
+export { default } from "./AllProducts.js";

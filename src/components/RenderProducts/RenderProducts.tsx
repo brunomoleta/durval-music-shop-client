@@ -4,7 +4,7 @@ import NoOrder from "../../assets/illustrations/No-Order.svg";
 import ProductsList from "../AllProducts/ProductsList";
 import ChangeProductPage from "../AllProducts/ChangeProductPage";
 import { IProductContext } from "../../types/product";
-import { useUserContext } from "../../providers/UserContext";
+import { useUserContext } from "../../providers/hooks";
 import { IUserContext } from "../../types/user";
 import Loader from "../Loader";
 
@@ -18,7 +18,6 @@ function RenderProducts({
   const { isLoading } = useUserContext() as IUserContext;
   const renderAnswer = () => {
     if (isLoading) <Loader />;
-
     else if (!products) {
       return (
         <NoProductFound

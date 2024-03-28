@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import {colors, fontSize} from "./root.ts";
-import {Link} from "react-router-dom";
-import {QUERIES} from "../services/database.ts";
+import { colors, fontSize } from "./root.ts";
+import { Link } from "react-router-dom";
+import { QUERIES } from "../services/database.ts";
 
 export const ImageContainer = styled.div`
   height: 200px;
-  
+
   overflow: hidden;
   object-fit: contain;
-  
+
   display: grid;
   place-content: center;
 
@@ -27,7 +27,7 @@ export const ImgModalContainer = styled(ImageContainer)`
     height: 160px;
     width: 120px;
   }
-`
+`;
 
 export const Brand = styled.h4`
   color: ${colors.grey70};
@@ -40,9 +40,9 @@ export const Price = styled.h3`
   font-weight: 600;
 `;
 export const PriceModal = styled(Price)`
-    text-align: end;
-    margin-inline-start: auto;
-`
+  text-align: end;
+  margin-inline-start: auto;
+`;
 
 export const ProductCardButton = styled(Link)`
   border-radius: 8px;
@@ -58,7 +58,7 @@ export const ProductCardButton = styled(Link)`
   }
 
   &:hover img {
-    scale: 1.10;
+    scale: 1.1;
   }
 
   &:focus {

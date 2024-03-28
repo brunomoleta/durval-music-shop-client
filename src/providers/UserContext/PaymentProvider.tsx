@@ -1,13 +1,11 @@
-import React, { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { IPaymentContext, IPayment, IPaymentForm } from "../../types/payment";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import { useUserContext } from "./UserProvider.tsx";
 import { IUserContext } from "../../types/user";
+import { useUserContext } from "../hooks";
 
 export const PaymentContext = createContext({});
-
-const usePaymentContext = () => React.useContext(PaymentContext);
 
 const PaymentProvider = (props: { children: ReactNode }) => {
   const { setIsLoading } = useUserContext() as IUserContext;
@@ -127,4 +125,4 @@ const PaymentProvider = (props: { children: ReactNode }) => {
   );
 };
 
-export { PaymentProvider, usePaymentContext };
+export { PaymentProvider };

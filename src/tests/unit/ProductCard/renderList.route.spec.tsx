@@ -8,7 +8,7 @@ import ProductsList from "../../../components/AllProducts/ProductsList";
 describe("List of Product Cards", () => {
   render(
     <BrowserRouter>
-        <ProductsList products={products} />
+      <ProductsList products={products} />
     </BrowserRouter>,
   );
   test("Renders list of all items correctly", () => {

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import {schemaMessages} from "../../services/database.ts";
+import { schemaMessages } from "../../services/database.ts";
 
 const signUpSchema = z
   .object({
@@ -26,7 +26,7 @@ const signUpSchema = z
       .regex(/\d/, "A senha deve conter pelo menos um número")
       .regex(
         /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/,
-        "A senha deve conter pelo menos um caractere especial"
+        "A senha deve conter pelo menos um caractere especial",
       ),
     confirmPassword: z.string().nonempty(schemaMessages.noConfirmation),
   })

@@ -1,2 +1,2 @@
-export * from './LogoCategories.tsx';
-export { default } from './LogoCategories.tsx';
+export * from "./LogoCategories.tsx";
+export { default } from "./LogoCategories.tsx";

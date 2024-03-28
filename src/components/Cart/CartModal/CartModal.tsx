@@ -1,6 +1,6 @@
 import CartEmpty from "./CartEmpty";
 
-import { useCartContext } from "../../../providers/UserContext";
+import { useCartContext } from "../../../providers/hooks";
 import { ICartContext } from "../../../types/cart";
 import RenderCartItems from "../../RenderCartItems";
 // import CartModalHeader from "./CartModalHeader";
@@ -18,7 +18,6 @@ function CartModal() {
       ) : (
         <CartEmpty />
       )}
-
     </>
   );
 }

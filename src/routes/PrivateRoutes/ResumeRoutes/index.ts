@@ -1,2 +1,2 @@
-export * from './ResumeRoutes.tsx';
-export { default } from './ResumeRoutes.tsx';
+export * from "./ResumeRoutes.tsx";
+export { default } from "./ResumeRoutes.tsx";

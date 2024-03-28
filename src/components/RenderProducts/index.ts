@@ -1,2 +1,2 @@
-export * from './RenderProducts';
-export { default } from './RenderProducts';
+export * from "./RenderProducts";
+export { default } from "./RenderProducts";

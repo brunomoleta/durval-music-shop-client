@@ -1,9 +1,9 @@
-import { ForwardedRef, forwardRef } from "react"
+import { ForwardedRef, forwardRef } from "react";
 import { ISelect } from "../../types/types";
 import styled from "styled-components";
 import { colors, fontSize } from "../../styled-components/root";
 import { DefaultLabel, Field } from "../../styled-components/Modal.styles";
-import {QUERIES} from "../../services/database.ts";
+import { QUERIES } from "../../services/database.ts";
 
 const StyledSelect = styled.select`
   width: 100%;
@@ -32,23 +32,28 @@ const LabelWrapper = styled.div`
 `;
 
 const InputContainer = styled.div`
-    position: relative;
+  position: relative;
 `;
 
-const Select = forwardRef(({label, id, children, defaultValue, error, ...rest}: ISelect, ref: ForwardedRef<HTMLSelectElement>) => {
-  return (
-    <Field>
+const Select = forwardRef(
+  (
+    { label, id, children, defaultValue, error, ...rest }: ISelect,
+    ref: ForwardedRef<HTMLSelectElement>,
+  ) => {
+    return (
+      <Field>
         <LabelWrapper>
-            {label ? <DefaultLabel htmlFor={id}> {label} </DefaultLabel> : null}
-            {error ? <Span>{error.message}</Span> : null }
+          {label ? <DefaultLabel htmlFor={id}> {label} </DefaultLabel> : null}
+          {error ? <Span>{error.message}</Span> : null}
         </LabelWrapper>
-      <InputContainer>
-        <StyledSelect ref={ref} id={id} defaultValue={defaultValue} {...rest}>
-          {children}
-        </StyledSelect>
-      </InputContainer>
-    </Field>
-  );
-});
+        <InputContainer>
+          <StyledSelect ref={ref} id={id} defaultValue={defaultValue} {...rest}>
+            {children}
+          </StyledSelect>
+        </InputContainer>
+      </Field>
+    );
+  },
+);
 
 export default Select;

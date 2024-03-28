@@ -1,2 +1,2 @@
-export * from './Template';
-export { default } from './Template';
+export * from "./Template";
+export { default } from "./Template";

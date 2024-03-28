@@ -1,2 +1,2 @@
-export * from './ProfileTemplate.tsx';
-export { default } from './ProfileTemplate.tsx';
+export * from "./ProfileTemplate.tsx";
+export { default } from "./ProfileTemplate.tsx";

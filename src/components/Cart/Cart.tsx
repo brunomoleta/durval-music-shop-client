@@ -1,5 +1,5 @@
 import Modal from "../Modal";
-import { useCartContext } from "../../providers/UserContext";
+import { useCartContext } from "../../providers/hooks";
 import { ICartContext } from "../../types/cart";
 import CartModal from "./CartModal";
 import { WarningInlineButton } from "../../styled-components/Button.styles.ts";

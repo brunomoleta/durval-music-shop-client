@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "./root.ts";
 
-export const Wrapper = styled.div<{ $isBigger?: boolean|null }>`
+export const Wrapper = styled.div<{ $isBigger?: boolean | null }>`
   @keyframes floatBy {
     0% {
       transform: translateY(50%);
@@ -20,6 +20,5 @@ export const Wrapper = styled.div<{ $isBigger?: boolean|null }>`
   position: absolute;
   top: 0;
   left: 1px;
-  color: ${(props) => (props.$isBigger ? colors.purpleBorder : colors.red60)}
-
+  color: ${(props) => (props.$isBigger ? colors.purpleBorder : colors.red60)};
 `;

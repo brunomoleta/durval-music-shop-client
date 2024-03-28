@@ -1,2 +1,2 @@
-export * from './HeaderLogo.js';
-export { default } from './HeaderLogo.js';
+export * from "./HeaderLogo.js";
+export { default } from "./HeaderLogo.js";

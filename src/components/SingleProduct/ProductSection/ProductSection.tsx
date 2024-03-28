@@ -5,12 +5,12 @@ import {
   SectionBuy,
   SpanCategory,
 } from "./styles.ts";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import {
-  ProductContext,
   useCartContext,
+  useProductContext,
   useUserContext,
-} from "../../../providers/UserContext";
+} from "../../../providers/hooks";
 import { IFullProductContext } from "../../../types/product";
 import { SendBtn } from "../../../styled-components/Button.styles.ts";
 import { ICartContext } from "../../../types/cart";
@@ -23,9 +23,8 @@ import ProductImage from "../ProductImage";
 
 const ProductSection = () => {
   const { setIsLoading } = useUserContext() as IUserContext;
-  const { singleProduct, getProductById } = useContext(
-    ProductContext,
-  ) as IFullProductContext;
+  const { singleProduct, getProductById } =
+    useProductContext() as IFullProductContext;
   const { addProductInCart } = useCartContext() as ICartContext;
 
   const { id } = useParams();
@@ -42,7 +41,7 @@ const ProductSection = () => {
 
   return (
     <SectionBuy>
-      <ProductImage product={singleProduct}/>
+      <ProductImage product={singleProduct} />
       <DivInfoContainer>
         <DivCategories>
           {singleProduct?.categories.map((category) => (

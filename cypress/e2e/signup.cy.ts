@@ -33,19 +33,19 @@ describe("user login", () => {
     cy.typeInputData("lastName", this.fail.lastName);
     cy.hasErrorMessage(this.messages.firstName);
     cy.hasErrorMessage(this.messages.lastName);
-    cy.clearAndTypeRightData('firstName', this.success.firstName)
-    cy.clearAndTypeRightData('lastName', this.success.lastName)
+    cy.clearAndTypeRightData("firstName", this.success.firstName);
+    cy.clearAndTypeRightData("lastName", this.success.lastName);
 
     cy.typeInputData("email", this.fail.email);
     cy.hasErrorMessage(this.messages.email);
-    cy.clearAndTypeRightData('email', this.success.email)
+    cy.clearAndTypeRightData("email", this.success.email);
 
     cy.typeInputData("password", this.fail.password);
     cy.hasErrorMessage(this.messages.noConfirmation);
     cy.typeInputData("confirmPassword", this.fail.confirmPassword);
 
     cy.hasErrorMessage(this.messages.equalPassword);
-    cy.clearAndTypeRightData('confirmPassword', this.success.password)
+    cy.clearAndTypeRightData("confirmPassword", this.success.password);
 
     cy.get("button").should("contain.text", "LOGIN");
     cy.get("button").should("contain.text", "ENVIAR");

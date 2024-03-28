@@ -5,4 +5,3 @@ export const useDocTitle = (title) => {
     document.title = `kHub | ${title.charAt(0).toUpperCase() + title.slice(1)}`;
   }, []);
 };
-

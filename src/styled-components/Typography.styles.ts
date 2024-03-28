@@ -7,12 +7,12 @@ export const H1 = styled.h1`
   font-weight: 600;
 `;
 export const H2 = styled.h2`
-    text-align: center;
-    margin-inline-end: auto;
-    line-height: 140%;
-    font-size: clamp(${fontSize.p}, 5svw, ${fontSize.h3});
+  text-align: center;
+  margin-inline-end: auto;
+  line-height: 140%;
+  font-size: clamp(${fontSize.p}, 5svw, ${fontSize.h3});
 
-    font-weight: 600;
+  font-weight: 600;
 `;
 export const H3 = styled.h3`
   font-weight: 500;

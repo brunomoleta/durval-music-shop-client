@@ -16,22 +16,21 @@ export const Wrapper = styled.div`
   display: grid;
   gap: clamp(1svh, 3svh, 16px);
   grid-template-rows: auto auto;
-  
 `;
 
 export const BottonInfo = styled.div`
-    height: fit-content;
-    margin-block-start: 32px;
-    
-    display: flex;
-    flex-flow: column;
-    gap: 16px;
+  height: fit-content;
+  margin-block-start: 32px;
+
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
 `;
 
 export const CartOl = styled.ul`
-    overflow-y: auto;
-    padding-inline-end: clamp(8px, 5%, 32px);
-    min-height: 100%;
-    max-height: 33svh;
-    margin-block: 40px 24px;
+  overflow-y: auto;
+  padding-inline-end: clamp(8px, 5%, 32px);
+  min-height: 100%;
+  max-height: 33svh;
+  margin-block: 40px 24px;
 `;

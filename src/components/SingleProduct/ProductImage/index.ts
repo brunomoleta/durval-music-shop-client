@@ -1,2 +1,2 @@
-export * from './ProductImage.tsx';
-export { default } from './ProductImage.tsx';
+export * from "./ProductImage.tsx";
+export { default } from "./ProductImage.tsx";

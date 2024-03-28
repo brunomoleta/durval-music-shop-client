@@ -1,2 +1,2 @@
-export * from './Resume';
-export { default } from './Resume';
+export * from "./Resume";
+export { default } from "./Resume";

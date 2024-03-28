@@ -3,7 +3,7 @@ import { genericValues } from "../../../styled-components/root.ts";
 import { DivImg, ImgProduct } from "../ProductSection/styles.ts";
 import Loader from "../../Loader";
 import React from "react";
-import { useUserContext } from "../../../providers/UserContext";
+import { useUserContext } from "../../../providers/hooks";
 import { IUserContext } from "../../../types/user";
 import { IProductContext } from "../../../types/product";
 

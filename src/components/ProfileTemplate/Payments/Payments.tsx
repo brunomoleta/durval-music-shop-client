@@ -4,9 +4,9 @@ import CreatePaymentForm from "./Form/CreatePaymentForm";
 import { useEffect } from "react";
 import PaymentCard from "./PaymentCard";
 
-import { usePaymentContext } from "../../../providers/UserContext/PaymentProvider.tsx";
+import { usePaymentContext } from "../../../providers/hooks/";
 import { IPaymentContext } from "../../../types/payment";
-import { useUserContext } from "../../../providers/UserContext";
+import { useUserContext } from "../../../providers/hooks";
 import { IUserContext } from "../../../types/user";
 import { H2 } from "../../../styled-components/Typography.styles.ts";
 import Loader from "../../Loader";

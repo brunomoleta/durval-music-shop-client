@@ -1,6 +1,6 @@
 import { SendBtn } from "../../styled-components/Button.styles.ts";
 import { CardSubTitle, H1 } from "../../styled-components/Typography.styles.ts";
-import { useCartContext, useProductContext } from "../../providers/UserContext";
+import { useCartContext, useProductContext } from "../../providers/hooks";
 import { ICartContext } from "../../types/cart";
 import React from "react";
 import { NoProductFoundProps } from "../../types/types";

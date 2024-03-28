@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Trash from "../../../assets/illustrations/Remove-Confirmation.svg";
 import { colors } from "../../../styled-components/root.ts";
-import { useUserContext } from "../../../providers/UserContext";
+import { useUserContext } from "../../../providers/hooks";
 import { IUserContext } from "../../../types/user";
 import Loader from "../../Loader";
 
@@ -31,8 +31,9 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
-  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
-  hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
 
   &:hover {
     background-color: ${colors.offWhite};
@@ -76,7 +77,6 @@ function ModalQuit({
   return (
     <>
       <Card>
-
         <img alt="" src={Trash} />
         <CartButtons>
           <Button onClick={handleCloseModalClick}>Cancelar</Button>

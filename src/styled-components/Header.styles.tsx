@@ -11,8 +11,8 @@ export const SearchBar = styled.input`
   padding-block: 0.3rem;
   padding-inline-start: 1.125rem;
   width: 100%;
-    
-    margin: auto;
+
+  margin: auto;
 
   &:focus {
     border: 2px solid ${colors.purpleSurface};
@@ -29,7 +29,6 @@ export const LogoTop = styled.span`
   margin: auto;
   width: 100%;
   height: auto;
-    
 
   line-height: 110%;
 
@@ -51,8 +50,8 @@ export const LogoTop = styled.span`
   }
 `;
 export const ProfileIcon = styled.img<{ $bgColor?: boolean }>`
-    max-height: 20px;
-    width: auto;
+  max-height: 20px;
+  width: auto;
 `;
 
 export const Category = styled.li`
@@ -82,10 +81,10 @@ export const InfoWrapper = styled.div`
 `;
 
 export const IconsWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(4px, 5svw, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(4px, 5svw, 20px);
 `;
 
 export const Wrapper = styled.header`
@@ -100,32 +99,30 @@ export const Wrapper = styled.header`
 `;
 
 export const MidWrapper = styled.div`
-    max-width: ${genericValues.pageWidth};
-    width: 100%;
-`
+  max-width: ${genericValues.pageWidth};
+  width: 100%;
+`;
 
 export const HeaderWrapper = styled.div`
-    margin-block-end: 24px;
-    margin-block-start: 8px;
-    padding-inline: ${genericValues.pagePadding};
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    gap: clamp(5svh, 8svh, 32px);
-    
-    flex-wrap: wrap;
+  margin-block-end: 24px;
+  margin-block-start: 8px;
+  padding-inline: ${genericValues.pagePadding};
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: clamp(5svh, 8svh, 32px);
+
+  flex-wrap: wrap;
 `;
 export const SearchWrapper = styled.div`
-    
-    
-    position: relative;
-    flex: 0 5 50ch;
-    width: 100%;
-    max-inline-size: 65ch;
+  position: relative;
+  flex: 0 5 50ch;
+  width: 100%;
+  max-inline-size: 65ch;
 
-    @media ${QUERIES.laptopAndUp} {
-        margin-inline: 0 auto ;
-    }
+  @media ${QUERIES.laptopAndUp} {
+    margin-inline: 0 auto;
+  }
 `;
 
 export const Label = styled(DefaultLabel)`

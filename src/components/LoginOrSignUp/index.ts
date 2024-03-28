@@ -1,2 +1,2 @@
-export * from './LoginOrSignUp';
-export { default } from './LoginOrSignUp';
+export * from "./LoginOrSignUp";
+export { default } from "./LoginOrSignUp";

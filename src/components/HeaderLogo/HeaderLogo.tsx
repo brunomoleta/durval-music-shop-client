@@ -1,6 +1,6 @@
 import { LogoTop } from "../../styled-components/Header.styles.tsx";
 import { logoName } from "../../services/database.ts";
-import { useProductContext } from "../../providers/UserContext";
+import { useProductContext } from "../../providers/hooks";
 import { IFullProductContext } from "../../types/product";
 
 function HeaderLogo() {

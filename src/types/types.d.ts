@@ -11,7 +11,7 @@ export interface NoProductFoundProps {
   message: string;
   subTitle: string;
   isButton: boolean;
-  element: React.ReactNode
+  element: React.ReactNode;
 }
 
 export interface IModal {
@@ -24,7 +24,7 @@ export interface IModal {
   overflow?: string;
 
   title: string;
-  button?: React.ReactNode
+  button?: React.ReactNode;
 }
 
 export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -40,4 +40,3 @@ export interface ISelect extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
   id: string;
 }
-

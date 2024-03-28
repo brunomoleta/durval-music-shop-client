@@ -1,3 +1,2 @@
-
-export * from './PrivateRoutes.tsx';
-export { default } from './PrivateRoutes.tsx';
+export * from "./PrivateRoutes.tsx";
+export { default } from "./PrivateRoutes.tsx";

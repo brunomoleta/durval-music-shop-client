@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {colors} from "./root.ts";
-import {QUERIES} from "../services/database.ts";
+import { colors } from "./root.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const ResumeHeader = styled.div`
   display: flex;

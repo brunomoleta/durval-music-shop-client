@@ -2,8 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { IsignUpInfo } from "./types";
 
 export interface IUserContext {
-
-  cleanUpRequests: ()=> void;
+  cleanUpRequests: () => void;
 
   isLoggedIn: boolean;
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;

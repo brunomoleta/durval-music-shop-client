@@ -1,9 +1,9 @@
 import Money from "../../../assets/illustrations/Nothing-in-Cart.svg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import {fontSize} from "../../../styled-components/root.ts";
-import {SendBtn} from "../../../styled-components/Button.styles.ts";
-import {QUERIES} from "../../../services/database.ts";
+import { fontSize } from "../../../styled-components/root.ts";
+import { SendBtn } from "../../../styled-components/Button.styles.ts";
+import { QUERIES } from "../../../services/database.ts";
 
 const H1 = styled.h1`
   width: 100%;

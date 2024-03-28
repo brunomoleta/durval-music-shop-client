@@ -9,7 +9,7 @@ import { colors, fontSize } from "../../../styled-components/root.ts";
 import { ICart, ICartContext } from "../../../types/cart";
 
 import ProductAmount from "../ProductAmount";
-import { useCartContext } from "../../../providers/UserContext";
+import { useCartContext } from "../../../providers/hooks";
 import {
   InfoButtons,
   ProductInfo,

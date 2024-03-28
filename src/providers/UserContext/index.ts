@@ -1,9 +1,8 @@
 export * from "./UserProvider.tsx";
-export { UserProvider, useUserContext } from "./UserProvider.tsx";
+export { UserProvider } from "./UserProvider.tsx";
 
 export * from "./ProductProvider.tsx";
 export { ProductProvider } from "./ProductProvider.tsx";
-
 
 export * from "./CartProvider.tsx";
 export { CartProvider } from "./CartProvider.tsx";
@@ -16,4 +15,3 @@ export { AddressProvider } from "./AddressProvider.tsx";
 
 export * from "./PaymentProvider.tsx";
 export { PaymentProvider } from "./PaymentProvider.tsx";
-

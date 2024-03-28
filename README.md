@@ -2,7 +2,6 @@
 
 <hr style="border-top: 3px solid #bbb;">
 
-
 ## Descrição
 
 Frontend de aplicação fullstack de um e-commerce de equipamentos musicais
@@ -11,16 +10,15 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 
 <hr style="border-top: 3px solid #bbb;">
 
-
 ## Índice
 
 - [Visão geral](#visão-geral)
   - [Tecnologias usadas](#tecnologias-usadas)
-      - [React](#react)
-      - [Outros](#outros)
-  - [Funcionalidades](#funcionalidades) 
+    - [React](#react)
+    - [Outros](#outros)
+  - [Funcionalidades](#funcionalidades)
   - [Design](#design)
-      - [Fluxo do usuário](#fluxo-do-usuário)
+    - [Fluxo do usuário](#fluxo-do-usuário)
   - [Links importantes](#links-importantes)
 - [Estrutura do projeto](#estrutura-do-projeto)
   - [Scripts](#scripts)
@@ -40,7 +38,6 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - [Pessoas que nos ajudaram](#pessoas-que-nos-ajudaram)
 
 <hr style="border-top: 3px solid #bbb;">
-
 
 ## Visão geral
 
@@ -67,11 +64,12 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
   - Seus produtos anunciados;
   - Seus métodos de pagamento;
 - Cadastro realizado através de um formulário de múltiplas etapas,
-    melhorando a experiência do usuário; 
+  melhorando a experiência do usuário;
 
 ### Design
 
 #### Fluxo do usuário
+
 <hr style="border-top: 3px solid #bbb;">
 
 - Imagem 01: tela inicial da aplicação;
@@ -87,14 +85,14 @@ A motivação da equipe foi de desevolver uma aplicação robusta para compor o 
 
 ![](./src/assets/docs/03-04.png)
 
-
 <hr style="border-top: 3px solid #bbb;">
-
 
 ### Links importantes
 
 - Explicação extensa do projeto:  [https://www.brunomoleta.com.br/durval-music-shop](https://www.brunomoleta.com.br/durval-music-shop)
+
 - Deploy frontend:  https://durval-music-shop.vercel.app/
+
 - Deploy backend: https://loja-do-durval.onrender.com/
 - Documentação do backend: https://loja-do-durval.onrender.com/doc
 
@@ -113,44 +111,44 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 
 ### Dependências
 
--  ````@hookform/resolvers````: ^3.3.4,
--  ````@radix-ui/react-dialog````: ^1.0.5,
--  ````@radix-ui/react-dropdown-menu````: ^2.0.6,
--  ````@radix-ui/react-icons````: ^1.3.0,
--  ````@radix-ui/react-visually-hidden````: ^1.0.3,
--  ````@types/cors````: ^2.8.17,
--  ````axios````: ^1.6.7,
--  ````focus-trap-react````: ^10.2.3,
--  ````jsonwebtoken````: ^9.0.2,
--  ````nanoid````: ^5.0.6,
--  ````react````: ^18.2.0,
--  ````react-dom````: ^18.2.0,
--  ````react-feather````: ^2.0.10,
--  ````react-hook-form````: ^7.50.1,
--  ````react-icons````: ^5.0.1,
--  ````react-router-dom````: ^6.22.1,
--  ````react-toastify````: ^10.0.4,
--  ````styled-components````: ^6.1.8,
--  ````zod````: ^3.22.4
+- `@hookform/resolvers`: ^3.3.4,
+- `@radix-ui/react-dialog`: ^1.0.5,
+- `@radix-ui/react-dropdown-menu`: ^2.0.6,
+- `@radix-ui/react-icons`: ^1.3.0,
+- `@radix-ui/react-visually-hidden`: ^1.0.3,
+- `@types/cors`: ^2.8.17,
+- `axios`: ^1.6.7,
+- `focus-trap-react`: ^10.2.3,
+- `jsonwebtoken`: ^9.0.2,
+- `nanoid`: ^5.0.6,
+- `react`: ^18.2.0,
+- `react-dom`: ^18.2.0,
+- `react-feather`: ^2.0.10,
+- `react-hook-form`: ^7.50.1,
+- `react-icons`: ^5.0.1,
+- `react-router-dom`: ^6.22.1,
+- `react-toastify`: ^10.0.4,
+- `styled-components`: ^6.1.8,
+- `zod`: ^3.22.4
 
 ### Dependências de desenvolvimento
 
--   ````@testing-library/jest-dom````: ^6.4.2,
--   ````@testing-library/react````: ^14.2.1,
--   ````@types/jest````: ^29.5.12,
--   ````@types/jsonwebtoken````: ^9.0.5,
--   ````@types/react````: ^18.2.56,
--   ````@types/react-dom````: ^18.2.19,
--   ````@typescript-eslint/eslint-plugin````: ^7.0.2,
--   ````@typescript-eslint/parser````: ^7.0.2,
--   ````@vitejs/plugin-react````: ^4.2.1,
--   ````eslint````: ^8.56.0,
--   ````eslint-plugin-react-hooks````: ^4.6.0,
--   ````eslint-plugin-react-refresh````: ^0.4.5,
--   ````new-component````: ^5.0.2,
--   ````prettier````: ^3.2.5,
--   ````typescript````: ^5.2.2,
--   ````vite````: ^5.1.
+- `@testing-library/jest-dom`: ^6.4.2,
+- `@testing-library/react`: ^14.2.1,
+- `@types/jest`: ^29.5.12,
+- `@types/jsonwebtoken`: ^9.0.5,
+- `@types/react`: ^18.2.56,
+- `@types/react-dom`: ^18.2.19,
+- `@typescript-eslint/eslint-plugin`: ^7.0.2,
+- `@typescript-eslint/parser`: ^7.0.2,
+- `@vitejs/plugin-react`: ^4.2.1,
+- `eslint`: ^8.56.0,
+- `eslint-plugin-react-hooks`: ^4.6.0,
+- `eslint-plugin-react-refresh`: ^0.4.5,
+- `new-component`: ^5.0.2,
+- `prettier`: ^3.2.5,
+- `typescript`: ^5.2.2,
+- `vite`: ^5.1.
 
 ### Instalação
 
@@ -171,9 +169,9 @@ Para mais informações sobre o back-end, verfique o README.md na raiz do projet
 3. Instale as dependências:
 
 ```bash
-npm install 
+npm install
 
-# ou 
+# ou
 
 yarn install
 ```
@@ -210,8 +208,9 @@ durval-music-shop-client/
 │   ├── services/           Serviço de comunicação com API.
 │   ├── styled-components/  Estilos globais da aplicação.
 │   └── tests/              Testes unitários
-│   └── types/              Tipagem dos components, funções e providers. 
+│   └── types/              Tipagem dos components, funções e providers.
 ```
+
 <hr style="border-top: 3px solid #bbb;">
 
 ## Processo de trabalho
@@ -220,12 +219,12 @@ durval-music-shop-client/
 - O usuário pode adicionar produtos a um carrinho de compras(modal) e editá-lo;
 - Além disso, a criação de conta e login ocorrem através dele;
 - Dentro do dashboard do usuário autenticado, as ações de
-CRUD acontecem no modal;
+  CRUD acontecem no modal;
 
 ### Aprendizado
 
-
 #### Modal
+
 O componente Modal é usa o Radix-UI como base:
 
 ```Javascript
@@ -238,17 +237,17 @@ function Modal({
                  button,
                }: IModal) {
   return (
-          <Dialog.Root 
-                  modal={true} 
-                  open={open} 
+          <Dialog.Root
+                  modal={true}
+                  open={open}
                   onOpenChange={onOpenChange}
           >
             <Dialog.Portal>
               <DOverLay />
               <DContent>
-                <ModalHeader 
-                        button={button} 
-                        title={title} 
+                <ModalHeader
+                        button={button}
+                        title={title}
                 />
                 {element}
               </DContent>
@@ -256,7 +255,7 @@ function Modal({
           </Dialog.Root>
   );
 }
-````
+```
 
 A fim de que este fosse o mais flexível possível,
 pelo fato de receber em um momento
@@ -264,7 +263,7 @@ uma lista de elementos, em outra um formulário curto
 e em um terceiro um formulário longo foi
 realizado o seguinte css:
 
-````css
+```css
 export const DContent = styled(Dialog.Content)`
     /* ... */
 
@@ -277,8 +276,9 @@ export const DContent = styled(Dialog.Content)`
     width: fit-content;
 }
 `
-````
-O código acima fez com que o modal 
+```
+
+O código acima fez com que o modal
 ocupe a tela inteira quando ela tiver até 62.5rem
 e ocupar o quanto for necessário
 em uma maior. Dando assim um resultado visual e funcional
@@ -291,10 +291,10 @@ satisfatório em todas as situações.
 
 ### Fontes úteis
 
-- [Josh Cameau's blog](https://www.joshwcomeau.com/) - Blog de frontend de um desenvolvedor sênior canadense. 
-Ele ilustra com pequenos jogos e ilustrações sem perder a profundidade;
+- [Josh Cameau's blog](https://www.joshwcomeau.com/) - Blog de frontend de um desenvolvedor sênior canadense.
+  Ele ilustra com pequenos jogos e ilustrações sem perder a profundidade;
 - [Radix UI](https://www.radix-ui.com/) - É uma mão na roda esta biblioteca de components não estilizados.
-O Modal e o Dropdown são baseados nele;
+  O Modal e o Dropdown são baseados nele;
 
 <hr style="border-top: 3px solid #bbb;">
 

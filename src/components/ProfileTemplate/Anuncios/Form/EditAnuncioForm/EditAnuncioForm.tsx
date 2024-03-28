@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   useAnuncioContext,
   useUserContext,
-} from "../../../../../providers/UserContext";
+} from "../../../../../providers/hooks";
 import { IAnuncioContext, IProductForm } from "../../../../../types/anuncios";
 import { IUserContext } from "../../../../../types/user";
 import { anuncioSchema } from "../../../../../schemas/anuncioSchema";
@@ -26,7 +26,7 @@ function EditAnuncioForm() {
     values: {
       name: editingAnuncio ? editingAnuncio.name : "",
       description: editingAnuncio ? editingAnuncio.description : "",
-      price: editingAnuncio ? (editingAnuncio.price) : 0,
+      price: editingAnuncio ? editingAnuncio.price : 0,
       image: editingAnuncio ? editingAnuncio.image : "",
       stock: editingAnuncio ? String(editingAnuncio.stock) : 0,
       color: editingAnuncio ? editingAnuncio.color : "",
@@ -48,72 +48,72 @@ function EditAnuncioForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Nome"
-          error={errors.name}
-          {...register("name")}
-          id={"name"}
-        />
-        <Input
-          label="Descrição"
-          error={errors.description}
-          {...register("description")}
-          id={"description"}
-        />
-        <Input
-          label="Preço (R$)"
-          type="number"
-          error={errors.price}
-          {...register("price")}
-          id={"price"}
-        />
-        <Input
-          label="Imagem"
-          error={errors.image}
-          {...register("image")}
-          id={"image"}
-        />
-        <Input
-          label="Estoque"
-          error={errors.stock}
-          {...register("stock")}
-          id={"stock"}
-        />
-        <Input
-          label="Cor"
-          error={errors.color}
-          {...register("color")}
-          id={"color"}
-        />
-        <Select
-          label="Condição"
-          error={errors.condition}
-          {...register("condition")}
-          id="condition"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Selecionar
-          </option>
-          <option value="new">Novo</option>
-          <option value="used">Usado</option>
-        </Select>
-        <Input
-          label="Categorias"
-          error={errors.categories}
-          {...register("categories")}
-          id={"categories"}
-        />
-        <Input
-          label="Marca"
-          error={errors.brandName}
-          {...register("brandName")}
-          id={".brandName"}
-        />
+      <Input
+        label="Nome"
+        error={errors.name}
+        {...register("name")}
+        id={"name"}
+      />
+      <Input
+        label="Descrição"
+        error={errors.description}
+        {...register("description")}
+        id={"description"}
+      />
+      <Input
+        label="Preço (R$)"
+        type="number"
+        error={errors.price}
+        {...register("price")}
+        id={"price"}
+      />
+      <Input
+        label="Imagem"
+        error={errors.image}
+        {...register("image")}
+        id={"image"}
+      />
+      <Input
+        label="Estoque"
+        error={errors.stock}
+        {...register("stock")}
+        id={"stock"}
+      />
+      <Input
+        label="Cor"
+        error={errors.color}
+        {...register("color")}
+        id={"color"}
+      />
+      <Select
+        label="Condição"
+        error={errors.condition}
+        {...register("condition")}
+        id="condition"
+        defaultValue=""
+      >
+        <option value="" disabled>
+          Selecionar
+        </option>
+        <option value="new">Novo</option>
+        <option value="used">Usado</option>
+      </Select>
+      <Input
+        label="Categorias"
+        error={errors.categories}
+        {...register("categories")}
+        id={"categories"}
+      />
+      <Input
+        label="Marca"
+        error={errors.brandName}
+        {...register("brandName")}
+        id={".brandName"}
+      />
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "SALVAR EDIÇÃO"}
       </SendBtn>
-    </FormUser >
+    </FormUser>
   );
 }
 

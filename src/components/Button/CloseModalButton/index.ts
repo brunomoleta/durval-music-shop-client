@@ -1,2 +1,2 @@
-export * from './CloseModalButton.tsx';
-export { default } from './CloseModalButton.tsx';
+export * from "./CloseModalButton.tsx";
+export { default } from "./CloseModalButton.tsx";

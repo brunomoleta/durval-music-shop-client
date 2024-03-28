@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {colors, fontSize} from "./root.ts";
-import {QUERIES} from "../services/database.ts";
+import { colors, fontSize } from "./root.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const StyledInput = styled.input`
   width: 100%;

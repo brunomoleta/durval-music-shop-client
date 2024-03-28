@@ -1,2 +1,2 @@
-export * from './Email.tsx';
-export { default } from './Email.tsx';
+export * from "./Email.tsx";
+export { default } from "./Email.tsx";

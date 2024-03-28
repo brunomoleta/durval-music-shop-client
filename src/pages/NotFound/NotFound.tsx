@@ -3,7 +3,13 @@ import NotFoundIllustration from "../../assets/illustrations/404-Not-Found.svg";
 import { InlineButton } from "../../styled-components/Button.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { CardSubTitle, H1 } from "../../styled-components/Typography.styles.ts";
-import {Figure, ImageNotFound, Line, TextWrapper, Wrapper} from "../../styled-components/NotFound.styles.ts";
+import {
+  Figure,
+  ImageNotFound,
+  Line,
+  TextWrapper,
+  Wrapper,
+} from "../../styled-components/NotFound.styles.ts";
 
 function NotFound() {
   const navigate = useNavigate();
@@ -13,7 +19,7 @@ function NotFound() {
         <ImageNotFound src={NotFoundIllustration} alt="url not found" />
         <figcaption>Url not found</figcaption>
       </Figure>
-      <Wrapper >
+      <Wrapper>
         <TextWrapper>
           <H1>Opa, algo deu errado :(</H1>
           <CardSubTitle>
