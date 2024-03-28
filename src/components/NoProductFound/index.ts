@@ -1,2 +1,2 @@
-export * from './NoProductFound';
-export { default } from './NoProductFound';
+export * from "./NoProductFound";
+export { default } from "./NoProductFound";

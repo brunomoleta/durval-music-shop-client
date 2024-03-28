@@ -15,11 +15,11 @@ export const Wrapper = styled.div`
 `;
 
 export const InternalWrapper = styled.aside`
-    position: sticky;
-    top: 0;
-    
-    height: fit-content;
-    padding-block-start: 20px;
+  position: sticky;
+  top: 0;
+
+  height: fit-content;
+  padding-block-start: 20px;
 `;
 
 export const ItemsWrapper = styled.ol`

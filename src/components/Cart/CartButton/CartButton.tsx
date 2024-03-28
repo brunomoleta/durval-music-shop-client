@@ -3,7 +3,7 @@ import { AddCartButton } from "../../../styled-components/Button.styles.ts";
 import { ProfileIcon } from "../../../styled-components/Header.styles.tsx";
 import { fontSize } from "../../../styled-components/root.ts";
 import Cart from "../../../assets/ui/Cart.svg";
-import { useCartContext } from "../../../providers/UserContext";
+import { useCartContext } from "../../../providers/hooks";
 import { ICartContext } from "../../../types/cart";
 import { CardProductProps } from "../../../types/product";
 
@@ -17,7 +17,7 @@ function CartButton({ item, ...props }: CardBtn) {
         addProductInCart(item);
       }}
       {...props}
-        title="adicionar ao carrinho"
+      title="adicionar ao carrinho"
     >
       <ProfileIcon src={Cart} alt="Carrinho" />
       <span style={{ fontSize: fontSize.icons }}>CARRINHO+</span>

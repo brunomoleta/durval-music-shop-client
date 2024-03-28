@@ -1,2 +1,2 @@
-export * from './emailSchema.ts';
-export { default } from './emailSchema.ts';
+export * from "./emailSchema.ts";
+export { default } from "./emailSchema.ts";

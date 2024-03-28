@@ -1,5 +1,5 @@
 import { z } from "zod";
-import {schemaMessages} from "../../services/database.ts";
+import { schemaMessages } from "../../services/database.ts";
 
 const emailSchema = z.object({
   email: z

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors, fontSize } from "../../../styled-components/root.ts";
-import {QUERIES} from "../../../services/database.ts";
+import { QUERIES } from "../../../services/database.ts";
 
 export const SectionBuy = styled.section`
   display: flex;
@@ -24,7 +24,7 @@ export const DivImg = styled.button`
   justify-content: center;
   transition: scale 300ms;
   &:hover {
-    scale: 1.10;
+    scale: 1.1;
   }
 
   @media ${QUERIES.tabletAndUp} {
@@ -101,7 +101,6 @@ export const SpanCharacteristic = styled.span`
     font-weight: 600;
   }
 `;
-
 
 export const SpanSellerName = styled.span`
   color: ${colors.purple};

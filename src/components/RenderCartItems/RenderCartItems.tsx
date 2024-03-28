@@ -1,12 +1,15 @@
 import CartItem from "./CartItem";
-import { useCartContext, useUserContext } from "../../providers/UserContext";
+import { useCartContext, useUserContext } from "../../providers/hooks";
 import { ICartContext } from "../../types/cart";
 import { nanoid } from "nanoid";
 import {
   ModalBottonButton,
   SendBtn,
 } from "../../styled-components/Button.styles.ts";
-import {GreyParagraph, H3} from "../../styled-components/Typography.styles.ts";
+import {
+  GreyParagraph,
+  H3,
+} from "../../styled-components/Typography.styles.ts";
 import { IUserContext } from "../../types/user";
 import { useNavigate } from "react-router-dom";
 import React, { useRef } from "react";
@@ -68,9 +71,7 @@ function RenderCartItems() {
             <H3>Subtotal:</H3>
             <FinalPrice>{priceToString(subTotal)}</FinalPrice>
           </Subtotal>
-            <GreyParagraph>
-              O frete é adicionado a seguir :)
-            </GreyParagraph>
+          <GreyParagraph>O frete é adicionado a seguir :)</GreyParagraph>
         </div>
         <Buttons>
           <ModalBottonButton

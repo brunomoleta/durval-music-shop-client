@@ -3,9 +3,9 @@ import { MdOutlineAddCircleOutline } from "react-icons/md";
 import CreateAddressForm from "./Form/CreateAddressForm";
 import { useEffect } from "react";
 import { AddressCard } from "./AddressCard";
-import { useAddressContext } from "../../../providers/UserContext";
+import { useAddressContext } from "../../../providers/hooks";
 import { IAddressContext } from "../../../types/address";
-import { useUserContext } from "../../../providers/UserContext";
+import { useUserContext } from "../../../providers/hooks";
 import { IUserContext } from "../../../types/user";
 import { H2 } from "../../../styled-components/Typography.styles.ts";
 import Loader from "../../Loader";
@@ -36,7 +36,7 @@ function Addresses() {
   return (
     <>
       <ResumeHeader>
-          <DashboardHeading text="endereços" />
+        <DashboardHeading text="endereços" />
         <AddProfileItemBtn
           onClick={() => setIsCreateAddressModalOpen(!isCreateAddressModalOpen)}
         >

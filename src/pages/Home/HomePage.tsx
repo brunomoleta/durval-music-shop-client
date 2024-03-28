@@ -1,8 +1,8 @@
-import Home from "../../components/Home/index.ts"
+import Home from "../../components/Home/index.ts";
 function HomePage() {
   return (
     <>
-      <Home/>
+      <Home />
     </>
   );
 }

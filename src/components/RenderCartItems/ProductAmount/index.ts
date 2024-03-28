@@ -1,2 +1,2 @@
-export * from './ProductAmount.tsx';
-export { default } from './ProductAmount.tsx';
+export * from "./ProductAmount.tsx";
+export { default } from "./ProductAmount.tsx";

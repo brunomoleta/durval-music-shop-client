@@ -5,7 +5,7 @@ import {
 } from "../../../../styled-components/Header.styles.tsx";
 import { Search } from "react-feather";
 import React from "react";
-import { useProductContext } from "../../../../providers/UserContext";
+import { useProductContext } from "../../../../providers/hooks";
 import { IFullProductContext } from "../../../../types/product";
 import { useNavigate } from "react-router-dom";
 import { SendBtn } from "../../../../styled-components/Button.styles.ts";

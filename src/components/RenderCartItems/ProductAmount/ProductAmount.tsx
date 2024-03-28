@@ -1,13 +1,13 @@
 import { DefaultButton } from "../../../styled-components/Button.styles.ts";
 import { Minus, Plus } from "react-feather";
-import { useCartContext } from "../../../providers/UserContext";
+import { useCartContext } from "../../../providers/hooks";
 import { ICart, ICartContext } from "../../../types/cart";
 import styled from "styled-components";
 
 const Amount = styled.div`
   display: flex;
   gap: 16px;
-    margin-inline-start: auto;
+  margin-inline-start: auto;
 `;
 
 function ProductAmount({ amount, product }: ICart) {
@@ -30,7 +30,6 @@ function ProductAmount({ amount, product }: ICart) {
       >
         <Plus />
       </DefaultButton>
-
     </Amount>
   );
 }

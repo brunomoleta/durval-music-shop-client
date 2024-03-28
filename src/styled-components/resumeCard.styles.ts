@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "./root.ts";
+import { colors } from "./root.ts";
 
 export const Card = styled.div`
   width: 100%;

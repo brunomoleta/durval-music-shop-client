@@ -1,2 +1,2 @@
-export * from './EditPaymentForm.tsx';
-export { default } from './EditPaymentForm.tsx';
+export * from "./EditPaymentForm.tsx";
+export { default } from "./EditPaymentForm.tsx";

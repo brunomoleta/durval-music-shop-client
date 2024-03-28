@@ -1,8 +1,6 @@
-import {StyledButton} from "../../styled-components/Button.styles.ts";
+import { StyledButton } from "../../styled-components/Button.styles.ts";
 
-
-
-function Button(children: string ) {
+function Button(children: string) {
   return <StyledButton>{children}</StyledButton>;
 }
 

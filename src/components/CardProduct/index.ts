@@ -1,2 +1,2 @@
-export * from './CardProduct.tsx';
-export { default } from './CardProduct.tsx';
+export * from "./CardProduct.tsx";
+export { default } from "./CardProduct.tsx";

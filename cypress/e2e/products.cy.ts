@@ -19,19 +19,18 @@ describe("products", () => {
       "Infelizmente não há produtos para sua busca :(",
     );
 
-    cy.contains('button', 'Voltar para a página inicial').click();
-    cy.url().should('equal', Cypress.config().baseUrl);
-
+    cy.contains("button", "Voltar para a página inicial").click();
+    cy.url().should("equal", Cypress.config().baseUrl);
   });
 
-  it("Should be able to open a single product",()=> {
+  it("Should be able to open a single product", () => {
     cy.get("[id*='-products']").children().eq(2).click();
-
+    cy.wait(200);
     // cy.get("[id*='-name']");
     // cy.get("[id*='-price']");
     // cy.get("[id*='-condition']");
     // cy.get("[id*='-owner']");
     // cy.get("[id*='-description']");
-    cy.contains('button', 'Adicionar ao carrinho').click();
-  })
+    cy.contains("button", "Adicionar ao carrinho").click();
+  });
 });

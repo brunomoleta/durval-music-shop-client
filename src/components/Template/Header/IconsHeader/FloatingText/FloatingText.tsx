@@ -1,10 +1,9 @@
-import { useCartContext } from "../../../../../providers/UserContext";
+import { useCartContext } from "../../../../../providers/hooks";
 import { ICartContext } from "../../../../../types/cart";
 import { Wrapper } from "../../../../../styled-components/FloatingText.style.ts";
 
 function FloatingText() {
   const { cart, prevCounter } = useCartContext() as ICartContext;
-
 
   return (
     <Wrapper $isBigger={cart && prevCounter <= cart.length} key={cart?.length}>

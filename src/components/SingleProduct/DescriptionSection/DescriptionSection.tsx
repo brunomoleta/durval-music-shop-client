@@ -1,14 +1,14 @@
-import { useContext } from "react";
 import {
   SectionDescription,
   H3TitleDescription,
   ParagDescription,
 } from "./styles.ts";
-import { ProductContext } from "../../../providers/UserContext";
+
 import { IFullProductContext } from "../../../types/product";
+import { useProductContext } from "../../../providers/hooks";
 
 const DescriptionSection = () => {
-  const { singleProduct } = useContext(ProductContext) as IFullProductContext;
+  const { singleProduct } = useProductContext() as IFullProductContext;
 
   return (
     <SectionDescription>

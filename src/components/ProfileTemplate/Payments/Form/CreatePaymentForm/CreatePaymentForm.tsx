@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IPaymentContext, IPaymentForm } from "../../../../../types/payment";
 import { IUserContext } from "../../../../../types/user";
-import { usePaymentContext } from "../../../../../providers/UserContext/PaymentProvider.tsx";
-import { useUserContext } from "../../../../../providers/UserContext";
+import { usePaymentContext } from "../../../../../providers/hooks/";
+import { useUserContext } from "../../../../../providers/hooks/";
 import { paymentSchema } from "../../../../../schemas/paymentSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
@@ -31,29 +31,29 @@ function CreatePaymentForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Número do Cartão"
-          error={errors.number}
-          {...register("number")}
-          id="name"
-        />
-        <Select
-          label="Tipo de Cartão"
-          error={errors.type}
-          {...register("type")}
-          id="type"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Selecionar
-          </option>
-          <option value="debit">Débito</option>
-          <option value="credit">Crédito</option>
-        </Select>
+      <Input
+        label="Número do Cartão"
+        error={errors.number}
+        {...register("number")}
+        id="name"
+      />
+      <Select
+        label="Tipo de Cartão"
+        error={errors.type}
+        {...register("type")}
+        id="type"
+        defaultValue=""
+      >
+        <option value="" disabled>
+          Selecionar
+        </option>
+        <option value="debit">Débito</option>
+        <option value="credit">Crédito</option>
+      </Select>
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "CADASTRAR CARTÃO"}
       </SendBtn>
-    </FormUser >
+    </FormUser>
   );
 }
 

@@ -7,8 +7,8 @@ import {
   IAnuncioCard,
   IAnuncioContext,
 } from "../../../../types/anuncios";
-import { useAnuncioContext } from "../../../../providers/UserContext";
- import { useProductContext } from "../../../../providers/UserContext";
+import { useAnuncioContext } from "../../../../providers/hooks";
+import { useProductContext } from "../../../../providers/hooks";
 import { IFullProductContext } from "../../../../types/product";
 import {
   Button,
@@ -19,7 +19,7 @@ import {
 } from "../../../../styled-components/resumeCard.styles.ts";
 import Modal from "../../../Modal";
 import ModalQuit from "../../../Modal/ModalQuit";
-import {priceToString, upper} from "../../../../services/utils.ts";
+import { priceToString, upper } from "../../../../services/utils.ts";
 
 const ViewButton = styled(Link)`
   color: ${colors.purple};

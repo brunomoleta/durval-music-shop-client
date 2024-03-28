@@ -2,9 +2,9 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-import { useAddressContext } from "../../../../../providers/UserContext/AddressProvider.tsx";
+import { useAddressContext } from "../../../../../providers/hooks/";
 import { IAddressContext, IAddressForm } from "../../../../../types/address";
-import { useUserContext } from "../../../../../providers/UserContext";
+import { useUserContext } from "../../../../../providers/hooks/";
 import { IUserContext } from "../../../../../types/user";
 import { addressSchema } from "../../../../../schemas/addressSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
@@ -58,63 +58,61 @@ function EditAddressForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Nome"
-          error={errors.name}
-          {...register("name")}
-          id={"name"}
-        />
-        <Input
-          label="CEP (Apenas números)"
-          error={errors.zip}
-          {...register("zip")}
-          id={"zip"}
-          onBlur={(e) =>
-            e.target.value.length >= 7 && searchZip(e.target.value)
-          }
-        />
-        <Input
-          label="Rua"
-          error={errors.street}
-          {...register("street")}
-          id={"street"}
-        />
-        <Input
-          label="Número"
-          type="number"
-          error={errors.number}
-          {...register("number")}
-          id={"number"}
-        />
-        <Input
-          label="Bairro"
-          error={errors.neihborhood}
-          {...register("neihborhood")}
-          id={"neihborhood"}
-        />
-        <Input
-          label="Cidade"
-          error={errors.city}
-          {...register("city")}
-          id={"city"}
-        />
-        <Input
-          label="Estado"
-          error={errors.state}
-          {...register("state")}
-          id={"state"}
-        />
-        <Input
-          label="Complemento (Opcional)"
-          error={errors.complement}
-          {...register("complement")}
-          id={"complement"}
-        />
+      <Input
+        label="Nome"
+        error={errors.name}
+        {...register("name")}
+        id={"name"}
+      />
+      <Input
+        label="CEP (Apenas números)"
+        error={errors.zip}
+        {...register("zip")}
+        id={"zip"}
+        onBlur={(e) => e.target.value.length >= 7 && searchZip(e.target.value)}
+      />
+      <Input
+        label="Rua"
+        error={errors.street}
+        {...register("street")}
+        id={"street"}
+      />
+      <Input
+        label="Número"
+        type="number"
+        error={errors.number}
+        {...register("number")}
+        id={"number"}
+      />
+      <Input
+        label="Bairro"
+        error={errors.neihborhood}
+        {...register("neihborhood")}
+        id={"neihborhood"}
+      />
+      <Input
+        label="Cidade"
+        error={errors.city}
+        {...register("city")}
+        id={"city"}
+      />
+      <Input
+        label="Estado"
+        error={errors.state}
+        {...register("state")}
+        id={"state"}
+      />
+      <Input
+        label="Complemento (Opcional)"
+        error={errors.complement}
+        {...register("complement")}
+        id={"complement"}
+      />
 
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "EDITAR ENDEREÇO"}
       </SendBtn>
-    </FormUser >
+    </FormUser>
   );
 }
 

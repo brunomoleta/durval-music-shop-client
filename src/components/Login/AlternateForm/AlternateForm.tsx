@@ -1,9 +1,9 @@
 import { colors } from "../../../styled-components/root.ts";
-import { useUserContext } from "../../../providers/UserContext";
 
 import styled from "styled-components";
 import { IUserContext } from "../../../types/user";
-import {QUERIES} from "../../../services/database.ts";
+import { QUERIES } from "../../../services/database.ts";
+import { useUserContext } from "../../../providers/hooks/";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 `;
 
 const Question = styled.h3`

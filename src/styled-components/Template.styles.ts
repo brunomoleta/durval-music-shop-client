@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, fontType, genericValues} from "./root.ts";
+import { colors, fontType, genericValues } from "./root.ts";
 
 export const AppWrapper = styled.div`
   font-family: ${fontType.primary};
@@ -12,9 +12,9 @@ export const MainWrapper = styled.main`
   margin-block: 64px;
   width: 100%;
   max-width: 100svw;
-    
-    display:grid;
-    place-content: center;
+
+  display: grid;
+  place-content: center;
 `;
 export const Wrapper = styled.div`
   width: 100%;

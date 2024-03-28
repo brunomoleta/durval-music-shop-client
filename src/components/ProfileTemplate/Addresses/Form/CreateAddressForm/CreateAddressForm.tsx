@@ -1,5 +1,5 @@
 import { IAddressContext, IAddressForm } from "../../../../../types/address";
-import { useAddressContext } from "../../../../../providers/UserContext/AddressProvider.tsx";
+import { useAddressContext } from "../../../../../providers/hooks/";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addressSchema } from "../../../../../schemas/addressSchema";
@@ -48,60 +48,58 @@ function CreateAddressForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Nome"
-          error={errors.name}
-          {...register("name")}
-          id={"name"}
-        />
-        <Input
-          label="CEP"
-          error={errors.zip}
-          {...register("zip")}
-          id={"zip"}
-          onBlur={(e) =>
-            e.target.value.length >= 7 && searchZip(e.target.value)
-          }
-        />
-        <Input
-          label="Rua"
-          error={errors.street}
-          {...register("street")}
-          id={"street"}
-        />
-        <Input
-          label="Número"
-          type="number"
-          error={errors.number}
-          {...register("number")}
-          id={"number"}
-        />
-        <Input
-          label="Bairro"
-          error={errors.neihborhood}
-          {...register("neihborhood")}
-          id={"neihborhood"}
-        />
-        <Input
-          label="Cidade"
-          error={errors.city}
-          {...register("city")}
-          id={"city"}
-        />
-        <Input
-          label="Estado"
-          error={errors.state}
-          {...register("state")}
-          id={"state"}
-        />
-        <Input
-          label="Complemento (Opcional)"
-          error={errors.complement}
-          {...register("complement")}
-          id={"complement"}
-        />
+      <Input
+        label="Nome"
+        error={errors.name}
+        {...register("name")}
+        id={"name"}
+      />
+      <Input
+        label="CEP"
+        error={errors.zip}
+        {...register("zip")}
+        id={"zip"}
+        onBlur={(e) => e.target.value.length >= 7 && searchZip(e.target.value)}
+      />
+      <Input
+        label="Rua"
+        error={errors.street}
+        {...register("street")}
+        id={"street"}
+      />
+      <Input
+        label="Número"
+        type="number"
+        error={errors.number}
+        {...register("number")}
+        id={"number"}
+      />
+      <Input
+        label="Bairro"
+        error={errors.neihborhood}
+        {...register("neihborhood")}
+        id={"neihborhood"}
+      />
+      <Input
+        label="Cidade"
+        error={errors.city}
+        {...register("city")}
+        id={"city"}
+      />
+      <Input
+        label="Estado"
+        error={errors.state}
+        {...register("state")}
+        id={"state"}
+      />
+      <Input
+        label="Complemento (Opcional)"
+        error={errors.complement}
+        {...register("complement")}
+        id={"complement"}
+      />
       <SendBtn type="submit">CADASTRAR ENDEREÇO</SendBtn>
-    </FormUser >
+    </FormUser>
   );
 }
 

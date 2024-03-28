@@ -1,5 +1,5 @@
 import { CardProductProps, IFullProductContext } from "../../../types/product";
-import { useProductContext } from "../../../providers/UserContext";
+import { useProductContext } from "../../../providers/hooks";
 import { ProductCardButton } from "../../../styled-components/CardProduct.styles.ts";
 
 function ProductButton(props: CardProductProps) {

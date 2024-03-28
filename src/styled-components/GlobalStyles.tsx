@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import {colors} from "./root.ts";
+import { createGlobalStyle } from "styled-components";
+import { colors } from "./root.ts";
 
 const GlobalStyles = createGlobalStyle`
   /* Resets from Josh Cameau */

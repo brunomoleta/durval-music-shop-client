@@ -1,13 +1,11 @@
-import React, { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { IAnuncio, IAnuncioContext, IProductForm } from "../../types/anuncios";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import { useUserContext } from "./UserProvider.tsx";
 import { IUserContext } from "../../types/user";
+import { useUserContext } from "../hooks";
 
 export const AnuncioContext = createContext({});
-
-const useAnuncioContext = () => React.useContext(AnuncioContext);
 
 const AnuncioProvider = (props: { children: ReactNode }) => {
   const [anuncios, setAnuncios] = useState<IAnuncio[]>([]);
@@ -140,4 +138,4 @@ const AnuncioProvider = (props: { children: ReactNode }) => {
   );
 };
 
-export { AnuncioProvider, useAnuncioContext };
+export { AnuncioProvider };

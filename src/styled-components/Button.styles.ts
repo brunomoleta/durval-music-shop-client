@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors, fontSize } from "./root.ts";
-import {QUERIES} from "../services/database.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const DefaultButton = styled.button`
   text-align: start;
@@ -32,19 +32,18 @@ export const MenuButton = styled(DefaultButton)`
   }
 `;
 export const IconButton = styled.button<{ $bgColor?: boolean }>`
-    background-color: ${(props) => props.$bgColor && colors.grey5};
-    padding: clamp(4px, 3svw, 20px);
-    border-radius: 20px;
-    display: grid;
-    place-items: center;
-    height: 80px;
+  background-color: ${(props) => props.$bgColor && colors.grey5};
+  padding: clamp(4px, 3svw, 20px);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  height: 80px;
 
-    box-shadow: 0 5px 16px 1.5px ${colors.grey10};
-    
-    &:hover {
-        outline: 2px solid ${colors.purpleHover};
-    }
+  box-shadow: 0 5px 16px 1.5px ${colors.grey10};
 
+  &:hover {
+    outline: 2px solid ${colors.purpleHover};
+  }
 `;
 export const AddCartButton = styled(IconButton)`
   position: absolute;
@@ -81,13 +80,12 @@ export const InlineButton = styled(DefaultButton)`
 
 export const WarningInlineButton = styled(InlineButton)`
   color: ${colors.red50};
-    font-size: clamp(${fontSize.icons},5dvw,${fontSize.smallLink});
+  font-size: clamp(${fontSize.icons}, 5dvw, ${fontSize.smallLink});
 
   top: 5ex;
   left: 0;
-    
-    position: absolute;
 
+  position: absolute;
 
   &:hover {
     color: ${colors.red80};
@@ -117,16 +115,15 @@ export const StyledButton = styled.button`
   }
 `;
 export const SendBtn = styled(StyledButton)`
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-block: 0;
-    margin-top: 30px;
-    font-weight: 500;
-    font-size: clamp(${fontSize.icons}, 7dvw, ${fontSize.smallLink});
-    
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-block: 0;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: clamp(${fontSize.icons}, 7dvw, ${fontSize.smallLink});
 `;
 
 export const ModalBottonButton = styled(SendBtn)`
@@ -146,26 +143,24 @@ export const ModalBottonButton = styled(SendBtn)`
 `;
 
 export const ModalButton = styled.button`
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: fit-content;
 
-    min-height: 40px;
-    min-width: 40px;
-    border-radius: 4px;
-    padding: 8px;
-    max-width: fit-content;
+  height: fit-content;
 
-    height: fit-content;
+  @media ${QUERIES.tabletAndUp} {
+    position: absolute;
 
-    @media ${QUERIES.tabletAndUp} {
-        position: absolute;
-        
-        top: -60px;
-        right: 0;
-        
-        color: ${colors.black};
-        background-color: ${colors.white000};
-    }
+    top: -60px;
+    right: 0;
+
+    color: ${colors.black};
+    background-color: ${colors.white000};
+  }
 `;
-
 
 export const QuitButton = styled(DefaultButton)`
   color: ${colors.red60};
@@ -212,4 +207,4 @@ export const PasswordButton = styled.button`
   top: 0;
   right: 0;
   z-index: 1;
-`
+`;

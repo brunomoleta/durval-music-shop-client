@@ -16,7 +16,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "react-feather";
 import List from "../../../../assets/ui/List.svg";
-import {IconSpan} from "../IconsHeader";
+import { IconSpan } from "../IconsHeader";
 
 function DropdownMenuHeader() {
   const navigate = useNavigate();
@@ -24,8 +24,7 @@ function DropdownMenuHeader() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <IconButton
-        >
+        <IconButton>
           <ProfileIcon src={List} alt="Categories" />
           <IconSpan>CATEGORIAS</IconSpan>
         </IconButton>

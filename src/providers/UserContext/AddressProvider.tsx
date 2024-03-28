@@ -1,13 +1,12 @@
-import React, { createContext, ReactNode, useState } from "react";
-import { IAddressContext, IAddress, IAddressForm } from "../../types/address";
+import { createContext, ReactNode, useState } from "react";
+import { IAddress, IAddressContext, IAddressForm } from "../../types/address";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import { useUserContext } from "./UserProvider.tsx";
+
 import { IUserContext } from "../../types/user";
+import { useUserContext } from "../hooks";
 
 export const AddressContext = createContext({});
-
-const useAddressContext = () => React.useContext(AddressContext);
 
 const AddressProvider = (props: { children: ReactNode }) => {
   const { setIsLoading } = useUserContext() as IUserContext;
@@ -129,4 +128,4 @@ const AddressProvider = (props: { children: ReactNode }) => {
   );
 };
 
-export { AddressProvider, useAddressContext };
+export { AddressProvider };

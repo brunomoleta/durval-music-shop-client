@@ -1,2 +1,2 @@
-export * from './passwordSchema.ts';
-export { default } from './passwordSchema.ts';
+export * from "./passwordSchema.ts";
+export { default } from "./passwordSchema.ts";

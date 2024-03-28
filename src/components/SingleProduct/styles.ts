@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {genericValues} from "../../styled-components/root.ts";
+import { genericValues } from "../../styled-components/root.ts";
 
 export const Div = styled.div`
   display: flex;

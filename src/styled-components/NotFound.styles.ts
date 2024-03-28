@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {fontSize} from "./root.ts";
+import { fontSize } from "./root.ts";
 
 export const Figure = styled.figure`
   display: grid;

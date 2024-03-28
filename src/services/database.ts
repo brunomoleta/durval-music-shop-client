@@ -156,7 +156,7 @@ export const schemaMessages = {
   email: "Por favor insira um e-mail válido",
   noConfirmation: "Favor confirmar a senha.",
   equalPassword: "As senhas hão de ser identicasíssimas.",
-  minimumPassword: "O tamanho mínimo é de 8 caracteres :)"
-}
+  minimumPassword: "O tamanho mínimo é de 8 caracteres :)",
+};
 
 export const corporationOptions = ["ARQUIVOS", "MÍDIA", "SOBRE NÓS"];

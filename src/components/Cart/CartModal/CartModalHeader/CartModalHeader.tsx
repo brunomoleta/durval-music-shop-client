@@ -1,6 +1,6 @@
 import { DDescription } from "../../../../styled-components/Modal.styles.js";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { useCartContext } from "../../../../providers/UserContext";
+import { useCartContext } from "../../../../providers/hooks";
 import { ICartContext } from "../../../../types/cart";
 
 function CartModalHeader() {

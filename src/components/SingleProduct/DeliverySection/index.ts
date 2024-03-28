@@ -1,2 +1,2 @@
-export * from './DeliverySection.tsx';
-export { default } from './DeliverySection.tsx';
+export * from "./DeliverySection.tsx";
+export { default } from "./DeliverySection.tsx";

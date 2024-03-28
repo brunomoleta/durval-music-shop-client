@@ -1,2 +1,2 @@
-export * from './Footer.js';
-export { default } from './Footer.js';
+export * from "./Footer.js";
+export { default } from "./Footer.js";

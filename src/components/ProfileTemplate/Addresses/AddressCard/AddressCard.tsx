@@ -4,7 +4,7 @@ import {
   IAddressCard,
   IAddressContext,
 } from "../../../../types/address";
-import { useAddressContext } from "../../../../providers/UserContext/AddressProvider.tsx";
+
 import {
   Button,
   Card,
@@ -14,6 +14,7 @@ import {
 } from "../../../../styled-components/resumeCard.styles.ts";
 import Modal from "../../../Modal";
 import ModalQuit from "../../../Modal/ModalQuit";
+import { useAddressContext } from "../../../../providers/hooks";
 
 export function AddressCard(props: IAddressCard) {
   const { address } = props;

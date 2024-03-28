@@ -1,10 +1,7 @@
 import SingleProduct from "../../components/SingleProduct";
 
 const ProductPage = () => {
-  return (
-      <SingleProduct/>
-
-  );
+  return <SingleProduct />;
 };
 
 export default ProductPage;

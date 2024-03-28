@@ -1,17 +1,17 @@
 import IllustrationCard from "./IllustrationCard";
 import styled from "styled-components";
-import {Cards} from "../../../styled-components/Cards.styles.ts";
-import {genericValues} from "../../../styled-components/root.ts";
-import {HomeIllustrations} from "../../../services/database.ts";
-import {H2} from "../../../styled-components/Typography.styles.ts";
+import { Cards } from "../../../styled-components/Cards.styles.ts";
+import { genericValues } from "../../../styled-components/root.ts";
+import { HomeIllustrations } from "../../../services/database.ts";
+import { H2 } from "../../../styled-components/Typography.styles.ts";
 
 const Wrapper = styled.section`
-    margin-block: 40px;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 64px;
-    padding-inline: ${genericValues.pagePadding};
+  margin-block: 40px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 64px;
+  padding-inline: ${genericValues.pagePadding};
 `;
 
 function HomeCards() {

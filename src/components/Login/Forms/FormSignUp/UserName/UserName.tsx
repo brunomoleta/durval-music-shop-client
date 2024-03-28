@@ -2,12 +2,12 @@ import Input from "../../Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
-import { useUserContext } from "../../../../../providers/UserContext";
+import { useUserContext } from "../../../../../providers/hooks/";
 import nameSchema from "../../../../../schemas/nameSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IName } from "../../../../../types/signUp";
 import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 
 function UserName() {
   const { setStep, signUpInfo, setSignUpInfo } =
@@ -49,7 +49,7 @@ function UserName() {
         />
 
         <SendBtn type="submit">AVANÇAR</SendBtn>
-      </FormUser >
+      </FormUser>
     </>
   );
 }

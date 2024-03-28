@@ -1,10 +1,7 @@
 import Catalog from "../../components/Catalog/Catalog";
 
-
 function CatalogPage() {
-  return (
-    <Catalog />
-  );
+  return <Catalog />;
 }
 
 export default CatalogPage;

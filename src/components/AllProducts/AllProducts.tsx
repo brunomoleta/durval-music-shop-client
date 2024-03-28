@@ -1,4 +1,4 @@
-import { useProductContext } from "../../providers/UserContext";
+import { useProductContext } from "../../providers/hooks";
 import { IFullProductContext } from "../../types/product";
 import React from "react";
 import {

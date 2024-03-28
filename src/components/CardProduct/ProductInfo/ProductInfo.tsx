@@ -1,6 +1,4 @@
-import {
-  CardProductProps,
-} from "../../../types/product";
+import { CardProductProps } from "../../../types/product";
 import { ProductGrid } from "../../../styled-components/Cards.styles.ts";
 import {
   Brand,
@@ -8,13 +6,15 @@ import {
   Name,
   Price,
 } from "../../../styled-components/CardProduct.styles.ts";
-import { capitalizedFirstLetter, priceToString } from "../../../services/utils.ts";
+import {
+  capitalizedFirstLetter,
+  priceToString,
+} from "../../../services/utils.ts";
 
 function ProductInfo(props: CardProductProps) {
   const { item } = props;
   const { image, brandName, name, price } = item;
   return (
-
     <ProductGrid>
       <ImageContainer>
         <img src={image} alt={`${name}`} title={name} />

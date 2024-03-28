@@ -13,7 +13,7 @@ import {
   IPaymentCard,
   IPaymentContext,
 } from "../../../../types/payment";
-import { usePaymentContext } from "../../../../providers/UserContext/PaymentProvider.tsx";
+import { usePaymentContext } from "../../../../providers/hooks/";
 
 export function PaymentCard(props: IPaymentCard) {
   const { payment } = props;

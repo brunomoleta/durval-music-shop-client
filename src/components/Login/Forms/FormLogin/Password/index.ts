@@ -1,2 +1,2 @@
-export * from './Password.tsx';
-export { default } from './Password.tsx';
+export * from "./Password.tsx";
+export { default } from "./Password.tsx";

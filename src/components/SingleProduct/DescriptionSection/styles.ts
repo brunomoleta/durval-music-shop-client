@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors, fontSize } from "../../../styled-components/root.ts";
-import {QUERIES} from "../../../services/database.ts";
+import { QUERIES } from "../../../services/database.ts";
 
 export const SectionDescription = styled.section`
   margin: 0 10px 0 10px;

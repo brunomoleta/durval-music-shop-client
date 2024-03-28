@@ -1,2 +1,2 @@
-export * from './IllustrationCard.tsx';
-export { default } from './IllustrationCard.tsx';
+export * from "./IllustrationCard.tsx";
+export { default } from "./IllustrationCard.tsx";

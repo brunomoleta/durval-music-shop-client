@@ -72,7 +72,7 @@ Cypress.Commands.add(
 );
 Cypress.Commands.add(
   "clearAndTypeRightData",
-  (field: string, write: string,) => {
+  (field: string, write: string) => {
     cy.get(`input[name="${field}"]`).clear().type(`${write}{enter}`);
     cy.wait(200);
   },

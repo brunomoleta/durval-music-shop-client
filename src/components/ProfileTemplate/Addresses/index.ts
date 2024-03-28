@@ -1,2 +1,2 @@
-export * from './Addresses.tsx';
-export { default } from './Addresses.tsx';
+export * from "./Addresses.tsx";
+export { default } from "./Addresses.tsx";

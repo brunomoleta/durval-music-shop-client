@@ -47,5 +47,5 @@ export const genericValues = {
   pageWidth: "1640px",
   pagePadding: "clamp(6.5%, 8px, 12%)",
   genericMaxWidth: "100svw",
-  clampFontSize: "clamp(${fontSize.smallLink},5svw, ${fontSize.text})"
+  clampFontSize: "clamp(${fontSize.smallLink},5svw, ${fontSize.text})",
 };

@@ -4,7 +4,6 @@ import {
   DefaultLabel,
   Field,
 } from "../../../../styled-components/Modal.styles.tsx";
-import { useUserContext } from "../../../../providers/UserContext";
 import { Eye, EyeOff } from "react-feather";
 import { IUserContext } from "../../../../types/user";
 import { PasswordButton } from "../../../../styled-components/Button.styles.ts";
@@ -13,6 +12,7 @@ import {
   Span,
   StyledInput,
 } from "../../../../styled-components/Input.styles.ts";
+import { useUserContext } from "../../../../providers/hooks/";
 
 const Input = React.forwardRef(
   (

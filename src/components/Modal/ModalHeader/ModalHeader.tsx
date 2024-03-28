@@ -24,12 +24,12 @@ interface ModalHeaderProps {
 }
 
 const TitleWrapper = styled.div`
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 `;
 
 const Wrapper = styled.div`
-    width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;

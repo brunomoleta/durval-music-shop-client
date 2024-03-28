@@ -1,4 +1,4 @@
-import { useUserContext } from "../../../../../providers/UserContext";
+import { useUserContext } from "../../../../../providers/hooks/";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,8 +9,8 @@ import { colors, fontSize } from "../../../../../styled-components/root.ts";
 import passwordSchema from "../../../../../schemas/passwordSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IPassword } from "../../../../../types/signUp";
-import {SendBtn} from "../../../../../styled-components/Button.styles.ts";
-import {FormUser} from "../../../../../styled-components/Modal.styles.tsx";
+import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
+import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 
 const Ol = styled.ol`
   font-size: ${fontSize.smallLink};
@@ -69,16 +69,15 @@ function Password() {
         />
 
         <SendBtn>AVANÇAR</SendBtn>
-      </FormUser >
+      </FormUser>
       <div>
-
-      <h3> Sua senha deve cumprir os seguintes critérios:</h3>
-      <Ol>
-        <li>8 caracteres ou mais</li>
-        <li>Uma letra Maiúscula</li>
-        <li>Um caracterer especial (ex: #,$,!,*)</li>
-        <li>Um número</li>
-      </Ol>
+        <h3> Sua senha deve cumprir os seguintes critérios:</h3>
+        <Ol>
+          <li>8 caracteres ou mais</li>
+          <li>Uma letra Maiúscula</li>
+          <li>Um caracterer especial (ex: #,$,!,*)</li>
+          <li>Um número</li>
+        </Ol>
       </div>
     </>
   );

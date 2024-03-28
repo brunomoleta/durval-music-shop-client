@@ -1,4 +1,4 @@
-import {vi} from "vitest";
+import { vi } from "vitest";
 
 export const handleButtonClick = vi.fn();
 
@@ -8,4 +8,4 @@ export const useCartContextMock = vi.fn(() => ({
   }),
 }));
 
-vi.mock("../../../providers/UserContext", () => useCartContextMock);
+vi.mock("../../../providers/hooks", () => useCartContextMock);

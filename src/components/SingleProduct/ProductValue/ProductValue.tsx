@@ -10,8 +10,7 @@ function ProductValue({
 }) {
   return (
     <SpanCharacteristic>
-      <span>{characteristic}</span>{" "}
-      {children}
+      <span>{characteristic}</span> {children}
     </SpanCharacteristic>
   );
 }

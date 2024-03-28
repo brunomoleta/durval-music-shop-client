@@ -3,11 +3,7 @@ import { IProductContext } from "../../types/product";
 import { toast } from "react-toastify";
 import { ICart, ICartContext } from "../../types/cart";
 
-// import { toast } from "react-toastify";
-
 export const CartContext = createContext({});
-
-const useCartContext = () => React.useContext(CartContext);
 
 const CartProvider = (props: { children: ReactNode }) => {
   const storedCartString = localStorage.getItem("@cartList");
@@ -88,4 +84,4 @@ const CartProvider = (props: { children: ReactNode }) => {
   );
 };
 
-export { CartProvider, useCartContext };
+export { CartProvider };

@@ -1,6 +1,6 @@
 import Resume from "../../../components/Resume/index.js";
 
-import {Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 import ProfileTemplate from "../../../components/ProfileTemplate/index.js";
 import Addresses from "../../../components/ProfileTemplate/Addresses";
 import Payments from "../../../components/ProfileTemplate/Payments";

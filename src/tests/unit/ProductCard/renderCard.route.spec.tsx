@@ -5,8 +5,8 @@ import { capitalizedFirstLetter } from "../../../services/utils.ts";
 import { render, screen } from "@testing-library/react";
 import { expect, test, describe } from "vitest";
 
+import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "../../../providers/UserContext";
-import {BrowserRouter} from "react-router-dom";
 
 const guitar = products[0];
 const { name, brandName } = guitar;

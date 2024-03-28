@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {colors, fontSize} from "./root.ts";
-import {QUERIES} from "../services/database.ts";
+import { colors, fontSize } from "./root.ts";
+import { QUERIES } from "../services/database.ts";
 
 export const ProductInfo = styled.div`
   display: grid;
@@ -48,11 +48,10 @@ export const RemoveBtn = styled.button`
 `;
 
 export const InfoButtons = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    
-    gap: 16px
-`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
+  gap: 16px;
+`;

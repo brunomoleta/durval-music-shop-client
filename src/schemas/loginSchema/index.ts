@@ -1,2 +1,2 @@
-export * from './loginSchema.ts';
-export { default } from './loginSchema.ts';
+export * from "./loginSchema.ts";
+export { default } from "./loginSchema.ts";

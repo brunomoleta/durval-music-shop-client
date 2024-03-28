@@ -9,12 +9,11 @@ import IconsHeader from "../IconsHeader";
 import HeaderLogo from "../../../HeaderLogo";
 
 function HeaderInfo() {
-
   return (
     <Wrapper>
       <MidWrapper>
         <HeaderWrapper>
-          <HeaderLogo/>
+          <HeaderLogo />
           <InfoWrapper>
             <SearchFormHeader />
             <IconsHeader />

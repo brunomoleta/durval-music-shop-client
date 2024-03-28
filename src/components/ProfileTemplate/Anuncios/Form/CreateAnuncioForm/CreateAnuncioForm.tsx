@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IAnuncioContext, IProductForm } from "../../../../../types/anuncios";
-import { useAnuncioContext } from "../../../../../providers/UserContext/AnuncioProvider.tsx";
-import { useUserContext } from "../../../../../providers/UserContext";
+import { useAnuncioContext } from "../../../../../providers/hooks/";
+import { useUserContext } from "../../../../../providers/hooks/";
 import { IUserContext } from "../../../../../types/user";
 import { anuncioSchema } from "../../../../../schemas/anuncioSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
@@ -41,72 +41,72 @@ function CreateAnuncioForm() {
 
   return (
     <FormUser onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Nome"
-          error={errors.name}
-          {...register("name")}
-          id={`${id}-name`}
-        />
-        <Input
-          label="Descrição"
-          error={errors.description}
-          {...register("description")}
-          id={`${id}-description`}
-        />
-        <Input
-          label="Preço (R$)"
-          type="number"
-          error={errors.price}
-          {...register("price")}
-          id={"price"}
-        />
-        <Input
-          label="Imagem"
-          error={errors.image}
-          {...register("image")}
-          id={`${id}-image`}
-        />
-        <Input
-          label="Estoque"
-          error={errors.stock}
-          {...register("stock")}
-          id={`${id}-stock`}
-        />
-        <Input
-          label="Cor"
-          error={errors.color}
-          {...register("color")}
-          id={`${id}-color`}
-        />
-        <Select
-          label="Condição"
-          error={errors.condition}
-          {...register("condition")}
-          id={`${id}-condition`}
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Selecionar
-          </option>
-          <option value="new">Novo</option>
-          <option value="used">Usado</option>
-        </Select>
-        <Input
-          label="Categorias"
-          error={errors.categories}
-          {...register("categories")}
-          id={`${id}-categories`}
-        />
-        <Input
-          label="Marca"
-          error={errors.brandName}
-          {...register("brandName")}
-          id={`${id}-brandName`}
-        />
+      <Input
+        label="Nome"
+        error={errors.name}
+        {...register("name")}
+        id={`${id}-name`}
+      />
+      <Input
+        label="Descrição"
+        error={errors.description}
+        {...register("description")}
+        id={`${id}-description`}
+      />
+      <Input
+        label="Preço (R$)"
+        type="number"
+        error={errors.price}
+        {...register("price")}
+        id={"price"}
+      />
+      <Input
+        label="Imagem"
+        error={errors.image}
+        {...register("image")}
+        id={`${id}-image`}
+      />
+      <Input
+        label="Estoque"
+        error={errors.stock}
+        {...register("stock")}
+        id={`${id}-stock`}
+      />
+      <Input
+        label="Cor"
+        error={errors.color}
+        {...register("color")}
+        id={`${id}-color`}
+      />
+      <Select
+        label="Condição"
+        error={errors.condition}
+        {...register("condition")}
+        id={`${id}-condition`}
+        defaultValue=""
+      >
+        <option value="" disabled>
+          Selecionar
+        </option>
+        <option value="new">Novo</option>
+        <option value="used">Usado</option>
+      </Select>
+      <Input
+        label="Categorias"
+        error={errors.categories}
+        {...register("categories")}
+        id={`${id}-categories`}
+      />
+      <Input
+        label="Marca"
+        error={errors.brandName}
+        {...register("brandName")}
+        id={`${id}-brandName`}
+      />
       <SendBtn type="submit" disabled={isLoading}>
         {isLoading ? <Loader /> : "CADASTRAR ANÚNCIO"}
       </SendBtn>
-    </FormUser >
+    </FormUser>
   );
 }
 

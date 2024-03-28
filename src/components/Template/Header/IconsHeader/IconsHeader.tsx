@@ -7,10 +7,7 @@ import {
 import Profile from "../../../../assets/ui/profile.svg";
 import Cart from "../../../../assets/ui/Cart.svg";
 import { useNavigate } from "react-router-dom";
-import {
-  useCartContext,
-  useUserContext,
-} from "../../../../providers/UserContext";
+import { useCartContext, useUserContext } from "../../../../providers/hooks";
 
 import { fontSize } from "../../../../styled-components/root.ts";
 import { IconButton } from "../../../../styled-components/Button.styles.ts";
@@ -22,8 +19,8 @@ import FloatingText from "./FloatingText";
 import DropdownMenuHeader from "../DropdownMenu";
 
 export const IconSpan = styled.span`
-    font-size: clamp(0.25rem, 3svw, ${fontSize.icons});
-    font-weight: 500;
+  font-size: clamp(0.25rem, 3svw, ${fontSize.icons});
+  font-weight: 500;
 `;
 
 function IconsHeader() {
@@ -48,9 +45,7 @@ function IconsHeader() {
         <IconSpan>CONTA</IconSpan>
       </IconButton>
       <CartWrapper>
-        <IconButton
-          onClick={() => setIsCartModalOpen(!isCartModalOpen)}
-        >
+        <IconButton onClick={() => setIsCartModalOpen(!isCartModalOpen)}>
           <ProfileIcon src={Cart} alt="Carrinho" />
           <IconSpan>CARRINHO</IconSpan>
           <FloatingText />

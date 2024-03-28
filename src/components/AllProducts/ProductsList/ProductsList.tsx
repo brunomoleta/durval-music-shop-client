@@ -2,15 +2,13 @@ import { ProductCards } from "../../../styled-components/Cards.styles.ts";
 import Loader from "../../Loader";
 import { IProductContext } from "../../../types/product";
 import CardProduct from "../../CardProduct";
-import {
-  useUserContext,
-} from "../../../providers/UserContext";
 import { IUserContext } from "../../../types/user";
 import React from "react";
+import { useUserContext } from "../../../providers/hooks/";
 
 function ProductsList({ products }: { products: IProductContext[] }) {
   const { isLoading } = useUserContext() as IUserContext;
-  const id = React.useId()
+  const id = React.useId();
   return (
     <ProductCards id={`${id}-products`}>
       {isLoading ? (
