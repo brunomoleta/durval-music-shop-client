@@ -13,7 +13,7 @@ type IAllProducts = {
 };
 
 function AllProducts(props: IAllProducts) {
-  const { getAllProducts, page, allProducts } =
+  const { getAllProducts, page, allProducts, singleProduct } =
     useProductContext() as IFullProductContext;
 
   React.useEffect((): void => {
@@ -23,7 +23,13 @@ function AllProducts(props: IAllProducts) {
   return (
     <Wrapper>
       <Heading>{props.heading}</Heading>
-      {allProducts && <RenderProducts products={allProducts} />}
+      {allProducts && (
+        <RenderProducts
+          products={allProducts.filter(
+            (product) => product.id !== singleProduct?.id,
+          )}
+        />
+      )}
     </Wrapper>
   );
 }
