@@ -56,8 +56,8 @@ export interface IFullProductContext {
   allProducts: IProductContext[] | null;
   setAllProducts: React.Dispatch<React.SetStateAction<IProductContext[]>>;
 
-  singleProduct: IProductContext;
-  setSingleProduct: React.Dispatch<React.SetStateAction<IProductContext>>;
+  singleProduct: IProductContext | null;
+  setSingleProduct: React.Dispatch<React.SetStateAction<IProductContext | null>>;
 
   productsPage: productsPage;
 
@@ -66,11 +66,9 @@ export interface IFullProductContext {
 
   getProductsByCategory: (
     categoryId: string,
-    url?: string | null,
   ) => Promise<IProductsPage>;
   getProductsByBrand: (
     brandName: string,
-    url?: string | null,
   ) => Promise<IProductsPage>;
   searchProduct: (productInfo: string) => Promise<void>;
 

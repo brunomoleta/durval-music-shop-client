@@ -6,7 +6,7 @@ import {
   IProductContext,
 } from "../../types/product";
 import { IUserContext } from "../../types/user";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useUserContext } from "../hooks";
 
 export const ProductContext = createContext({});
@@ -16,13 +16,17 @@ const ProductProvider = (props: { children: ReactNode }) => {
   const { setIsLoading } = useUserContext() as IUserContext;
 
   const [allProducts, setAllProducts] = useState<IProductContext[]>([]);
-  const [singleProduct, setSingleProduct] = useState(allProducts[0]);
+  const [singleProduct, setSingleProduct] = useState<IProductContext | null>(
+    null,
+  );
   const [productsPage, setProductsPage] = useState({
     prevPage: "",
     nextPage: "",
   });
   const [searchValue, setSearchValue] = React.useState("");
   const [page, setPage] = useState(1);
+
+  const { categoryName } = useParams();
 
   const getAllProducts = async (page: number, perPage: number) => {
     try {
@@ -41,12 +45,13 @@ const ProductProvider = (props: { children: ReactNode }) => {
     }
   };
 
-  const getProductsByCategory = async (categoryName: string) => {
+  const getProductsByCategory = async () => {
     try {
       setIsLoading(true);
       const { data } = await api.get(`products/category/${categoryName}`);
       const { products, prevPage, nextPage }: IGetProductsByCategoryResponse =
         data;
+      console.log(data)
       setAllProducts(products);
       return { prevPage, nextPage };
     } finally {
@@ -106,6 +111,7 @@ const ProductProvider = (props: { children: ReactNode }) => {
   const returnHome = () => {
     setSearchValue("");
     navigate("/");
+    setSingleProduct(null);
   };
 
   const values: IFullProductContext = {
