@@ -28,7 +28,7 @@ describe("user login", () => {
     cy.get("div.Toastify__toast--error");
   });
 
-  it.only("Should be able to navigate the dialog fully", () => {
+  it("Should be able to navigate the dialog fully", () => {
     cy.typeInputData("firstName", this.fail.firstName);
     cy.typeInputData("lastName", this.fail.lastName);
     cy.hasErrorMessage(this.messages.firstName);
