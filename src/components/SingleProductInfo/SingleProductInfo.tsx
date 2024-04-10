@@ -8,7 +8,7 @@ import ProductValues from "../SingleProduct/ProductValues";
 import { IFullProductContext } from "../../types/product";
 import RenderProduct from "../SingleProduct/RenderProduct";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useCartContext, useProductContext } from "../../providers/hooks";
 import { SendBtn } from "../../styled-components/Button.styles.ts";
 import { ICartContext } from "../../types/cart";
@@ -23,6 +23,7 @@ function SingleProductInfo() {
     getProductById(Number(id));
   }, []);
 
+  const pId = React.useId();
   return (
     <>
       <RenderProduct>
@@ -31,7 +32,7 @@ function SingleProductInfo() {
             <SpanCategory key={nanoid()}>{category}</SpanCategory>
           ))}
         </DivCategories>
-        <H3NameProduct>{singleProduct?.name}</H3NameProduct>
+        <H3NameProduct id={`${pId}-nome`}>{singleProduct?.name}</H3NameProduct>
         {singleProduct && <ProductValues product={singleProduct} />}
       </RenderProduct>
       <SendBtn onClick={() => addProductInCart(singleProduct)}>
