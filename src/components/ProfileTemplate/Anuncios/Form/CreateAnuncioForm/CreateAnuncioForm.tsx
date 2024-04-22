@@ -1,16 +1,18 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IAnuncioContext, IProductForm } from "../../../../../types/anuncios";
-import { useAnuncioContext } from "../../../../../providers/hooks/";
-import { useUserContext } from "../../../../../providers/hooks/";
+import {
+  useAnuncioContext,
+  useUserContext,
+} from "../../../../../providers/hooks/";
 import { IUserContext } from "../../../../../types/user";
 import { anuncioSchema } from "../../../../../schemas/anuncioSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
 import React from "react";
+import Button from "../../../../Button";
 
 function CreateAnuncioForm() {
   const { createAnuncioRequest } = useAnuncioContext() as IAnuncioContext;
@@ -103,9 +105,9 @@ function CreateAnuncioForm() {
         {...register("brandName")}
         id={`${id}-brandName`}
       />
-      <SendBtn type="submit" disabled={isLoading}>
+      <Button disabled={isLoading}>
         {isLoading ? <Loader /> : "CADASTRAR ANÚNCIO"}
-      </SendBtn>
+      </Button>
     </FormUser>
   );
 }

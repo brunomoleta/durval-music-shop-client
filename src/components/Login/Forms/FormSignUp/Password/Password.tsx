@@ -9,8 +9,8 @@ import { colors, fontSize } from "../../../../../styled-components/root.ts";
 import passwordSchema from "../../../../../schemas/passwordSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IPassword } from "../../../../../types/signUp";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
+import Button from "../../../../Button";
 
 const Ol = styled.ol`
   font-size: ${fontSize.smallLink};
@@ -68,7 +68,7 @@ function Password() {
           id={confirmPasswordId}
         />
 
-        <SendBtn>AVANÇAR</SendBtn>
+        <Button>AVANÇAR</Button>
       </FormUser>
       <div>
         <h3> Sua senha deve cumprir os seguintes critérios:</h3>

@@ -3,11 +3,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "../../Input";
 import { IUserContext } from "../../../../../types/user";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
 import { simplePasswordSchema } from "../../../../../schemas/passwordSchema/simplePasswordSchema.ts";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import { useUserContext } from "../../../../../providers/hooks/";
+import Button from "../../../../Button";
 
 function Password() {
   const {
@@ -47,7 +47,7 @@ function Password() {
         id={passwordId}
       />
 
-      <SendBtn disabled={isLoading}>{isLoading ? <Loader /> : "LOGIN"}</SendBtn>
+      <Button disabled={isLoading}>{isLoading ? <Loader /> : "LOGIN"}</Button>
     </FormUser>
   );
 }

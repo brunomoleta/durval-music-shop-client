@@ -8,13 +8,13 @@ import React from "react";
 import { useProductContext } from "../../../../providers/hooks";
 import { IFullProductContext } from "../../../../types/product";
 import { useNavigate } from "react-router-dom";
-import { SendBtn } from "../../../../styled-components/Button.styles.ts";
 import { FormUser } from "../../../../styled-components/Modal.styles.tsx";
+import Button from "../../../Button";
 
 function SearchFormHeader() {
   const id = React.useId();
   const navigate = useNavigate();
-
+  const inputId = `${id}-searchInput`
   const { searchProduct, searchValue, setSearchValue } =
     useProductContext() as IFullProductContext;
 
@@ -33,15 +33,15 @@ function SearchFormHeader() {
           handleSubmit();
         }}
       >
-        <Label htmlFor={`${id}-search`}>BUSCAR:</Label>
+        <Label htmlFor={inputId}>BUSCAR:</Label>
         <SearchBar
-          id={`${id}-search`}
+          id={inputId}
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
           name={`${id}-search`}
         />
-        <SendBtn
-          type="submit"
+        <Button
+          id={`${id}-searchButton`}
           style={{
             marginTop: "0",
             height: "90%",
@@ -53,7 +53,7 @@ function SearchFormHeader() {
           onClick={() => handleSubmit()}
         >
           <Search />
-        </SendBtn>
+        </Button>
       </FormUser>
     </SearchWrapper>
   );

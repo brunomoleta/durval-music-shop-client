@@ -11,7 +11,7 @@ import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
 import Loader from "../../../../Loader";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
+import Button from "../../../../Button";
 
 function EditAnuncioForm() {
   const { editAnuncio, editingAnuncio } =
@@ -110,9 +110,9 @@ function EditAnuncioForm() {
         {...register("brandName")}
         id={".brandName"}
       />
-      <SendBtn type="submit" disabled={isLoading}>
+      <Button disabled={isLoading}>
         {isLoading ? <Loader /> : "SALVAR EDIÇÃO"}
-      </SendBtn>
+      </Button>
     </FormUser>
   );
 }

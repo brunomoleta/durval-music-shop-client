@@ -2,14 +2,16 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IPaymentContext, IPaymentForm } from "../../../../../types/payment";
 import { IUserContext } from "../../../../../types/user";
-import { usePaymentContext } from "../../../../../providers/hooks/";
-import { useUserContext } from "../../../../../providers/hooks/";
+import {
+  usePaymentContext,
+  useUserContext,
+} from "../../../../../providers/hooks/";
 import { paymentSchema } from "../../../../../schemas/paymentSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
 import Select from "../../../../Select";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
+import Button from "../../../../Button";
 
 function CreatePaymentForm() {
   const { createPaymentRequest } = usePaymentContext() as IPaymentContext;
@@ -50,9 +52,9 @@ function CreatePaymentForm() {
         <option value="debit">Débito</option>
         <option value="credit">Crédito</option>
       </Select>
-      <SendBtn type="submit" disabled={isLoading}>
+      <Button disabled={isLoading}>
         {isLoading ? <Loader /> : "CADASTRAR CARTÃO"}
-      </SendBtn>
+      </Button>
     </FormUser>
   );
 }

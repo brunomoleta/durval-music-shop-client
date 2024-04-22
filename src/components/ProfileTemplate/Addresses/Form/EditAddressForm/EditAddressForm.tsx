@@ -9,8 +9,8 @@ import { IUserContext } from "../../../../../types/user";
 import { addressSchema } from "../../../../../schemas/addressSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../../../Login/Forms/Input";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
+import Button from "../../../../Button";
 
 function EditAddressForm() {
   const { editAddress, editingAddress } =
@@ -109,9 +109,9 @@ function EditAddressForm() {
         id={"complement"}
       />
 
-      <SendBtn type="submit" disabled={isLoading}>
+      <Button disabled={isLoading}>
         {isLoading ? <Loader /> : "EDITAR ENDEREÇO"}
-      </SendBtn>
+      </Button>
     </FormUser>
   );
 }

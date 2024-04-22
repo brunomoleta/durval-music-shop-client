@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import Loader from "../../../../Loader";
 import Select from "../../../../Select";
 import Input from "../../../../Login/Forms/Input";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import { IPaymentContext, IPaymentForm } from "../../../../../types/payment";
-import { useUserContext } from "../../../../../providers/hooks/";
-import { usePaymentContext } from "../../../../../providers/hooks/";
+import {
+  usePaymentContext,
+  useUserContext,
+} from "../../../../../providers/hooks/";
 import { IUserContext } from "../../../../../types/user";
 import { paymentSchema } from "../../../../../schemas/paymentSchema";
+import Button from "../../../../Button";
 
 function EditPaymentForm() {
   const { editPayment, editingPayment } =
@@ -52,9 +54,9 @@ function EditPaymentForm() {
         <option value="debit">Débito</option>
         <option value="credit">Crédito</option>
       </Select>
-      <SendBtn type="submit" disabled={isLoading}>
+      <Button disabled={isLoading}>
         {isLoading ? <Loader /> : "EDITAR CARTÃO"}
-      </SendBtn>{" "}
+      </Button>{" "}
     </FormUser>
   );
 }

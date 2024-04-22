@@ -7,7 +7,7 @@ import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
 import Input from "../../Input";
 import { IUserContext } from "../../../../../types/user";
 import { IEmail } from "../../../../../types/signUp";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
+import Button from "../../../../Button";
 
 function Email() {
   const { setStep, signUpInfo, setSignUpInfo } =
@@ -39,7 +39,7 @@ function Email() {
           id={emailId}
         />
 
-        <SendBtn>AVANÇAR</SendBtn>
+        <Button>AVANÇAR</Button>
       </FormUser>
     </>
   );

@@ -1,4 +1,3 @@
-import { SendBtn } from "../../styled-components/Button.styles.ts";
 import { CardSubTitle, H1 } from "../../styled-components/Typography.styles.ts";
 import { useCartContext, useProductContext } from "../../providers/hooks";
 import { ICartContext } from "../../types/cart";
@@ -6,6 +5,7 @@ import React from "react";
 import { NoProductFoundProps } from "../../types/types";
 import styled from "styled-components";
 import { IFullProductContext } from "../../types/product";
+import Button from "../Button";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -29,9 +29,9 @@ const NoProductFound: React.FC<NoProductFoundProps> = ({
       <H1>{message}</H1>
       <CardSubTitle>{subTitle}</CardSubTitle>
       {isButton ? (
-        <SendBtn onClick={() => setIsCartModalOpen(!isCartModalOpen)}>
+        <Button isForm={false} onClick={() => setIsCartModalOpen(!isCartModalOpen)}>
           Ir às compras :)
-        </SendBtn>
+        </Button>
       ) : (
         <button onClick={returnHome} style={{ textDecoration: "underline" }}>
           Voltar para a página inicial

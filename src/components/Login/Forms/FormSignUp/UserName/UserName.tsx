@@ -6,8 +6,8 @@ import { useUserContext } from "../../../../../providers/hooks/";
 import nameSchema from "../../../../../schemas/nameSchema";
 import { IUserContext } from "../../../../../types/user";
 import { IName } from "../../../../../types/signUp";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
+import Button from "../../../../Button";
 
 function UserName() {
   const { setStep, signUpInfo, setSignUpInfo } =
@@ -48,7 +48,7 @@ function UserName() {
           id={lastNameId}
         />
 
-        <SendBtn type="submit">AVANÇAR</SendBtn>
+        <Button>AVANÇAR</Button>
       </FormUser>
     </>
   );

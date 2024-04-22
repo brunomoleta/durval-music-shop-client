@@ -2,8 +2,8 @@ import Money from "../../../assets/illustrations/Nothing-in-Cart.svg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { fontSize } from "../../../styled-components/root.ts";
-import { SendBtn } from "../../../styled-components/Button.styles.ts";
 import { QUERIES } from "../../../services/database.ts";
+import Button from "../../Button";
 
 const H1 = styled.h1`
   width: 100%;
@@ -26,7 +26,7 @@ function Orders() {
     <Section>
       <H1>Por enquanto não há pedidos</H1>
       <img src={Money} alt="" />
-      <SendBtn onClick={() => navigate("/")}>Quero comprar :)</SendBtn>
+      <Button onClick={() => navigate("/")}>Quero comprar :)</Button>
     </Section>
   );
 }

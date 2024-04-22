@@ -7,9 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import Input from "../../Input";
 import { IUserContext } from "../../../../../types/user";
-import { SendBtn } from "../../../../../styled-components/Button.styles.ts";
 import emailSchema from "../../../../../schemas/emailSchema";
 import { FormUser } from "../../../../../styled-components/Modal.styles.tsx";
+import Button from "../../../../Button";
 
 function Email() {
   const { loginInfo, setLoginInfo, setStepLogin } =
@@ -40,7 +40,7 @@ function Email() {
         {...register("email")}
         id={emailId}
       />
-      <SendBtn type="submit">AVANÇAR</SendBtn>
+      <Button>AVANÇAR</Button>
     </FormUser>
   );
 }

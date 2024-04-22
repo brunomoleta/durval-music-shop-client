@@ -2,11 +2,7 @@ import { useUserContext } from "../../../../../providers/hooks/";
 
 import { Eye, EyeOff } from "react-feather";
 import { IUserContext } from "../../../../../types/user";
-import {
-  InlineButton,
-  SendBtn,
-} from "../../../../../styled-components/Button.styles.ts";
-import React from "react";
+import { InlineButton } from "../../../../../styled-components/Button.styles.ts";
 import { H3 } from "../../../../../styled-components/Typography.styles.ts";
 import { colors } from "../../../../../styled-components/root.ts";
 import Loader from "../../../../Loader";
@@ -15,6 +11,7 @@ import {
   Title,
   Wrapper,
 } from "../../../../../styled-components/FormCreation.styles.ts";
+import Button from "../../../../Button";
 
 function Confirmation() {
   const {
@@ -33,15 +30,6 @@ function Confirmation() {
     setSignUpInfo({});
   }
 
-  const sendBtnRef = React.useRef<HTMLButtonElement>(null);
-
-  React.useEffect(() => {
-    setIsPasswordVisible(false);
-    if (sendBtnRef && sendBtnRef.current) {
-      // Call the focus method
-      sendBtnRef.current.focus();
-    }
-  }, []);
   return (
     <>
       <Wrapper>
@@ -77,9 +65,9 @@ function Confirmation() {
         <div
           style={{ display: "flex", flexFlow: "column", alignItems: "center" }}
         >
-          <SendBtn onClick={submit} ref={sendBtnRef} disabled={isLoading}>
+          <Button isForm={false} onClick={submit} disabled={isLoading}>
             {isLoading ? <Loader /> : "ENVIAR"}
-          </SendBtn>
+          </Button>
           <InlineButton
             style={{
               width: "fit-content",
