@@ -4,6 +4,31 @@ import styled from "styled-components";
 import { IUserContext } from "../../../types/user";
 import { QUERIES } from "../../../services/database.ts";
 import { useUserContext } from "../../../providers/hooks/";
+import React from "react";
+
+function AlternateForm(question: string, buttonText: string) {
+  const { cleanUpRequests } = useUserContext() as IUserContext;
+    const id = React.useId()
+  return (
+    <Wrapper>
+      <Question>{question}</Question>
+      <button
+        id={`${id}-switch-form`}
+        onClick={() => {
+          cleanUpRequests();
+        }}
+        style={{
+          textDecoration: "underline",
+          backgroundColor: "inherit",
+          color: colors.purple,
+          fontWeight: 500,
+        }}
+      >
+        {buttonText}
+      </button>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,27 +45,5 @@ const Question = styled.h3`
   }
 `;
 
-function AlternateForm(question: string, buttonText: string) {
-  const { cleanUpRequests } = useUserContext() as IUserContext;
-
-  return (
-    <Wrapper>
-      <Question>{question}</Question>
-      <button
-        onClick={() => {
-          cleanUpRequests();
-        }}
-        style={{
-          textDecoration: "underline",
-          backgroundColor: "inherit",
-          color: colors.purple,
-          fontWeight: 500,
-        }}
-      >
-        {buttonText}
-      </button>
-    </Wrapper>
-  );
-}
 
 export default AlternateForm;

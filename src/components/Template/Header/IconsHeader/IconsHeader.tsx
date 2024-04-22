@@ -17,6 +17,7 @@ import { ICartContext } from "../../../../types/cart";
 import styled from "styled-components";
 import FloatingText from "./FloatingText";
 import DropdownMenuHeader from "../DropdownMenu";
+import React from "react";
 
 export const IconSpan = styled.span`
   font-size: clamp(0.25rem, 3svw, ${fontSize.icons});
@@ -29,12 +30,15 @@ function IconsHeader() {
   const { token, setIsLogOpen, isLogOpen } = useUserContext() as IUserContext;
   const { setIsCartModalOpen, isCartModalOpen, cart } =
     useCartContext() as ICartContext;
-
+  const id = React.useId()  
+  
+  
   return (
     <IconsWrapper>
       <DropdownMenuHeader />
 
       <IconButton
+        id={`${id}-account`}
         onClick={() =>
           token && token.length > 0
             ? navigate("/resumo")
