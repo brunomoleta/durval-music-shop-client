@@ -1,4 +1,4 @@
-describe("user login", () => {
+describe("Feat: user login", () => {
   beforeEach(() => {
     cy.fixture("schemaMessages").then((messages) => {
       this.messages = messages;
@@ -11,7 +11,7 @@ describe("user login", () => {
     });
     cy.visit("");
     cy.wait(1000);
-    cy.contains("button", "CONTA").click();
+    cy.get('[id*="account"]').click();
   });
 
   it("should be able to make the user's login successfully", () => {
@@ -21,7 +21,7 @@ describe("user login", () => {
     cy.notExist("dialog");
     cy.get("div.Toastify__toast--success");
 
-    cy.contains("button", "CONTA").click();
+    cy.get('[id*="account"]').click();
     cy.notExist("input[name=email]");
   });
 
@@ -44,7 +44,7 @@ describe("user login", () => {
     cy.get("div.Toastify__toast--error");
     cy.notExist("dialog");
 
-    cy.contains("button", "CONTA").click();
+    cy.get('[id*="account"]').click();
     cy.get('input[name="email"]');
   });
 });

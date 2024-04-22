@@ -1,5 +1,7 @@
-describe("user login", () => {
-  const buttonStrings = [/conta/i, /cadastrar/i, /enviar/i];
+
+
+describe("Feat: user login unsuccesful", () => {
+  const buttonStrings = [/conta/i, /cadastrar/i, /enviar/i, /avançar/i];
 
   beforeEach(() => {
     cy.fixture("userFail").then((fail) => {
@@ -12,9 +14,9 @@ describe("user login", () => {
       this.success = success;
     });
     cy.visit("");
-    cy.contains("button", buttonStrings[0]).click();
+    cy.get('[id*="account"]').click();
     cy.wait(200);
-    cy.contains("button", buttonStrings[1]).click();
+    cy.get('[id*="switch-form"]').click();
   });
 
   it("Should not be able to create a user successfully as the email already exists.", () => {
