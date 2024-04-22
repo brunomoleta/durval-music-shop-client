@@ -10,7 +10,7 @@ import { UserProvider } from "../../../providers/UserContext";
 
 const guitar = products[0];
 const { name, brandName } = guitar;
-describe("Render ProductCard", () => {
+describe("Feat: Render ProductCard", () => {
   test("Should render product card, including info and image and button", () => {
     render(
       <BrowserRouter>

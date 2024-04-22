@@ -5,7 +5,7 @@ import CartButton from "../../../components/Cart/CartButton";
 import { handleButtonClick } from "../../mocks/ProductCard/handleButtonClick.route.mock.ts";
 import { products } from "../../mocks/ProductCard/renderProduct.route.mock.ts";
 
-describe("Fire ProductCard button", () => {
+describe("Feat: Fire ProductCard button", () => {
   test("Card button should fire a click event.", () => {
     render(<CartButton item={products[0]} onClick={handleButtonClick} />);
     const addToCartBtn = screen.getByTitle("adicionar ao carrinho");

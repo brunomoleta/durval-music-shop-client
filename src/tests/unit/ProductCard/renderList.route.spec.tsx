@@ -5,7 +5,7 @@ import { describe, expect } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import ProductsList from "../../../components/AllProducts/ProductsList";
 
-describe("List of Product Cards", () => {
+describe("Feat: List of Product Cards", () => {
   render(
     <BrowserRouter>
       <ProductsList products={products} />
