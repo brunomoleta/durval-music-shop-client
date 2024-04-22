@@ -9,16 +9,12 @@ function ProductValues({ product }: { product: IProductContext }) {
   const { price, color, condition, stock, owner } = product;
   return (
     <>
-      <ProductValue characteristic="preço">
-        {priceToString(price)}
-      </ProductValue>
+      <ProductValue characteristic="preço">{priceToString(price)}</ProductValue>
       {color && <ProductValue characteristic="cor">{color}</ProductValue>}
       <ProductValue characteristic="condição">
         {condition == "new" ? "Novo" : "Usado"}
       </ProductValue>
-      <ProductValue characteristic="unidades disponíveis">
-        {stock}
-      </ProductValue>
+      <ProductValue characteristic="unidades disponíveis">{stock}</ProductValue>
       <ProductValue characteristic="vendedor">{owner.name}</ProductValue>
     </>
   );

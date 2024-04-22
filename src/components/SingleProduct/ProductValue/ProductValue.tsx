@@ -1,6 +1,6 @@
 import React from "react";
 import { SpanCharacteristic } from "../ProductSection/styles.ts";
-import {upper} from "../../../services/utils.ts";
+import { upper } from "../../../services/utils.ts";
 
 function ProductValue({
   children,

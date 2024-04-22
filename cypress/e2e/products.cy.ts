@@ -3,9 +3,9 @@ describe("Feat: products", () => {
     cy.visit("");
     cy.wait(3000);
   });
-  afterEach(()=>{
-    cy.screenshot()
-  })
+  afterEach(() => {
+    cy.screenshot();
+  });
 
   it("Should be able to search and find a product using the word 'guitar'", () => {
     cy.get("[id*='-searchInput']").type("guitar{enter}");
@@ -15,7 +15,9 @@ describe("Feat: products", () => {
     cy.get('a[href^="/products/"]');
   });
   it("Should render an error message if no products are found.", () => {
-    cy.get("[id*='-searchInput']").type("chuteira total 90 do Ronaldinho{enter}");
+    cy.get("[id*='-searchInput']").type(
+      "chuteira total 90 do Ronaldinho{enter}",
+    );
     cy.get("h1").should(
       "have.text",
       "Infelizmente não há produtos para sua busca :(",

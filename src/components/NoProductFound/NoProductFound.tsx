@@ -29,7 +29,10 @@ const NoProductFound: React.FC<NoProductFoundProps> = ({
       <H1>{message}</H1>
       <CardSubTitle>{subTitle}</CardSubTitle>
       {isButton ? (
-        <Button isForm={false} onClick={() => setIsCartModalOpen(!isCartModalOpen)}>
+        <Button
+          isForm={false}
+          onClick={() => setIsCartModalOpen(!isCartModalOpen)}
+        >
           Ir às compras :)
         </Button>
       ) : (

@@ -8,7 +8,7 @@ import React from "react";
 
 function AlternateForm(question: string, buttonText: string) {
   const { cleanUpRequests } = useUserContext() as IUserContext;
-    const id = React.useId()
+  const id = React.useId();
   return (
     <Wrapper>
       <Question>{question}</Question>
@@ -44,6 +44,5 @@ const Question = styled.h3`
     text-align: center;
   }
 `;
-
 
 export default AlternateForm;

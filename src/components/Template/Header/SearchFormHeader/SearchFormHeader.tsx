@@ -14,7 +14,7 @@ import Button from "../../../Button";
 function SearchFormHeader() {
   const id = React.useId();
   const navigate = useNavigate();
-  const inputId = `${id}-searchInput`
+  const inputId = `${id}-searchInput`;
   const { searchProduct, searchValue, setSearchValue } =
     useProductContext() as IFullProductContext;
 

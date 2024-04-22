@@ -51,7 +51,7 @@ const ProductProvider = (props: { children: ReactNode }) => {
       const { data } = await api.get(`products/category/${categoryName}`);
       const { products, prevPage, nextPage }: IGetProductsByCategoryResponse =
         data;
-      console.log(data)
+      console.log(data);
       setAllProducts(products);
       return { prevPage, nextPage };
     } finally {

@@ -57,19 +57,17 @@ export interface IFullProductContext {
   setAllProducts: React.Dispatch<React.SetStateAction<IProductContext[]>>;
 
   singleProduct: IProductContext | null;
-  setSingleProduct: React.Dispatch<React.SetStateAction<IProductContext | null>>;
+  setSingleProduct: React.Dispatch<
+    React.SetStateAction<IProductContext | null>
+  >;
 
   productsPage: productsPage;
 
   getProductById: (id: number) => Promise<IProductContext>;
   getSingleProduct: (id: number) => Promise<void>;
 
-  getProductsByCategory: (
-    categoryId: string,
-  ) => Promise<IProductsPage>;
-  getProductsByBrand: (
-    brandName: string,
-  ) => Promise<IProductsPage>;
+  getProductsByCategory: (categoryId: string) => Promise<IProductsPage>;
+  getProductsByBrand: (brandName: string) => Promise<IProductsPage>;
   searchProduct: (productInfo: string) => Promise<void>;
 
   getAllProducts: (page: number, perPage: number) => Promise<IProductsPage>;

@@ -1,5 +1,3 @@
-
-
 describe("Feat: user login unsuccesful", () => {
   const buttonStrings = [/conta/i, /cadastrar/i, /enviar/i, /avançar/i];
 

@@ -30,9 +30,8 @@ function IconsHeader() {
   const { token, setIsLogOpen, isLogOpen } = useUserContext() as IUserContext;
   const { setIsCartModalOpen, isCartModalOpen, cart } =
     useCartContext() as ICartContext;
-  const id = React.useId()  
-  
-  
+  const id = React.useId();
+
   return (
     <IconsWrapper>
       <DropdownMenuHeader />
