@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-describe("Feat: user login unsuccesful", () => {
+describe("Feat: Register user succesfully", () => {
   beforeEach(() => {
     cy.visit("");
 

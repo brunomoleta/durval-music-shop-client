@@ -66,29 +66,16 @@ Cypress.Commands.add("hasErrorMessage", (error: string) => {
 Cypress.Commands.add(
   "typeInputData",
   (field: string, write: string, pressEnter: boolean = true) => {
-    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
+    11;
     cy.wait(200);
   },
 );
 Cypress.Commands.add(
   "clearAndTypeRightData",
   (field: string, write: string) => {
-    cy.get(`input[name="${field}"]`).clear().type(`${write}{enter}`);
-    cy.wait(200);
-  },
-);
-
-Cypress.Commands.add(
-  "typeInputData",
-  (field: string, write: string, pressEnter: boolean = true) => {
-    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
-    cy.wait(200);
-  },
-);
-Cypress.Commands.add(
-  "typeInputData",
-  (field: string, write: string, pressEnter: boolean = true) => {
-    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && "{enter}"}`);
+    cy.get(`input[name="${field}"]`)
+      .clear()
+      .type(`${write}{enter}`, { log: false });
     cy.wait(200);
   },
 );

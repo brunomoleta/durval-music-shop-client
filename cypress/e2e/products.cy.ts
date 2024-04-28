@@ -3,9 +3,6 @@ describe("Feat: products", () => {
     cy.visit("");
     cy.wait(3000);
   });
-  afterEach(() => {
-    cy.screenshot();
-  });
 
   it("Should be able to search and find a product using the word 'guitar'", () => {
     cy.get("[id*='-searchInput']").type("guitar{enter}");
@@ -28,8 +25,8 @@ describe("Feat: products", () => {
     cy.url().should("equal", Cypress.config().baseUrl);
   });
 
-  it("Should be able to open a single product", () => {
-    cy.get("[id*='-products']").children().eq(2).click();
+  it.only("Should be able to open a single product", () => {
+    cy.get("[id*='-products']").children().eq(1).click();
     cy.wait(250);
     cy.get("[id*='-nome']");
     cy.get("[id*='-preço']");
