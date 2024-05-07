@@ -1,50 +1,57 @@
-describe("Feat: user login", () => {
+describe("Given you are a user at the homepage", () => {
+  let messages: Messages;
+  let fail: Response;
+  let success: Response;
   beforeEach(() => {
-    cy.fixture("schemaMessages").then((messages) => {
-      this.messages = messages;
+    cy.fixture("schemaMessages").then((data) => {
+      messages = data;
     });
-    cy.fixture("loginFailure").then((fail) => {
-      this.fail = fail;
+    cy.fixture("loginFailure").then((data) => {
+      fail = data;
     });
-    cy.fixture("loginSuccess").then((success) => {
-      this.success = success;
+    cy.fixture("loginSuccess").then((data) => {
+      success = data;
     });
     cy.visit("");
     cy.wait(1000);
     cy.get('[id*="account"]').click();
   });
+  context("when you insert valid login data", () => {
+    it("then you should go to the dashboard.", () => {
+      cy.typeInputData("email", success.email);
+      cy.typeInputData("password", success.password, true);
 
-  it("should be able to make the user's login successfully", () => {
-    cy.typeInputData("email", this.success.email);
-    cy.typeInputData("password", this.success.password);
+      cy.notExist("dialog");
+      cy.get("div.Toastify__toast--success");
 
-    cy.notExist("dialog");
-    cy.get("div.Toastify__toast--success");
-
-    cy.get('[id*="account"]').click();
-    cy.notExist("input[name=email]");
+      cy.get('[id*="account"]').click();
+      cy.notExist("input[name=email]");
+    });
   });
+  context("when you insert incomplete login data", () => {
+    it("then You should be shown an error message.", () => {
+      cy.typeInputData("email", fail.email);
 
-  it("Should not be able to advance if there's invalid input", () => {
-    cy.typeInputData("email", this.fail.email);
+      cy.hasErrorMessage(messages.email);
 
-    cy.hasErrorMessage(this.messages.email);
+      cy.clearAndTypeRightData("email", success.email);
 
-    cy.clearAndTypeRightData("email", this.success.email);
+      cy.typeInputData("password", fail.password, true);
 
-    cy.typeInputData("password", this.fail.password);
-
-    cy.hasErrorMessage(this.messages.minimumPassword);
+      cy.hasErrorMessage(messages.minimumPassword);
+    });
   });
+  context("when you insert invalid login data", () => {
+    it("then you should remain on the same page.", () => {
+      cy.typeInputData("email", success.email);
+      cy.typeInputData("password", `${success.password}650`, true);
 
-  it("Login should fail.", () => {
-    cy.typeInputData("email", this.success.email);
-    cy.typeInputData("password", `${this.success.password}650`);
+      cy.get("div.Toastify__toast--error");
+      cy.notExist("dialog");
 
-    cy.get("div.Toastify__toast--error");
-    cy.notExist("dialog");
-
-    cy.get('[id*="account"]').click();
-    cy.get('input[name="email"]');
+      cy.get('[id*="account"]').click();
+      cy.get('input[name="email"]');
+    });
   });
 });
+

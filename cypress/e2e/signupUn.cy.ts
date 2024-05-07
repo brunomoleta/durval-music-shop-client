@@ -1,15 +1,18 @@
 describe("Feat: user login unsuccesful", () => {
   const buttonStrings = [/conta/i, /cadastrar/i, /enviar/i, /avançar/i];
+  let messages: Messages;
+  let fail: UserFeedback;
+  let success: UserFeedback;
 
   beforeEach(() => {
-    cy.fixture("userFail").then((fail) => {
-      this.fail = fail;
+    cy.fixture("schemaMessages").then((data) => {
+      messages = data;
     });
-    cy.fixture("schemaMessages").then((messages) => {
-      this.messages = messages;
+    cy.fixture("userFail").then((data) => {
+      fail = data;
     });
-    cy.fixture("userSuccess").then((success) => {
-      this.success = success;
+    cy.fixture("userSuccess").then((data) => {
+      success = data;
     });
     cy.visit("");
     cy.get('[id*="account"]').click();
@@ -18,7 +21,7 @@ describe("Feat: user login unsuccesful", () => {
   });
 
   it("Should not be able to create a user successfully as the email already exists.", () => {
-    cy.typeUserData(this.success);
+    cy.typeUserData(success);
 
     cy.contains("button", buttonStrings[2]).click();
 
@@ -29,29 +32,29 @@ describe("Feat: user login unsuccesful", () => {
   });
 
   it("Should be able to navigate the dialog fully", () => {
-    cy.typeInputData("firstName", this.fail.firstName);
-    cy.typeInputData("lastName", this.fail.lastName);
-    cy.hasErrorMessage(this.messages.firstName);
-    cy.hasErrorMessage(this.messages.lastName);
-    cy.clearAndTypeRightData("firstName", this.success.firstName);
-    cy.clearAndTypeRightData("lastName", this.success.lastName);
+    cy.typeInputData("firstName", fail.firstName);
+    cy.typeInputData("lastName", fail.lastName);
+    cy.hasErrorMessage(messages.firstName);
+    cy.hasErrorMessage(messages.lastName);
+    cy.clearAndTypeRightData("firstName", success.firstName);
+    cy.clearAndTypeRightData("lastName", success.lastName);
 
-    cy.typeInputData("email", this.fail.email);
-    cy.hasErrorMessage(this.messages.email);
-    cy.clearAndTypeRightData("email", this.success.email);
+    cy.typeInputData("email", fail.email);
+    cy.hasErrorMessage(messages.email);
+    cy.clearAndTypeRightData("email", success.email);
 
-    cy.typeInputData("password", this.fail.password);
-    cy.hasErrorMessage(this.messages.noConfirmation);
-    cy.typeInputData("confirmPassword", this.fail.confirmPassword);
+    cy.typeInputData("password", fail.password);
+    cy.hasErrorMessage(messages.noConfirmation);
+    cy.typeInputData("confirmPassword", fail.confirmPassword);
 
-    cy.hasErrorMessage(this.messages.equalPassword);
-    cy.clearAndTypeRightData("confirmPassword", this.success.password);
+    cy.hasErrorMessage(messages.equalPassword);
+    cy.clearAndTypeRightData("confirmPassword", success.password);
 
     cy.get("button").should("contain.text", "LOGIN");
     cy.get("button").should("contain.text", "ENVIAR");
     cy.contains("button", "Voltar ao início").click();
 
-    cy.typeUserData(this.success);
+    cy.typeUserData(success);
 
     cy.contains("button", "LOGIN").click();
     cy.contains("h2", /login/i);
