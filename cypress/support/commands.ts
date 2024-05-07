@@ -66,7 +66,7 @@ Cypress.Commands.add("hasErrorMessage", (error: string) => {
 Cypress.Commands.add(
   "typeInputData",
   (field: string, write: string, pressEnter: boolean = true) => {
-    11;
+    cy.get(`input[name="${field}"]`).type(`${write}${pressEnter && `{enter}`}`);
     cy.wait(200);
   },
 );
