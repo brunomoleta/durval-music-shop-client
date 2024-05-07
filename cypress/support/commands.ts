@@ -88,11 +88,4 @@ Cypress.Commands.add("typeUserData", (user: User) => {
   cy.typeInputData("confirmPassword", user.password);
 });
 
-interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-}
-
 import "@testing-library/cypress/add-commands";
